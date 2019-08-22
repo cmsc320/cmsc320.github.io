@@ -42,6 +42,6 @@ def main(url, outbase):
 
 
 if __name__ == '__main__':
-    url = "https://cs.umd.edu/class/fall2019/cmsc320/"  # TBD, might change
+    url = "https://cmsc320.github.io/"
     outbase = "./"
     main(url, outbase)
