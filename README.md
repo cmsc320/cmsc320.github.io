@@ -1,2 +1,2 @@
 # cmsc320.github.io
-CMSC320 Fall 2019 - Introduction to Data Science - University of Maryland
+CMSC320 Fall 2020 - Introduction to Data Science - University of Maryland
