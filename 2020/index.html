@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="Introduction to Data Science" />
+        <meta name="author" content="John P. Dickerson" />
+        <link rel="icon" href="favicon.ico" />
+        
+        <title>Introduction to Data Science</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+        
+        <!-- Custom styles for this template -->
+        <link href="css/jumbotron-narrow.css" rel="stylesheet" />
+        
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="js/ie-emulation-modes-warning.js"></script>
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <!-- Fancy fonts for the headers -->
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet" />
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation"><a href="#description">Description</a></li>
+                        <li role="presentation"><a href="#schedule">Schedule</a></li>
+                        <li role="presentation"><a href="#assignments">Assignments</a></li>
+                        <li role="presentation"><a href="#tutorials">Tutorials</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">CMSC320 &ndash; Fall 2020</h3>
+            </div>
+            
+            <div class="jumbotron">
+                <h2>Introduction to Data Science</h2>
+                <!-- <img class="img-responsive" src="img/ds_01.jpg" alt="Data Science!?">  <!-- image from Vanguard -->
+                <!-- <img class="img-responsive" src="img/ds_02.jpg" alt="Data Science!?">  <!-- image from Forbes -->
+                <!-- <img class="img-responsive" src="img/ds_03.jpg" alt="Data Science!?">  <!-- image from Business Intelligence -->
+                <!-- <img class="img-responsive" src="img/ds_04.png" alt="Data Science!?">  <!-- image from https://gcn.com/articles/2017/12/05/data-inventory.aspx -->
+                <!-- <img class="img-responsive" src="img/ds_05.jpeg" alt="Data Science!?" />  <!-- image from Amber; not sure of the source-->
+                <img class="img-responsive" src="img/ds_06.png" alt="Data Science!?" />  <!-- image from Wikipedia (Sociology) -->
+                <p>
+                <address>
+                    <strong>Instructor:</strong> <a href="http://jpdickerson.com">John P. Dickerson</a><br/>
+                    <strong>TAs:</strong>
+                    <a href="https://sweta20.github.io/">Sweta Agrawal</a> (1/2 TA),
+                    Nitin Balachandran,
+                    Tracy Chen,
+                    <a href="https://avivaprins.com/">Aviva Prins</a>,
+                    <a href="https://npsdc.github.io/npsdc.github.io/">Noor Singh</a>,
+                    <a href="https://qytan.com/">Qingyang Tan</a> (1/2 TA)
+                    <br/>
+                    <strong>Lectures:</strong> Tuesday and Thursday, 5:00&ndash;6:15 PM<br/>
+                    <strong>Lectures are live on Zoom &amp; posted on ELMS and YouTube</strong><br/>
+                </address>
+                </p>
+            </div>
+            
+            <div class="row marketing" id="description">
+                <h1>Description of Course</h1>
+                <p>Data science encapsulates the interdisciplinary activities required to create data-centric products and applications that address specific scientific, socio-political or business questions. It has drawn tremendous attention from both academia and industry and is making deep inroads in industry, government, health and journalism&mdash;just ask <a href="http://fivethirtyeight.com/features/why-fivethirtyeight-gave-trump-a-better-chance-than-almost-anyone-else/">Nate Silver</a>!</p>
+                
+                <p>This course focuses on (i) data management systems, (i) exploratory and statistical data analysis, (ii) data and information visualization, and (iv) the presentation and communication of analysis results. It will be centered around case studies drawing extensively from applications, and will yield a publicly-available final project that will strengthen course participants' data science portfolios.</p>
+                
+                <p>This course will consist primarily of sets of self-contained lectures and assignments that leverage real-world data science platforms when needed; as such, there is no assigned textbook.  Each lecture will come with links to required reading, which should be done before that lecture, and (when appropriate) a list of links to other resources on the web.</p>
+                
+                <h3>Requirements</h3>
+                <p>
+                Students enrolled in the course should be comfortable with programming (for those at UMD, having passed CMSC216 will be good enough!) and be reasonably mathematically mature.  The course itself will make heavy use of the <a href="https://www.python.org/">Python</a> scripting language by way of <a href="https://jupyter.org/">Jupyter</a> Notebooks, leaning on the <a href="http://conda.pydata.org/docs/">Anaconda</a> package manager; we'll give some Python-for-data-science primer lectures early on, so don't worry if you haven't used Python before.  Later lectures will delve into statistics and machine learning and may make use of basic calculus and basic linear algebra; light mathematical maturity is preferred at roughly the level of a junior CS student.
+                </p>
+                
+                <p>
+                There will be one written, take-home (obviously, given COVID-19 and all) midterm examination.  There will <em>not</em> be a final examination; rather, in the interest of building students' public portfolios, and in the spirit of &quot;learning by doing&quot;, students will create a self-contained <strong>online tutorial to be posted publicly</strong>.  This tutorial can be created individually or in a small group.  As described <a href="files/cmsc320_f2020_final_rubric.pdf">here</a> (<em>subject to change!</em>), the tutorial will be a publicly-accessible website that provides an end-to-end walkthrough of identifying and scraping a specific data source, performing some exploratory analysis, and providing some sort of managerial or operational insight from that data.
+                </p>
+                
+                <p>
+                Final grades will be calculated as:
+                <ul>
+                    <li>10% weekly quizzes</li>
+                    <li>25% midterm</li>
+                    <li>40% mini-project assignments</li>
+                    <li>25% final tutorial to be posted publicly online (<a href="files/cmsc320_f2020_final_rubric.pdf">instructions</a>, <em>subject to change!</em>)</li>
+                    <!--<li>5% course, Piazza, and office hours participation (extra credit!)</li>-->
+                </ul>
+                </p>
+                
+                <!-- <p>
+                You can earn full credit for class participation in three ways:
+                <ol>
+                <li>Lecture participation, asking questions and answering your peers questions;</li>
+                <li>Piazza participation, asking and answering questions on Piazza; and</li>
+                <li>Regular attendance at office hours.</li>
+                </ol>
+                To earn full credit you should aim to ask or answer a question at least once every two weeks in lecture or on Piazza; or attend office hours at least once a month (this can include just going to my office hours to chat about computer science, data, science, software engineering, etc.).
+                </p> -->
+                
+                <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area.  If in doubt, e-mail me: john@cs.umd.edu!</em></p>
+                
+                <h3>Office Hours &amp; Communication</h3>
+                
+                <p>For course-related questions, please use <a href="https://piazza.com/umd/fall2020/cmsc320">Piazza</a> to communicate with your fellow students, the TAs, and the course instructors.  For private correspondance or special situations (e.g., excused absences, DDS accomodations, etc), please email John with <code>[CMSC320]</code> in the email subject line.</p>
+                
+                <p>
+                <table class="table table-striped">
+                    <caption>Office Hours (all times EDT)</caption>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Human</th>
+                            <th style="width: 45%">Time</th>
+                            <th style="width: 25%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sweta Agrawal</td>
+                            <td>10AM-11AM Tuesday; Piazza on Wednesday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                        <tr>
+                            <td>Nitin Balachandran</td>
+                            <td>3PM-5PM Monday; Piazza on Monday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                        <tr>
+                            <td>Tracy Chen</td>
+                            <td>2PM-4PM Thursday; Piazza on Thursday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                        <tr>
+                            <td>John Dickerson</td>
+                            <td>By appointment; please email John with <code>[CMSC320]</code> in the email subject line.</td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <td>Aviva Prina</td>
+                            <td>12PM-2PM Tuesday; Piazza on Tuesday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                        <tr>
+                            <td>Noor Singh</td>
+                            <td>4:00-6:00PM on Wednesday; Piazza on Friday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                        <tr>
+                            <td>Qingyang Tan</td>
+                            <td>2PM-3PM on Friday; Piazza on Tuesday</td>
+                            <td>Check ELMS/Piazza</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+                
+                <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                <h3>University Policies and Resources</h3>
+                
+                <p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.</p>
+                
+                <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                <h3>Course evaluations</h3>
+                
+                <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+                
+            </div>
+            
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="schedule">
+                <h1>Schedule</h1>
+                <table class="table table-striped">
+                    <caption>(Schedule subject to change as the semester progresses!)</caption>
+                    <thead>
+                        <tr>
+                            <th>&#35;</th>
+                            <th>Date</th>
+                            <th>Topic</th>
+                            <th>Reading</th>
+                            <th>Slides</th>
+                            <th>Lecturer</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>9/1</td>
+                            <td>Introduction</td>
+                            <td>What the Fox Knows.  <a href="https://fivethirtyeight.com/features/what-the-fox-knows/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec01.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec01.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Sign up on <a href="https://piazza.com/umd/fall2020/cmsc320">Piazza</a>!</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>9/3</td>
+                            <td>What is Data &amp; Lightning Python Overview</td>
+                            <td>Anaconda's Test Drive.  <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec02.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec02.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>9/8</td>
+                            <td>Scraping Data (with Python) I</td>
+                            <td>&quot;What happens when you type google.com into your browser's address bar?&quot; <a href="https://github.com/alex/what-happens-when"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec03.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec03.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>PDF download script from class: <a href="files/cmsc320_f2020_lec03_crawler.py">link</a>; Extra reading/quick tutorial on using BeautifulSoup: <a href="https://www.digitalocean.com/community/tutorials/how-to-scrape-web-pages-with-beautiful-soup-and-python-3">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>9/10</td>
+                            <td>Scraping Data (with Python) II</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_f2020_lec04.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec04.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Regex helper sites: <a href="https://regexr.com">regexr.com</a>, <a href="https://pythex.org/">pythex.org</a>, <a href="https://regex101.com/">regex101.com</a>, <a href="https://rubular.com/">rubular.com</a> (thanks to J Helperin, J Martinez, M Mohades, &amp; R Amor)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>9/15</td>
+                            <td>NumPy &amp; SciPy, &amp; Best Practices</td>
+                            <td>Introduction to pandas.  <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/01_table_oriented.html#min-tut-01-tableoriented"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec05.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec05.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Pandas tutorials: <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>9/17</td>
+                            <td>Data Wrangling I: Pandas &amp; Tidy Data</td>
+                            <td>Hadley Wickham. &quot;Tidy Data.&quot;  <a href="files/tidy_data.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec06+07.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec06+07.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Hould's <a href="http://www.jeannicholashould.com/tidy-data-in-python.html">Tidy Data</a> for Python</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>9/22</td>
+                            <td>Data Wrangling II: Tidy data &amp; SQL</td>
+                            <td>Derman &amp; Wilmott's &quot;Financial Modelers' Manifesto.&quot;  <a href="files/modelers_manifesto.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec06+07.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec06+07.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>SQLite: <a href="https://www.sqlite.org/">link</a>; pandasql library: <a href="https://community.alteryx.com/t5/Data-Science/pandasql-Make-python-speak-SQL/ba-p/138435">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>9/24</td>
+                            <td>Version Control &amp; Git</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_f2020_lec08.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec08.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>9/29</td>
+                            <td>Version Conrol Wrap-up, &amp; Graphs</td>
+                            <td>Introduction to GraphQL: <a href="https://graphql.org/learn/">link</a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec09.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec09.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>NetworkX: <a href="https://networkx.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>10/1</td>
+                            <td>Graphs, &amp; Summary Statistics and Transformations</td>
+                            <td>Backstrom &amp; Kleinberg.  &quot;Romantic Partnerships and the Dispersion of Social Ties: A Network Analysis of Relationship Status on Facebook,&quot; CSCW-14.  <a href="https://arxiv.org/abs/1310.6753">arXiv link</a>.</td>
+                            <td><a href="lecs/cmsc320_f2020_lec10+11.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec10+11.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>10/6</td>
+                            <td>Summary Statistics and Transformations, &amp; Missing Data I</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_f2020_lec10+11.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec10+11.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>10/8</td>
+                            <td>Missing Data II</td>
+                            <td>Pandas tutorial on working with missing data. <a href="http://pandas.pydata.org/pandas-docs/stable/missing_data.html"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec12+13.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec12+13.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Scikit-learn's imputation functionality: <a href="https://scikit-learn.org/stable/modules/impute.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">13</th>
+                            <td>10/13</td>
+                            <td>Missing Data III, &amp; Data Wrangling Wrap-Up: Data Integration, Data Warehousing, Entity Resolution</td>
+                            <td>Data Cleaning: Problems and Current Approaches <a href="files/data_cleaning.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> (<em>Note: this is a reference piece; please don't read the whole thing!</em>)</td>
+                            <td><a href="lecs/cmsc320_f2020_lec12+13.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec12+13.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Wikipdia article on <a href="http://en.wikipedia.org/wiki/Outlier">outliers</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14</th>
+                            <td>10/15</td>
+                            <td>Natural Language I: Syntax &amp; Semantics</td>
+                            <td>NLTK Book.  <a href="http://www.nltk.org/book/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec14+15.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec14+15.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Python Natural Language Toolkit (NLTK): <a href="http://www.nltk.org/">link</a>; Criticisms of the Turing Test: <a href="https://people.csail.mit.edu/katrina/papers/6893.pdf">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">15</th>
+                            <td>10/20</td>
+                            <td>Natural Language II: Representation</td>
+                            <td><em>Continued from last class ...</em></td>
+                            <td><a href="lecs/cmsc320_f2020_lec14+15.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec14+15.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td><em>Continued from last class ...</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">16</th>
+                            <td>10/22</td>
+                            <td>Natural Language III: Embeddings &amp; Similarity</td>
+                            <td><em>Continued from last class ...</em></td>
+                            <td><a href="lecs/cmsc320_f2020_lec14+15.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec14+15.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td><em>Pre-recorded class; John will not be available during the live lecture period for this class.</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">17</th>
+                            <td>10/27</td>
+                            <td>Midterm Review &amp; TBD</td>
+                            <td>&mdash;</td>
+                            <td>Midterm review: <a href="lecs/cmsc320_f2020_midterm_review.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_midterm_review.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx; Lecture slides: <a href="lecs/cmsc320_f2020_lec17+19.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec17+19.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td><em>New material from this lecture will not be included on the midterm.</em></td>
+                        </tr>
+                        <tr class="danger">
+                            <th scope="row">18</th>
+                            <td>10/29</td>
+                            <td>Midterm</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">19</th>
+                            <td>11/3</td>
+                            <td>Vote!</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td>Dickerson</td>
+                            <td><em>Election day!</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20</th>
+                            <td>11/5</td>
+                            <td>Introduction to Machine Learning</td>
+                            <td>Hal Daum&eacute; III.  A Course in Machine Learning.  <a href="http://ciml.info/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec17+19.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec17+19.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">21</th>
+                            <td>11/10</td>
+                            <td>Decision Trees and Random Forests</td>
+                            <td>Russell &amp; Norvig's Chapter 18 lecture slides: <a href="http://aima.eecs.berkeley.edu/slides-pdf/chapter18.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec21+22.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec21+22.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Scikit-learn's basic decision tree functionality: <a href="http://scikit-learn.org/stable/modules/tree.html">link</a>; Bart Selman's CS4700: <a href="https://www.cs.cornell.edu/courses/cs4700/2013fa/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">22</th>
+                            <td>11/12</td>
+                            <td>Random Forests, K-NN</td>
+                            <td>&mdash;</td>
+                            <td><a href="lecs/cmsc320_f2020_lec21+22.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec21+22.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">23</th>
+                            <td>11/17</td>
+                            <td>Practical Issues I: Overfitting, Cross-validation, Regularization</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_f2020_lec23+24+25.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec23+24+25.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>xkcd on overfitting: <a href="https://xkcd.com/1122/">link</a>; Polynomial features/Interaction terms in Scikit: <a href="https://chrisalbon.com/machine_learning/linear_regression/adding_interaction_terms/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">24</th>
+                            <td>11/19</td>
+                            <td>Practical Issues II: Feature Engineering, PCA, Clustering, Association Rules</td>
+                            <td>Nguyen &amp; Holmes.  &quot;Ten quick tips for effective dimensionality reduction,&quot; PLoS Computational Biology.  <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006907"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec23+24+25.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec23+24+25.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Wikipedia article on the confusion matrix: <a href="https://en.wikipedia.org/wiki/Confusion_matrix">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">25</th>
+                            <td>11/24</td>
+                            <td>Practical Issues III: Recommender Systems and Association Rules</td>
+                            <td>Best Practices for Recommender Systems (from Microsoft). <a href="https://github.com/microsoft/recommenders#introduction"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec23+24+25.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec23+24+25.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td></td>
+                        </tr>
+                        <tr class="warning">
+                            <th scope="row">&mdash;</th>
+                            <td>11/26</td>
+                            <td>Thanksgiving Break</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">26</th>
+                            <td>12/1</td>
+                            <td>Scaling It Up</td>
+                            <td>Dean &amp; Ghemawat.  &quot;MapReduce: Simplified Data Processing on Large Clusters,&quot; CACM.  <a href="files/mapreduce.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec26.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec26.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Wikipedia on SGD: <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">27</th>
+                            <td>12/3</td>
+                            <td>Data Science Ethics &amp; Best Practices I</td>
+                            <td><em>The Atlantic</em>.  &quot;Everything We Know About Facebook's Secret Mood Manipulation Experiment&quot; <a href="https://www.theatlantic.com/technology/archive/2014/06/everything-we-know-about-facebooks-secret-mood-manipulation-experiment/373648/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec27+28.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec27+28.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>What is GDPR?  (<a href="https://gdpr.eu/what-is-gdpr/">link</a>)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">28</th>
+                            <td>12/8</td>
+                            <td>Data Science Ethics &amp; Best Practices II</td>
+                            <td>Apple's brief overview of differential privacy: <a href="https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>; Barocas, Hardt, &amp; Narayanan.  <em>Fairness in Machine Learning</em>.  <a href="https://fairmlbook.org/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_f2020_lec27+28.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec27+28.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>SIGCOMM paper that passed IRB review but is widely seen as unethical: <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p653.pdf">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">29</th>
+                            <td>12/10</td>
+                            <td>Debugging Data Science, &amp; Data Science in Industry</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_f2020_lec29.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_f2020_lec29.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Dickerson</td>
+                            <td>Additional discussion of debugging models (from Cornell): <a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote13.html">link</a></td>
+                        </tr>
+                        <tr class="danger">
+                            <th scope="row">Final</th>
+                            <td>12/21</td>
+                            <td>Final Exam Date</td>
+                            <td><em><strong>Final versions</strong> of tutorials must be posted by 4:00PM, the exam time.</em></td>
+                            <td></td>
+                            <td></td>
+                            <td>Instructions &amp; rubric: <a href="files/cmsc320_f2020_final_rubric.pdf">link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="assignments">
+                <h1>Mini-Projects n&#233; Homework</h1>
+                <p>In addition to the tutorial to be posted publicly at the end of the semester, there will be four &quot;mini-projects&quot; assigned over the course of the semester (plus one simple setup assignment that will walk you through using git, Docker, and Jupyter).  The best way to learn is by doing, so these will largely be applied assignments that provide hands-on experience with the basic skills a data scientist needs in industry.</p>
+                <!-- <p>As in the real world, students are encouraged to discuss these assignments in groups; however, unlike in the real world, free-riding will not be tolerated.  Toward that end, students must independently write and program their solutions; furthermore -->
+                <p>Posting solutions publicly online without the staff's express consent is a direct violation of our academic integrity policy.  <strong>Late assignments will not be accepted.</strong>
+                <table class="table table-striped">
+                    <caption>(Assignments will appear over the course of the semester.)</caption>
+                    <thead>
+                        <tr>
+                            <th>&#35;</th>
+                            <th>Description</th>
+                            <th>Date Released</th>
+                            <th>Date Due</th>
+                            <th>Project Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>0</th>
+                            <td>Setting Things Up</td>
+                            <td>September 1</td>
+                            <td>September 8</td>
+                            <td><a href="https://github.com/cmsc320/fall2020/tree/master/project0">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>Fly Me To The Moon</td>
+                            <td>September 15</td>
+                            <td>September 29</td>
+                            <td><a href="https://github.com/cmsc320/fall2020/tree/master/project1">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>Moneyball</td>
+                            <td>October 2</td>
+                            <td><s>October 19</s> October 22</td>
+                            <td><a href="https://github.com/cmsc320/fall2020/tree/master/project2">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>Fact Tank</td>
+                            <td>November 6</td>
+                            <td><s>November 23</s> December 3</td>
+                            <td><a href="https://github.com/cmsc320/fall2020/tree/master/project3">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td>Baltimore Crime</td>
+                            <td>December 3</td>
+                            <td>December 10</td>
+                            <td><a href="https://github.com/cmsc320/fall2020/tree/master/project4">link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="tutorials">
+                
+                <h1>Final Tutorials</h1>
+                <p>In the spirit of &quot;learning by doing,&quot; students created a self-contained online tutorial to be posted publicly. Tutorials could be created individually or in a small group. The intention was to create a publicly-accessible website that provides an end-to-end walkthrough of identifying and scraping a specific data source, performing some exploratory analysis, and providing some sort of managerial or operational insight from that data.  Below is a list of (most of) the tutorials created in the Fall 2020 version of CMSC320.</p>
+                
+                <table class="table table-striped">
+                    <caption>Most links lead to a public <a href="https://pages.github.com/">GitHub Page</a> created by a student or small group in the Fall 2020 CMSC320 course; some links lead to students' personal websites or to a Notebook hosted on <a href="https://colab.research.google.com/">Google Colab</a>.  Project creators: if a link is missing or incorrect, please get in touch with John!</caption>
+                    <thead>
+                        <tr>
+                            <th>Project Title</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2020 Presidential Election: From a Data Science Perspective</td>
+                            <td><a href="https://dgu334.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>A Closer look at the NFL Draft</td>
+                            <td><a href="https://sai-pesari.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>A Data Science Walkthrough Using Global Happiness Data</td>
+                            <td><a href="https://kxu9969.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>A Data Scientist&#39;s Guide to the S&amp;P 500</td>
+                            <td><a href="https://sobrad956.github.io/stocks.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>A March Madness Analysis</td>
+                            <td><a href="https://rpbharadwaj99.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>A Pandemic: An Analysis of COVID-19</td>
+                            <td><a href="https://sneha-001.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>American Music Awards Tweets</td>
+                            <td><a href="https://henryc19.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of Amazon&#39;s Top 50 Bestselling Books</td>
+                            <td><a href="https://adam-martin1.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of Heart Diseases and Attributes Leading to Heart Disease</td>
+                            <td><a href="https://jwaite22.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of Metrics in Predicting Economic Performance based on the Modern Portfolio Theory</td>
+                            <td><a href="https://dankimchi.github.io.">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of Salaries and Cost of Living in Different US Cities</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of the Impact of COVID-19 on Crime in College Park, MD</td>
+                            <td><a href="https://mmablim00.github.io.">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Analysis of the Prevalence of US Events on Reddit</td>
+                            <td><a href="https://nsakha.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>An Introduction to Genome Analysis in Python (Data Science Tutorial)</td>
+                            <td><a href="https://colab.research.google.com/drive/1co_-qwtCmwl_0hCU5Vrz0Lcnp-Qvy_4_?usp=sharing">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Amazon&#39;s Top 50 Bestselling Books</td>
+                            <td><a href="https://supriyam9.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Book Data from Amazon</td>
+                            <td><a href="https://captaincatatonic.github.io/cmsc320_final_tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of COVID Data and Politicial Outcomes for the United States</td>
+                            <td><a href="https://rushabhushah.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of COVID-19 data in United States</td>
+                            <td><a href="https://github.com/swang134/finalcopy/blob/main/Final_Project_for_Cmsc_320.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Crime in Maryland</td>
+                            <td><a href="https://wzf1999.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Homelessness in Maryland</td>
+                            <td><a href="https://aroy2530.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of NFL Games</td>
+                            <td><a href="https://tnbarton.github.io/cmsc320-final-tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of the Coronavirus by Coninent</td>
+                            <td><a href="https://stschoberg.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of the Covid-19 Pandemic</td>
+                            <td><a href="https://sskuch.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of the Google Play Store</td>
+                            <td><a href="https://tmw085.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Tournament Matches in Super Smash Bros. Melee</td>
+                            <td><a href="https://github.com/DanPetruso/CMSC320-Final/blob/main/320%20Final.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis of Traffic Violations in Montgomery County Maryland</td>
+                            <td><a href="https://myang124.github.io/Python-tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis on the Potential of Life on Exoplanets</td>
+                            <td><a href="https://ebarr10.github.io/Potential_Exoplanet_Life/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis on Voter Turnout Data from 2020 General Election</td>
+                            <td><a href="https://mdinakar5.github.io/index.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analysis San Francisco Criminal Records (CMSC320 Final Project)</td>
+                            <td><a href="https://wenwenlababy25.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyze 2020 Election Data</td>
+                            <td><a href="https://github.com/yundiguaerjia/yundiguaerjia.github.io/blob/main/final.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing Avocado Prices and Consumption in the U.S.</td>
+                            <td><a href="https://cpcorsair.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing Football Clubs in the U.K.</td>
+                            <td><a href="https://github.com/SiddarGu/Performance-of-FCs-in-the-UK">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing Global Suicide Rate from 1985 to 2016</td>
+                            <td><a href="https://summerzzzy.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing Retail Investors with Robinhood Data</td>
+                            <td><a href="https://palashp.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing the Prices of Boston Airbnb Rentals: What Affects Prices and Have Prices Changed Since the Pandemic?</td>
+                            <td><a href="https://joshlavitz.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing the relationship between home matches and match wins in the English Premier League (Soccer)</td>
+                            <td><a href="https://vsehgal1.github.io/320Final.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Analyzing the Top Spotify Songs of the 2010s</td>
+                            <td><a href="https://amarmuju.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Aspects of Trending Videos on YouTube</td>
+                            <td><a href="https://nickboller.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Attempting to predict the outcome of a hit baseball</td>
+                            <td><a href="https://jjhelperin.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Black Lives Matter movement</td>
+                            <td><a href="https://github.com/nmitra28/DataScience_tutorial/blob/main/final_project.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Breaking down the Grammy Award for Record of the Year - An Analysis</td>
+                            <td><a href="https://anyesha.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>BREAKING DOWN THE TOP TRENDING YOUTUBE VIDEOS (U.S. &amp; CA)</td>
+                            <td><a href="https://estherzhang523.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Chicago Burglaries</td>
+                            <td><a href="https://annivas.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Citi Bike Ridership &amp; Public Safety During COVID-19</td>
+                            <td><a href="https://taniaarya.github.io/datascience-capstone/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Classifying Pokemon Competitively</td>
+                            <td><a href="https://poortho.github.io/competitive_pokemon.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC320 Final Project - Spotify Data Analysis</td>
+                            <td><a href="https://egarbow.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC320 Final Project: Steven Struglia, Michael Strobel, HtetMyat Aung (Stock Market)</td>
+                            <td><a href="https://steven-struglia.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>CMSC320 Final Tutorial</td>
+                            <td><a href="https://joeygongcj.github.io/Final%20Project.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cooking Recipes: An analysis of Ratings, Nutrition, and Tags</td>
+                            <td><a href="https://imveryhungry.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Coronavirus Exploratory Data Analysis</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Countering a Dangerous Problem</td>
+                            <td><a href="https://josephdipietro.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>COVID-19, An Analysis</td>
+                            <td><a href="https://joshwent.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>COVID-19: Modeling The Relative Impact on US States</td>
+                            <td><a href="https://mchavez1999.github.io/Cov19/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>COVID-19&#39;s effect on Twitch &amp; which games are the best to stream</td>
+                            <td><a href="https://charleslaming.github.io/covid-and-twitch/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>COVID&#39;s Effect on Music Trends</td>
+                            <td><a href="https://sonyal.github.io/COVIDSpotifyTrends/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>COVID19 and state demographics: Finding which factors might affect COVID19 rates</td>
+                            <td><a href="https://sakshumkulshrestha.github.io/sakshumkulshrestha.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Critical and Commercial Success in Music of the 2010 Decade</td>
+                            <td><a href="http://bhazman.me/cmsc320/Hazman_Final_Tutorial.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Data Analysis on FAANG Stocks from 2013 to 2020</td>
+                            <td><a href="https://vkhetan27.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Data Visualization and Analysis of COVID-19</td>
+                            <td><a href="https://keshab101.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Determining Buzz Words on Reddit</td>
+                            <td><a href="https://github.com/swills18/SubredditWordAnalysisTutorial">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Do Masks Help in the Prevention of Covid-19?</td>
+                            <td><a href="https://gauravsoccerstar.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Do Professional Wine Reviewers Know What They&#39;re Doing?</td>
+                            <td><a href="https://arons1618.github.io/Wine-analysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Drink To Forget: An Analysis of Drinking Habits During the COVID-19 Pandemic</td>
+                            <td><a href="https://alexmorganumd.github.io/Final_Project.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Evaluating Chess Positions</td>
+                            <td><a href="https://morales0.github.io/data-science-chess-project/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Expected Value, Win Probability, and why &quot;Common Knowledge&quot; Hurts Sports Teams</td>
+                            <td><a href="https://chrisberry888.github.io">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Film Genre and Popularity Trends</td>
+                            <td><a href="https://a2kovalev.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Final Tutorial</td>
+                            <td><a href="https://dandrewh.github.io/cmsc320final/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Final Tutorial</td>
+                            <td><a href="https://francisp1.github.io/FinalTutorial%20HTML.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Finding Your Ideal Wine</td>
+                            <td><a href="https://shreelekhar.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Formula 1: A brief look through history</td>
+                            <td><a href="https://rtkjn.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Formula One Racing</td>
+                            <td><a href="https://rnarla123.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>From 2016 to 2020, How Politics Have Changed In America</td>
+                            <td><a href="https://agupps.github.io/electionTurnoutAnalysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Get a formula to predict the sale price of houses in Ames, Iowa</td>
+                            <td><a href="https://poponiania.github.io/HousePriceAnalysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Global Food Waste Analysis</td>
+                            <td><a href="https://jack1847.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Gold Prices: Driven by Inflation, Volatility, or Treasury Yields?</td>
+                            <td><a href="https://superav.github.io/index.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Happiness in the World</td>
+                            <td><a href="https://n12maya.github.io/final_project.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Happiness Within Countries</td>
+                            <td><a href="https://jzhong456.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Hospital Wait Times in The U.S.</td>
+                            <td><a href="https://petersm8.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How Corona Started</td>
+                            <td><a href="https://ronlagss.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How Happy is Our World?</td>
+                            <td><a href="https://gordonwu66.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How has Music Changed over Time - A Spotify Data Analysis</td>
+                            <td><a href="https://jsantan.github.io/Jacob_Santangelo_Final_Project.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How Height has effected Win % in 1980 and 2020</td>
+                            <td><a href="https://vivekm2128.github.io/nbadatascience.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How much better can the 2019 NBA Draft class get?</td>
+                            <td><a href="https://vedpujari123.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How to Beat Better Rated Chess Players</td>
+                            <td><a href="https://18vshanmugam.github.io/vshantutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How to Make a Successful Game on Steam?</td>
+                            <td><a href="https://mzhu65536-um.github.io/final.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>How well do our police departments represent the populations they serve?</td>
+                            <td><a href="https://spogelser.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Individual and Comparative Analysis of Pop, Hip Hop, and Rock Song Structures</td>
+                            <td><a href="https://cirecirecire.github.io./">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Is College Tuition Infected? Diagnosing Baumol&#39;s Cost Disease</td>
+                            <td><a href="https://casebriscoe.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Is Joe Flacco an Elite Quarterback?</td>
+                            <td><a href="https://andrewstehman.github.io/Joe-Flacco-Is-Elite/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Is The Electoral College Misleading?</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>Leicester&#39;s Unprecedented Title Win</td>
+                            <td><a href="https://rodneyamor.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Mental Health in the Tech Industry</td>
+                            <td><a href="https://github.com/ilanapkern/CMSC320-final-tutorial/blob/main/CMSC320_final_tutorial.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Missing Migrants - An Analysis on the Risk of Seeking Asylum</td>
+                            <td><a href="https://github.com/dscho1/missingMigrants/blob/master/missingMigrants.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Movie Genre Popularity and Economic Activity</td>
+                            <td><a href="https://amukadam.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Music attributes and its effect on popularity</td>
+                            <td><a href="https://ahsieh53632.github.io/music-attributes-and-popularity/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Music Over the Decades</td>
+                            <td><a href="https://maximgeronime.com/final_tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Music Throughout the Decades: An Analysis</td>
+                            <td><a href="https://ssarahfloress.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>My Brother, My Brother and Me and the McElroy Brand</td>
+                            <td><a href="https://qishannon.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>NBA 2020 Season Statistics Analysis</td>
+                            <td>&mdash;</td>
+                        </tr>
+                        <tr>
+                            <td>NBA Project</td>
+                            <td><a href="https://github.com/lucluc66/CMSC320-Final-Tutorial/blob/main/Final%20Tutorial.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Netflix Movie/Tv Show Trends</td>
+                            <td><a href="https://weisinjiang.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>NTSB Investigations of Aircraft Incursions in the USA</td>
+                            <td><a href="https://jallard1.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Pokemon Type Analysis</td>
+                            <td><a href="https://github.com/jgao1238/PokedexStatAnalysis/blob/main/Pokemon.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting 2020-2021 English Premier League Table Results Using Machine Learning</td>
+                            <td><a href="https://wdaseking.github.io/CMSC320-Final-Tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting an MLB Player&#39;s Performance In Fantasy Baseball</td>
+                            <td><a href="https://mikeisen1.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Average Salaries for all Proffessor Ranks</td>
+                            <td><a href="https://apancorb.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Car Prices</td>
+                            <td><a href="https://ntejwani.github.io/CMSC320-Final-Project/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Chess Wins based off Openings</td>
+                            <td><a href="https://fishnal.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Current Quarterback Win Rates</td>
+                            <td><a href="https://mdelbene9.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Dementia and Alzheimer&#39;s</td>
+                            <td><a href="https://amygracecruz.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Gaon Digital Streams through Spotify Audio Features</td>
+                            <td><a href="https://marissahe.github.io/Gaon-Spotify-Final-Tutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Gross Domestic Investment in the United States</td>
+                            <td><a href="https://kpat13.github.io/US_Gross_Private_Investment/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting House Prices in King County, Washington</td>
+                            <td><a href="https://jofalu.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting NBA Players&#39; Salaries</td>
+                            <td><a href="https://kylluminati.github.io/fall2020final/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Student Performance In High School</td>
+                            <td><a href="https://leeleeliang.github.io./">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting the Chance of Winning in League of Legends (Given the First 10 Minutes of Data)</td>
+                            <td><a href="https://daltonherrold.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting the Popularity of a Book on Project Gutenberg</td>
+                            <td><a href="https://shearerw.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Winning Play Styles in Texas Hold&#39;em</td>
+                            <td><a href="https://rwang18.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predicting Wins at the Highest Level in the NBA</td>
+                            <td><a href="https://bhaveshkemburu.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Prediction of Diabetes Melitus from Patients Medical Records</td>
+                            <td><a href="https://dhyay.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Predictive Power of 3-Pointer for Team Win% in 21st Century NBA</td>
+                            <td><a href="https://adithyasolai.com/projects/nba_three_point_revolution/Final%20Tutorial%20-%20Adithya%20Solai.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Presidential Election 2020 Voter Turnout Analysis</td>
+                            <td><a href="https://roakky.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Relationships Among Crime Rate, Gini Coefficient, and Median Income in US</td>
+                            <td><a href="https://github.com/YaejiS/Income-inequality-vs-crime/blob/main/income%20inequality%20vs%20crime.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Reverse Line Movement</td>
+                            <td><a href="https://markhanz10.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Small Ball</td>
+                            <td><a href="https://xyang777.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Smart, not fair: An analysis of CS:GO metagame tactics</td>
+                            <td><a href="https://sylean.github.io/csgotutorial/index.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Testing a stock buying strategy versus buying and holding a stock</td>
+                            <td><a href="https://dpeletski.github.io/finalTutorial/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Best Times Of The Year To Puchase Tech Stocks</td>
+                            <td><a href="https://swimkevin.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Evolution of the 3 point shot</td>
+                            <td><a href="https://ericzhang1231.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Future of Console Gaming in a PC World</td>
+                            <td><a href="https://patel-utkp.github.io/cmsc320/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The NBA Draft</td>
+                            <td><a href="https://nba-draft.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Probabilities and Financial Impact of Gacha Games</td>
+                            <td><a href="https://kevinw1008.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>The Trends of Happiness</td>
+                            <td><a href="https://github.com/sschacko/sschacko.github.io/blob/main/The%20Trends%20of%20Happiness.ipynb">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Trends in Seattle Crimes</td>
+                            <td><a href="https://dani-cloud.github.io/DS_FinalTutorialNote-Copy1.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Twitter&#39;s Climate Tide: An Analysis of Tweets About Climate Change</td>
+                            <td><a href="https://arjungandhi521.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Ultimate Fighter Championship Data Analysis</td>
+                            <td><a href="https://skonkalmatt.github.io/UFC_Data_Analysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Using Data Analysis &amp; Visualization to Understand the Performance of NCAA Division 1 College Basketball Teams in March Madness</td>
+                            <td><a href="https://nidhi196.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Venmo Transactions Analysis</td>
+                            <td><a href="https://mmohades.github.io/venmo-analysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Video Game Sales</td>
+                            <td><a href="https://toniabius.github.io/ytaosyou320final.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Visualization and Analysis of Liquor Sales in Iowa</td>
+                            <td><a href="https://richardcmsc320final.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Visualizing Ocean Data on Reconstructed pH and Coral Bleaching Reports</td>
+                            <td><a href="https://tennyson94.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Wall Street Bets Sentiment Analysis</td>
+                            <td><a href="https://yueshanwang.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What Determines A Soccer Player&#39;s Salary?</td>
+                            <td><a href="https://peter-feeney.github.io/soccer-analysis/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What Factors Help Predict the Outcome of the 2020 Election?</td>
+                            <td><a href="https://nehaswamy.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What Make You Happy?</td>
+                            <td><a href="https://kangdaia.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What makes an ArchiveOfOurOwn story successful?</td>
+                            <td><a href="https://epitaque.github.io/cmsc320/archiveofourown_analysis.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What Review Scores Mean for Games</td>
+                            <td><a href="https://tythoneywell.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>What&#39;s the movie score</td>
+                            <td><a href="https://wang-umd.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Will You Accept This Analysis?</td>
+                            <td><a href="https://deliav04.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>Winter is Coming: An Analysis of Sunshine vs Depression</td>
+                            <td><a href="https://justinrfenn.github.io/cmsc320/winter-is-coming.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <td>World Happiness</td>
+                            <td><a href="https://dlulli.github.io/World-Happiness/">link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            
+            <div class="row marketing" id="assignments">
+                <h1>Additional Administrative Information</h1>
+                <!-- information in this section adapted from David van Horn's course webpages -->
+                <!-- E.g., http://www.cs.umd.edu/class/fall2019/cmsc430/Syllabus.html -->
+                
+                <h3>Excused Absences</h3>
+                <p>Missing an exam for reasons such as illness, religious observance, participation in required university activities, or family or personal emergency (such as a serious automobile accident or close relative’s funeral) will be excused so long as the absence is requested in writing at least 2 days in advance and the student includes documentation that shows the absence qualifies as excused; a self-signed note is not sufficient as exams are Major Scheduled Grading Events. For this class, such events are the final project assessment and midterms, which will be due on the dates listed in the schedule above.  The final exam is scheduled according to the University Registrar.</p>
+                
+                <p>For medical absences, you must furnish documentation from the health care professional who treated you. This documentation must verify dates of treatment and indicate the timeframe that the student was unable to meet academic responsibilities. In addition, it must contain the name and phone number of the medical service provider to be used if verification is needed. No diagnostic information will ever be requested. Note that simply being seen by a health care professional does not constitute an excused absence; it must be clear that you were unable to perform your academic duties.</p>
+                
+                <p>It is the University’s policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
+                
+                <p>The policies for excused absences do not apply to project assignments. Projects will be assigned with sufficient time to be completed by students who have a reasonable understanding of the necessary material and begin promptly. In cases of extremely serious documented illness of lengthy duration or other protracted, severe emergency situations, the instructor may consider extensions on project assignments, depending upon the specific circumstances.</p>
+                
+                <p>Besides the policies in this syllabus, the University’s policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
+                
+                <p>If you experience difficulty during the semester keeping up with the academic demands of your courses, you may consider contacting the Learning Assistance Service in 2201 Shoemaker Building at (301) 314-7693. Their educational counselors can help with time management issues, reading, note-taking, and exam preparation skills.</p>
+                
+                
+                <h3>Right to Change Information</h3>
+                <p>Although every effort has been made to be complete and accurate, unforeseen circumstances arising during the semester could require the adjustment of any material given here. Consequently, given due notice to students, the instructors reserve the right to change any information on this syllabus or in other course materials. Such changes will be announced and prominently displayed at the top of the syllabus.
+                </p>
+                
+                <h3>University of Maryland Policies for Undergraduate Students</h3>
+                <p>Please read the university’s guide on <a href="https://www.ugst.umd.edu/courserelatedpolicies.html">Course Related Policies</a>, which provides you with resources and information relevant to your participation in a UMD course.
+                </p>
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="bottom-logo">
+                <img class="img-responsive" src="img/umd_cs_logo.png" alt="University of Maryland Department of Computer Science" />
+            </div>
+            
+            <footer class="footer">
+                <p>Previous versions of this course:
+                <a href="2019/index.html">Fall 2019</a>,
+                <a href="http://www.cs.umd.edu/class/fall2018/cmsc320/">Fall 2018</a>,
+                <a href="https://umd.instructure.com/courses/1227895">Fall 2017</a>,
+                <a href="http://www.cs.umd.edu/class/spring2017/cmsc320/">Spring 2017</a>
+                </p>
+                <p><a href="http://jpdickerson.com">&copy; 2017&ndash;2020 Dickerson</a> &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
+            </footer>
+            
+        </div> <!-- /container -->
+        
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        
+    </body>
+</html>
