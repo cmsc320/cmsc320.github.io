@@ -1,0 +1,10 @@
+graph G {
+  Data -- Categorical;
+  Data -- Numerical;
+
+  Categorical -- Nominal;
+  Categorical -- Ordinal;
+
+  Numerical -- Interval;
+  Numerical -- Ratio;
+}
