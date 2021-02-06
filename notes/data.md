@@ -54,5 +54,93 @@ Now, we can abstract these categories a little bit but noticing some of the
 common aspects between them. This gives us the following view of the
 categories:
 
-![view of data](data-types.svg "How you can break down the categories of data")
+![view of data](data-types.png "How you can break down the categories of data")
+
+### Nominal Data
+
+Think "finite sets", where equality is well understood, but comparison between
+elements is not necessarily sensical. Examples include:
+
+ * The names of clothing brands
+ * Flavors of soda
+ * List of cities
+
+### Ordinal Data
+
+For something to be considered ordinal data, we must be able to provide an
+ordering to the data, but the _distance_ or _measure_ of the ordering isn't
+necessarily clear or well-founded. Example include:
+
+ * Survey responses (e.g. Agree vs. Neutral vs. Disagree)
+ * Weather reports (e.g. sunny vs. partly cloudy vs. overcast)
+
+We can order these things, overcast is 'more cloudy' than sunny, but there
+might not be a well established measure of where the exactly line between
+categories is and how you measure that where you are on that scale.
+
+### Interval Data
+
+For interval data we are now fully in the realm of numerical data, we can order
+things, subtract things from other things, take the average of things, etc.
+However, we aren't able to reason about the _ratios_ of these values. Example include:
+
+ * Temperature: we can say "today was 5 degrees warmer than yesterday" but we can't say "100C is twice as hot as 50C"
+ * SAT scores
+ * Credit scores
+
+### Ratio Data
+
+Ration Data has all the properties of interval data, but also a meaningful 0
+and we can reason about the ration of two elements. Examples include:
+
+ * Age (it makes sense to say that I'm twice as old as someone else)
+ * Running speed
+ * Things dealing with money
+ * weight
+ * length
+
+# The things we can do
+
+A taxonomy like the above is all well and good, but where this view becomes
+_useful_ is in providing rough ideas about what sorts of
+operations/manipulations may be appropriate for various forms of data.
+
+Below we're going to list some common numeric operations that we often use when
+analyzing data. For each of these operations, we'll show whether it's
+meaningful (in general) to do that operation on each type of data.
+
+## Frequency Distribution
+
+  - [x] Nominal
+  - [x] Ordinal
+  - [x] Interval
+  - [x] Ratio
+
+## Median and Percentiles
+
+  - [ ] Nominal
+  - [x] Ordinal
+  - [x] Interval
+  - [x] Ratio
+
+## Addition or Subtraction
+
+  - [ ] Nominal
+  - [ ] Ordinal
+  - [x] Interval
+  - [x] Ratio
+
+## Mean or Standard Deviation
+
+  - [ ] Nominal
+  - [ ] Ordinal
+  - [x] Interval
+  - [x] Ratio
+
+## Ratio or Coefficient of variation
+
+  - [ ] Nominal
+  - [ ] Ordinal
+  - [ ] Interval
+  - [x] Ratio
 
