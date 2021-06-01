@@ -1,0 +1,199 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Pandas + SQL}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{Tidy Data}
+\date{Febuary 17\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Some more thoughts on Pandas and SQL
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Say hello to the mods
+        \item<3 -> Some updates
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Today's Moderator}
+      \begin{enumerate}
+        \item<2 -> Laura!
+        \item<3 -> Currently a first-year grad student at UMD
+        \item<4 -> ...also did her undergrad at UMD
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Some updates}
+      \begin{enumerate}
+        \item<2 -> New docker image!
+        \item<3 -> Prettify is making things ugly
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Making DataFrames from the web}
+      On Tuesday I was asked about this and said that I wouldn't be showing an example, but I can show an example today!
+
+      \onslide<2->{To the Notebook}
+  }
+
+  \frame{
+    \frametitle{Melting?!?!}
+    Some students were confused about Melting (from the reading, you should be doing the reading!)
+    \onslide<2->{I made a Notebook to explain!}
+  }
+
+  \frame{
+    \frametitle{SQL}
+      One of the most important DSLs.
+      \begin{enumerate}
+        \item<2 -> SQL: Working with \emph{structured} data
+        \item<3 -> More specifically: \blueit{relational data}
+        \item<4 -> As a rough guide: Think tuples!
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{SQL vs Pandas}
+      Many pixels have been used in this debate. My take:
+      \begin{enumerate}
+        \item<2 -> If you have a choice, choose the one you're most comfortable with
+        \item<3 -> If you don't have a choice, you use the one you have to
+        \item<4 -> There are many situations where the choice is beyond your control (i.e. not just because a manager makes you)
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{SQL}
+      Tables are important! \vspace{1cm}
+  
+    \onslide<2 -> {
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  ID & Age & Weight (kg) & Height (cm) \\ \hline
+  1 & 12.2 & 42.3 & 146.1 \\
+  2 & 11.0 & 40.8 & 143.8 \\
+  3 & 15.6 & 65.3 & 165.3 \\
+  4 & 35.1 & 84.2 & 185.8 \\ \hline
+  
+  \end{tabular}} \vspace{1cm}
+
+  \onslide<3->{We've got \blueit{Labels}, \blueit{Variables}, and \blueit{Observations}}
+  }
+
+  \begin{frame}[fragile]
+    \frametitle{SQL: Primary Keys}
+      Primary Keys: Unique identifier for \blueit{one observation} in \blueit{one table}.
+      \vspace{1cm}
+
+    \onslide<2 -> {
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  ID & Age & Weight (kg) & Height (cm) & Nationality \\ \hline
+  1 & 12.2 & 42.3 & 146.1 & 1 \\
+  2 & 11.0 & 40.8 & 143.8 & 2 \\
+  3 & 15.6 & 65.3 & 165.3 & 5 \\
+  4 & 35.1 & 84.2 & 185.8 & 3 \\ \hline
+  
+  \end{tabular}} \vspace{1cm}
+
+    \onslide<3->{When the primary key \emph{from another table} is used in a table, like above, we call them \blueit{foreign keys}}
+   
+  \end{frame}
+
+
+  \frame{
+    \frametitle{High-level view: Cons}
+      SQL is very powerful, but has some downsides
+      \begin{enumerate}
+        \item<2 -> You have to think about the `schema' beforehand
+        \item<3 -> Some people don't like SQL (the language)
+        \item<4 -> YATTL :(
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{High-level view: Pros}
+      SQL is very powerful, more power is more gooder
+      \begin{enumerate}
+        \item<2 -> Implementations are \emph{very} good
+        \item<3 -> Schemas are important, thinking about them ahead of time is good!
+        \item<4 -> You can share data with folks across different tech stacks!
+        \item<5 -> The same system can process small, medium, large, huge amounts of data.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{High-level view: Implementations}
+      SQL is very powerful, but it's not one thing
+      \begin{enumerate}
+        \item<2 -> SQLite: The most popular database ever. \blueit{By far.}, great for small/medium datasets
+        \item<3 -> MySQL/MariaDB: Lots of documentation, very common for the web.
+        \item<4 -> PostgreSQL: Fantastic for large amounts of data, `industrial strength'
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

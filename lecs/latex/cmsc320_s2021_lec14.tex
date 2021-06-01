@@ -1,0 +1,123 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{\_ Data 3: Deal with it}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Data Science, Spring 2021}}
+\date{March 10\textsuperscript{th}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Project 2
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> Anubhav!
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Project 2}
+      \begin{enumerate}
+        \item<2 -> If you have not started, you should start.
+        \item<3 -> It is \blueit{not} expected that you work through spring break, but that assumes that you already started!
+        \item<4 -> Nothing will be accepted after 11:59pm EDT\footnote{Notice the timezone}
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Single Imputation}
+      How do we \blueit{deal} with Missing Data? Some thoughts:
+      \begin{enumerate}
+        \item<2 -> Mean imputation: use the average of all observed cases
+        \item<3 -> Hot-deck imputation: Use an observed value from a different row
+        \item<4 -> Last Observation Carried Forward (LOCF): in an ordered dataset fill a missing value with its neighbor
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Single Imputation}
+      Thought?
+      \onslide<2>{These are not always great (mostly used to deal with constraints we don't face anymore)}
+      \begin{enumerate}
+        \item<1 -> Mean imputation: use the average of all observed cases
+        \item<1 -> Hot-deck imputation: Use an observed value from a different row
+        \item<1 -> Last Observation Carried Forward (LOCF): in an ordered dataset fill a missing value with its neighbor
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Imputation}
+      We have a lot of processing power on our hands... how can we do better?
+      \begin{enumerate}
+        \item<2 -> Any thoughts?
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}

@@ -1,0 +1,131 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Summary Statistics 2}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Exploring Data, again}}
+\date{March 1\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Website (and repo) updates
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> Laura!
+        \item<3 -> Say hi!
+        \item<4 -> Be respectful
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Website updates}
+      \begin{enumerate}
+        \item<2 -> Repo with notebooks is updated
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Next assignment}
+      \begin{enumerate}
+        \item<2 -> Will be released immediately after Project1 is due.
+        \item<3 -> You might want to start a bit earlier this time :)
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Material for today}
+      \begin{enumerate}
+        \item<2 -> We didn't finish the slides from last week
+        \item<3 -> We're going to cover some of that material today, but you should still check out those slides.
+      \end{enumerate}
+      
+  }
+
+  \frame{
+    \frametitle{First, a problem}
+
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Coast & Members & Avg. Friends \\ \hline
+  West  & 101 & 8.2 \\
+  East  & 103 & 6.5 \\ \hline
+  \end{tabular}
+      
+  }
+
+  \frame{
+    \frametitle{First, a problem}
+
+ \begin{tabular}{|c|c|c|c|}
+  \hline
+  Coast & Degree & Members & Avg. Friends \\ \hline
+  West & PhD & 35 & 3.1 \\
+  East & PhD & 70 & 3.2 \\
+  West & BS  & 66 & 10.9 \\
+  East & BS  & 33 & 13.4 \\ \hline
+  \end{tabular}
+      
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\end{document}

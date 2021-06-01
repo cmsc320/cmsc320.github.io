@@ -1,0 +1,215 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{CMSC 320}
+\date{Febuary 3\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Getting some data.
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 - 5> Queuing for office hours.
+        \item<3 - 5> Working together.
+        \item<4 - 5> Email.
+        \item<5 - 5> Accommodation Letters.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Queuing}
+      \begin{enumerate}
+        \item<2 -> Thank you for your feedback!
+        \item<3 -> After discussing with students/TAs, we're going to use discord, not Quuly.
+        \item<4 -> Allow me to demonstrate.
+        \item<5 -> If this does not work for you, let us know! We want to be as flexible as possible.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Working Together}
+      \onslide<2>{Some thoughts on working together for 320. These thoughts only apply to 320.}
+    }
+
+  \frame{
+    \frametitle{Email}
+    \onslide<2>{I get a lot of email}
+    \onslide<3>{\begin{itemize}
+      \item Never feel shy to email again.
+      \item If you're still shy, email a TA and they'll reach me.
+    \end{itemize}
+    }
+  }
+
+  \frame{
+    \frametitle{Accommodation Letters}
+      \begin{enumerate}
+        \item<2 -> For some reason, my ads portal account is borked.
+        \item<3 -> While IT is on it, I've lost my patience. Moving to Plan B.
+        \item<4 -> If you email me with your letter (i.e. not through the ADS portal) I will respond with affirmation that I have seen your letter.
+        \item<5 -> If you would like further assurance, I will print it out, sign it, and scan it back for you.
+        \item<6 -> I promise this is not my ideal situation, I'm sorry that it's affected how quickly I can turn around these letters.
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Data!}
+    The reading teased the notion of 4 `kinds' of data (in roughly two `types'):
+    \begin{itemize}
+      \item<2-> Nominal (Categorical)
+      \item<3-> Ordinal (Categorical)
+      \item<4-> Interval (Numerical)
+      \item<5-> Ratio (Numerical)
+    \end{itemize}
+
+  }
+
+  \frame{
+    \frametitle{Categorical Data: Nominal}
+    \begin{itemize}
+      \item<2-> Think `finite set'
+      \item<3-> Marital status, soda flavor, etc.
+      \item<4-> Comparison is difficult and nonsensical
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{Categorical Data: Ordinal}
+    \begin{itemize}
+      \item<2-> Like Nominal data, Ordinal data describes \blueit{classes} or \blueit{states} of things...
+      \item<3-> But we can provide an \blueit{order}
+      \item<4-> The lecturer of this class is \{boring, neutral, exciting\}
+      \item<5-> We have an order but not a mathematical way to measure \blueit{distance}
+    \end{itemize}
+  }
+
+
+  \frame{
+    \frametitle{Numerical Data: Interval}
+    \begin{itemize}
+      \item<2-> Think: Dates, year in school (i.e. grade level), temperature.
+      \item<3-> We have ordering \blueit{and} distance.
+      \item<4-> What don't we have?
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{Numerical Data: Ratio}
+    \begin{itemize}
+      \item<2-> Everything Interval has, but with a meaningful \blueit{zero}
+      \item<3-> Ratios are meaningful (hence the name)
+      \item<4-> Money, distance, volume, etc.
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{From data to data \emph{representation}}
+    \onslide<2->{Data structures are important!}
+    \onslide<3->{They guide you by limiting the number of appropriate operations}
+    \begin{itemize}
+      \item<4-> What are the appropriate operations for an array?
+      \item<5-> Index, slice, map, reduce, etc.
+      \item<6-> What dataset would be appropriate to represent as an array?
+      \item<7-> In what ways could we combine two arrays?
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{From data to data \emph{representation}}
+    \onslide<2->{What about multi-dimensional arrays?}
+  }
+
+  \frame{
+    \frametitle{From data to data \emph{representation}}
+    \onslide<2->{What about $\Nat$-dimensional arrays (i.e. higher-dimensional matrices)}
+    \begin{itemize}
+      \item<3-> This is where Linear Algebra starts to come in handy!
+    \end{itemize}
+  
+  }
+
+  \frame{
+    \frametitle{From data to data \emph{representation}}
+    \onslide<2->{What about...}
+    \begin{itemize}
+      \item<3-> Sets?
+      \item<4-> Maps (a.k.a Dictionaries)?
+      \item<5-> Tables?
+      \item<6-> Trees?
+      \item<7-> Graphs?
+    \end{itemize}
+  
+  }
+
+  \frame{
+    \frametitle{Let's get some data!}
+    \onslide<2->{To the REPL!}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Any Questions?}
+  }
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

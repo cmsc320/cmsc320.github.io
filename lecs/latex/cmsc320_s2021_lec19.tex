@@ -1,0 +1,338 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Introduction to Machine Learning: Preliminaries}}
+\date{April 7, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+\newcommand{\redit}[1]{%
+  {\color{my-magenta}#1}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+\newcommand{\withwidth}[2]{%
+  \makebox[\widthof{#2}][c]{#1}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Recap: The Pipeline}
+      \begin{center}
+      \begin{tikzpicture}[vert/.style={rectangle, draw=lucid-blue
+                                      ,radius=1cm
+                                      ,minimum width={width("Analysis, Hypothesis Testing, \& ML")+2pt}
+                                      ,font=\small}
+                         ,every edge/.style={draw=my-magenta}]
+        \node [vert] (a) at (0  ,5) {Data Collection};
+        \node [vert] (b) at (0  ,4) {Data Processing};
+        \node [vert] (c) at (0  ,3) {Exploratory Analysis};
+        \node [vert] (d) at (0  ,2) {Analysis, Hypothesis Testing, \& ML};
+        \node [vert] (e) at (0  ,1) {Insight \& Policy Decision};
+
+        \draw 
+              (a) edge[->] (b)
+              (b) edge[->] (c)
+              (c) edge[->] (d)
+              (d) edge[->] (e);
+
+      \end{tikzpicture}%
+      \end{center}
+  }
+
+  \frame{
+    \frametitle{What we're doing next:}
+      \begin{center}
+      \begin{tikzpicture}[vert/.style={rectangle, draw=lucid-blue
+                                      ,radius=1cm
+                                      ,minimum width={width("Analysis, Hypothesis Testing, \& ML")+2pt}
+                                      ,font=\small}
+                         ,every edge/.style={draw=my-magenta}]
+        \node [vert] (a) at (0  ,5) {Data Collection};
+        \node [vert] (b) at (0  ,4) {Data Processing};
+        \node [vert] (c) at (0  ,3) {Exploratory Analysis};
+        \node [vert,fill=lucid-blue,text=white] (d) at (0  ,2) {Analysis, Hypothesis Testing, \& ML};
+        \node [vert] (e) at (0  ,1) {Insight \& Policy Decision};
+
+        \draw 
+              (a) edge[->] (b)
+              (b) edge[->] (c)
+              (c) edge[->] (d)
+              (d) edge[->] (e);
+
+      \end{tikzpicture}%
+      \end{center}
+  }
+
+  \frame{
+    \frametitle{Motivation}
+      In previous lectures I've mentioned things like a ``linear model'', or ``statistical model'', but...
+      \begin{enumerate}
+        \item<2 -> We skipped how you would \blueit{\withwidth{make}{reason about}} such a model
+        \item<3 -> We skipped how you would \blueit{reason about} such a model
+        \item<4 -> Now that we know how to get our data in order, it's time to really get our hands dirty!
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{What Machine Learning is not}
+      \onslide<2->{Objective.}
+      \begin{enumerate}
+        \item<3 -> \blueite{Lots} of judgement gets used
+        \item<4 -> \blueite{Lots} of heuristics get applied
+        \item<5 -> Anyone who tells you differently is trying to sell you something.
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Preliminaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+  \frame{
+    \frametitle{Let's flip a coin}
+      Coins/dice are fantastic, we'll often talk about `flipping' a coin when it
+      comes to reasoning about probabilities.
+      \begin{enumerate}
+        \item<2 -> A coin represents a \blueite{random variable}, $v$
+        \item<3 -> $v$ can have one of two outcomes: \blueit{Heads} (1) and \blueit{Tails} (0)
+        \item<4 -> Each $v$ has an associate \blueit{distribution} that gives the probabilities
+                   of $v$ realizing each of its possible values.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Great Expectations}
+      Each random variable also has an \blueite{expected value}
+      \begin{enumerate}
+        \item<2 -> What's the expected value for a coin?
+        \item<3 -> A 10-sided die?
+        \item<4 -> Two 6-sided die?
+        \item<5 -> Notice anything?
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Continuing with distributions}
+      Cons/Dice are \blueit{discrete} distributions, but \blueit{continuous}
+      distributions are also very important.
+
+      \vspace{1cm}
+
+      Common distributions
+      \begin{enumerate}
+        \item<2 -> The \blueite{\withwidth{Uniform}{Binomial}} distribution
+        \begin{itemize}
+          \item<2 -> Defined by an interval
+        \end{itemize}
+        \item<3 -> The \blueite{\withwidth{Normal}{Binomial}} distribution: $\mathcal{N}(\mu,\sigma^2)$
+        \begin{itemize}
+          \item<3 -> Defined by an \blueit{mean} ($\mu$), and its
+                     \blueit{standard deviation} ($\sigma$)
+        \end{itemize}
+        \item<4 -> The \blueite{Binomial} distribution: $\mathcal{B}(n,p)$
+        \begin{itemize}
+          \item<3 -> Defined by an \blueit{number of yes/no trials} ($n$), and the
+                     \blueit{probability of `yes'} ($p$)
+        \end{itemize}
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Potential Problem?}
+    Take the uniform distribution over $[0,1]$
+
+    \vspace{.2cm}
+
+    Since in a continuous space there are $\infty$-many possible points, within
+    this interval, the probability for any given point is $\frac{x}{\infty} \approx 0$
+
+      \begin{enumerate}
+        \item<2 -> Do we pack it up?
+        \item<3 -> No, we use \blueite{calculus}!
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{The \redit{other} PDF}
+
+    We represent a continuous distribution as a \blueite{probability density
+    function} (PDF):
+
+      \begin{enumerate}
+        \item<2 -> The probability of seeing a value \redit{within} a certain interval
+                   equals the \blueite{integral} of the density function over that interval
+        \item<3 -> ``But I hate calculus!'', I hear you say. Okay...
+      \end{enumerate}
+  }
+
+  \begin{frame}[fragile]
+    \frametitle{Speaking in Uniform Code}
+    We're computer scientists, let's write some code to gain an intuition about
+    these things:
+
+    \vspace{1cm}
+
+    For the Uniform distribution:
+
+    \vspace{0.5cm}
+  
+        \centering
+    {\color{dark-gray}
+        \begin{BVerbatim}
+def uniform_pdf(x: float) -> float:
+    return 1 if 0 <= x < 1 else 0
+        \end{BVerbatim}
+  }
+
+  \end{frame}
+
+  \begin{frame}[fragile]
+    \frametitle{Speaking in Normal Code}
+    We're computer scientists, let's write some code to gain an intuition about
+    these things:
+
+    \vspace{0.5cm}
+
+    For the Normal distribution: To the notebook
+
+  \end{frame}
+
+  \frame{
+    \frametitle{PDF to CDF}
+
+    PDFs are great, but we're not always asking a question like ``How likely is $X$'',
+    sometimes we want to ask is the probability of $X$ \blueite{less than $Y$}?
+
+      \begin{enumerate}
+        \item<2 -> For that we have \redit{Cumulative density functions}!
+      \end{enumerate}
+  }
+
+
+  \begin{frame}[fragile]
+    \frametitle{Speaking in Uniform Code}
+
+    For the Uniform distribution:
+
+    \vspace{0.5cm}
+  
+        \centering
+    {\color{dark-gray}
+        \begin{BVerbatim}
+def uniform_cdf(x: float) -> float:
+    if x < 0:   return 0
+    elif x < 1: return x
+    else:       return 1
+        \end{BVerbatim}
+  }
+  \end{frame}
+
+
+  \frame{
+    \frametitle{Hypothesis Testing}
+
+    Now that we have some intuition for PDF vs CDF, we can talk about testing a \blueite{hypothesis}.
+
+    \vspace{0.5cm}
+    \onslide<2 ->{Example hypotheses:}
+      \begin{enumerate}
+        \item<3 -> Is this coin fair?
+        \item<4 -> Data Scientists Prefer Python
+        \item<5 -> Student who take class with Prof X are more likely to be involved in violent events.
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Hypothesis Testing}
+
+    To be disciplined about it, we need a \blueite{Null Hypothesis}: $H_0$.
+
+    \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> $H_0$ is the `default' position on a question
+        \item<3 -> You can have multiple hypoteses $H_1, H_2 \dots$ for each null hypothesis.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Simple Test}
+
+    We want to see if a coin if fair:
+
+    \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> What's our $H_1$?
+        \item<3 -> WHat's our $H_0$?
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Simple Test}
+
+    We want to see if a coin if fair:
+
+    \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> Let's write some code to see.
+      \end{enumerate}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Getting Data}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{Gottem}
+\date{Febuary 8\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Getting some data.
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 - 3> Assignment later this week.
+        \item<3 - 3> Working Together, part 2
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Assignment}
+      \begin{enumerate}
+        \item<2 -> Should go live Wednesday evening (i.e. after the lecture)
+        \item<3 -> You should \emph{absolutely} not wait until the last minute.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Working Together}
+      \onslide<2>{With another assignment being release, some more thoughts on working together for 320. These thoughts only apply to 320.}
+    }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Getting Data!}
+    Last week we talked about \emph{data}. Great fine, bit whoop. We want to actually \blueit{use}
+    data!
+  }
+
+  \frame{
+    \frametitle{Python to the rescue}
+    \onslide<2->{There's lots of data on the internet.}
+    \onslide<3->{Some of it is useful.}
+    \onslide<4->{Even less of it is SFW.}
+    \onslide<5->{Luckily, we can write programs that let us get this data.}
+  }
+
+  \frame{
+    \frametitle{Python to the rescue}
+      How do we do this? A few things to keep in mind:
+      \begin{enumerate}
+        \item<2 -> Every website does their own thing, even if they claim to meet a standard.
+        \item<3 -> You're going to have to get comfortable with \blueit{exploring} what you get back.
+        \item<4 -> All hope is not lost, there are some common things that will help.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{A light in the darkness}
+      \begin{enumerate}
+        \item<2 -> Learning how JSON works will pay dividends (eventually you won't even think about it)
+        \item<3 -> CSV is crucial and will almost certainly come up.
+        \item<4 -> Learning some basic HTML will help, but understand that few sites produce compliant HTML
+        \item<5 -> GraphQL is the new kid on the block, unclear how popular it will be (maybe huge!)
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Some encouragement}
+      I would be doing you a disservice if I forced you to learn the details of these formats.
+      \begin{enumerate}
+        \item<2 -> If you go in thinking that a website has definitely followed the standard, you're only producing tears.
+        \item<3 -> Use an interactive environment (REPL, Jupyter Notebook, etc.)
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{To the Notebook!}
+      What the title says.
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{What did we learn?}
+      \begin{enumerate}
+        \item<2 -> Be careful with passwords!
+        \item<3 -> Look up the API docs for the website you're trying to use
+        \item<4 -> Realize the docs are bad
+        \item<5 -> Go through the stages of acceptance
+        \item<6 -> Explore/play with what you get and press on
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{What didn't we learn?}
+      \begin{enumerate}
+        \item<2 -> Beautiful Soup (HTML)
+        \item<3 -> CSV
+        \item<4 -> Manipulating JSON into other formats
+        \item<5 -> For all of these: read the docs of the libraries!
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

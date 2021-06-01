@@ -1,0 +1,134 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Summary Statistics}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Exploring Data}}
+\date{Febuary 24\textsuperscript{nd}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Where are we?}
+    \onslide<2->{So far we've looked at how we can represent and manipulate data.}
+    \onslide<3->{Now we're going to start looking at how we can \blueit{explore} the data.}
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Website (and repo) updates
+        \item<4 -> Quiz question \#4
+        \item<5 -> Final Projects!
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> Anubhav, BT.
+        \item<3 -> Currently a Masters student working on research in Computer Vision
+        \item<4 -> Be respectful
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Website updates}
+      \begin{enumerate}
+        \item<2 -> There's a new repo!
+        \item<3 -> I will probably shift from linking to files directly to link to that repo...
+        \item<4 -> unless someone likes having the files linked as they were before
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Quiz Question \#4}
+      \begin{enumerate}
+        \item<2 -> I personally looked at every quiz submission's question \#4
+        \item<3 -> If you still feel that you should get a point, email me
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Final Projects}
+      \begin{enumerate}
+        \item<2 -> Students will have the chance to request a group
+        \item<3 -> I have some examples to show you
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{What are we doing today and Monday?}
+      \begin{enumerate}
+        \item<2 -> We want \emph{descriptive statistics}
+        \item<3 -> For a variable, what does this mean?
+        \item<4 -> What are \emph{correlation} of two variables?
+      \end{enumerate}
+      
+  }
+
+  \frame{
+    \frametitle{Description for a variable}
+      We have two main descriptors:
+      \begin{enumerate}
+        \item<2 -> \blueit{Location}: mean, median, mode
+        \item<3 -> \blueit{Dispertion}: variance, standard deviation
+      \end{enumerate}
+      
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\end{document}

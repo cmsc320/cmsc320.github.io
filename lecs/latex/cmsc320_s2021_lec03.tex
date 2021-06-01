@@ -1,0 +1,180 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{CMSC 320}
+\date{Febuary 1\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Python?
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 - 4> Quizzes.
+        \item<3 - 4> Office hours.
+        \item<4 - 4> How to ask questions.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Quizzes}
+      \onslide<2>{You only need to take 10, don't panic if you miss one.}
+
+      \onslide<3>{If you still have concerns, email me (if you emailed me \blueit{before} my email, send me another)}
+  }
+
+  \frame{
+    \frametitle{Office Hours}
+    \onslide<2>{\begin{itemize}
+      \item We're going to use Quuly
+      \item Quuly doesn't work in every country
+      \item If this affects you, let me know
+    \end{itemize}
+    }
+  }
+
+  \frame{
+    \frametitle{How to ask questions}
+    \onslide<2>{This class is about communication!}
+    \onslide<3>{\begin{itemize}
+      \item Explaining what you've tried already: Good.
+      \item Screenshots: Bad... usually.
+    \end{itemize}
+    }
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Python
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{What's in a language?}
+    \begin{itemize}
+      \item<2-> Languages can be (roughly) organized into \blueit{paradigms}
+      \item<3-> Python is multi-paradigm, but leans on the imperative and OO
+      \item<4-> These paradigms and languages often have \blueit{idioms}
+      \item<5-> A big part of becoming comfortable in a new PL is learning its idioms
+    \end{itemize}
+
+  }
+
+  \frame{
+    \frametitle{Python.}
+    \onslide<2->{Python tends to emphasize the following:}
+    \begin{itemize}
+      \item<3-> Simple code
+      \item<4-> Being explicit
+      \item<5-> Working on flat data-structures when possible
+      \item<6-> Emphasize readability (code is also communication!)
+    \end{itemize}
+  }
+
+
+  \frame{
+    \frametitle{iPython (which became part of Jupyter).}
+    \onslide<2->{Code alone is great, but what about explanation}
+    \begin{itemize}
+      \item<3-> Documenting code is good and necessary, but if you want to \blueit{show what the code is doing}, it leaves something to be desired.
+      \item<4-> `Notebooks' are meant to address this: Show the code and what it produces, all in the same document
+      \item<5-> This is \blueit{essential} for data-science as the code is often the least important thing!
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{Learning Python, today}
+    \onslide<2->{The vast majority of your programming skills will transfer easily (soapbox: because syntax isn't the main thing!)}
+    \onslide<3->{Things we will cover today:}
+    \begin{itemize}
+      \item<4-> Using the repl
+      \item<5-> Defining functions
+      \item<6-> Counting and interating
+      \item<7-> map and filter
+      \item<8-> Iteration cooked two ways
+      \item<9-> List comprehensions (ask me how I feel about them)
+    \end{itemize}
+  }
+
+  \frame{
+    \frametitle{Python 2 vs Python 3}
+    \onslide<2->{It's been a wild ride.}
+    \begin{itemize}
+      \item<3-> Most differences are minor
+      \item<4-> Some differences break compatibility (code for one won't work for the other)
+      \item<5-> For better or for worse (matter of opinion...) Python 3 is the medium-to-long-term future
+      \item<6-> Very little reason to \blueit{start} new projects in Python 2.
+    \end{itemize}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Any Questions?}
+  }
+
+  \frame{
+    \frametitle{Closing thoughts}
+    \onslide<2-> {This class is not a Python class.}
+    \onslide<3-> {That said, use this time to learn Python!}
+    \onslide<4-> {But just know that nothing we learn about \blueit{Data Science} requires Python}
+  }
+
+  \frame{
+    \frametitle{}
+    Thanks for your time!
+
+  }
+
+\end{document}
