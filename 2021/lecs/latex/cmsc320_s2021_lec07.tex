@@ -1,0 +1,225 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{SciPy + Pandas}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{Data Science\\
+          (but this is a subtitle)}
+\date{Febuary 15\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Scipy: Don't reinvent the wheel. Pandas: making data manageable.
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Assignment issues
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Assignment}
+      \begin{enumerate}
+        \item<2 -> Some folks are seeing an issue with lxml.
+        \item<3 -> Not sure what's happening there, I am investigating.
+        \item<4 -> I will communicate the solution/resolution as soon as we know.
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{SciPy}
+    SciPy is one of the best things to come out of the Python ecosystem
+
+      \begin{enumerate}
+        \item<2 -> Lots of mathematical functions, implemented over man
+                   standard python/numpy types.
+        \item<3 -> Numerical integration: (scipy.integrate)
+        \item<4 -> Solving optimization problems (scipy.optimize)
+        \item<5 -> Lots of linear algebra
+        \item<6 -> and much more!
+      \end{enumerate}
+
+  }
+
+  \frame{
+    \frametitle{What you need to know about SciPy}
+    If other library authors have done their job:
+    \onslide<2->{\blueit{not much}}
+  }
+
+  \frame{
+    \frametitle{What you need to know about SciPy}
+      It's good to know that SciPy functions are there, for when you need them.
+      Things that might come up for you during this class:
+      \begin{enumerate}
+        \item<2 -> Need a statistical function: scipy.stats
+        \item<3 -> Need to process an image: scipy.ndimage
+        \item<4 -> if these things come up: scipy.io often has the functionality
+                   for getting various libraries to `talk' to each other.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Pandas}
+      Tables are important! \vspace{1cm}
+  
+    \onslide<2 -> {
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Day & Min Temp & Max Temp & Sky \\ \hline
+  Monday  & 0C & 5C & Cloudy \\
+  Tuesday & 1C & 3C & Overcast \\
+  Wednesday & 3C & 8C & Sunny \\ \hline
+  
+  \end{tabular}}
+  }
+
+
+  \begin{frame}[fragile]
+    \frametitle{Pandas}
+      Pandas is for working with and processing tabular data. \vspace{1cm}
+    \onslide<2 -> {
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Day & Min Temp & Max Temp & Sky \\ \hline
+  Monday  & 0C & 5C & Cloudy \\
+  Tuesday & 1C & 3C & Overcast \\
+  Wednesday & 3C & 8C & Sunny \\ \hline
+  
+  \end{tabular}} \vspace{0.5cm}
+      \begin{enumerate}
+        \item<3 -> Selection (rows)
+        \item<4 -> Slicing (columns)
+      \end{enumerate}
+  \end{frame}
+
+  \begin{frame}[fragile]
+    \frametitle{Pandas}
+      Pandas is for working with and processing tabular data. \vspace{1cm}
+   
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Day & Min Temp & Max Temp & Sky \\ \hline
+  Monday  & 0C & 5C & Cloudy \\
+  Tuesday & 1C & 3C & Overcast \\
+  Wednesday & 3C & 8C & Sunny \\ \hline
+  
+  \end{tabular} \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> Reduce
+        \item<3 -> Aggregate
+      \end{enumerate}
+  \end{frame}
+
+  \begin{frame}[fragile]
+    \frametitle{Pandas}
+      Pandas is for working with and processing tabular data. \vspace{1cm}
+   
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Day & Min Temp & Max Temp & Sky \\ \hline
+  Monday  & 0C & 5C & Cloudy \\
+  Tuesday & 1C & 3C & Overcast \\
+  Wednesday & 3C & 8C & Sunny \\ \hline
+  
+  \end{tabular} \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> Map
+        \item<3 -> may increase or decrease number of columns!
+      \end{enumerate}
+  \end{frame}
+
+  \begin{frame}[fragile]
+    \frametitle{Pandas}
+      Pandas is for working with and processing tabular data. \vspace{1cm}
+   
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Day & Min Temp & Max Temp & Sky \\ \hline
+  Sunday  & 0C & 8C & Sunny \\
+  Monday  & 0C & 5C & Cloudy \\
+  Tuesday & 1C & 3C & Overcast \\
+  Wednesday & 3C & 8C & Sunny \\ \hline
+  
+  \end{tabular} \vspace{0.5cm}
+      \begin{enumerate}
+        \item<2 -> GroupBy
+      \end{enumerate}
+  \end{frame}
+
+  \frame{
+    \frametitle{High-level view}
+      Many of the same operations you'd see in SQL (but be warned!).
+      \begin{enumerate}
+        \item<2 -> Join/Merge
+        \item<3 -> Intersection/Union/Concat
+        \item<4 -> `index' in pandas is like `key' in SQL
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{To the Noteboo}
+    What the title says
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

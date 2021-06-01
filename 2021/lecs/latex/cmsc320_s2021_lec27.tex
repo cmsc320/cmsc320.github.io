@@ -1,0 +1,177 @@
+\documentclass[handout]{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Ethics}}
+\date{May 10, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+\newcommand{\redit}[1]{%
+  {\color{my-magenta}#1}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+\newcommand{\withwidth}[2]{%
+  \makebox[\widthof{#2}][c]{#1}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Goals for today}
+    Get you thinking about the ethics of doing Data Science
+    \begin{enumerate}
+      \item<2 -> This is not about \blueite{morals}, lots of definitions of these things, for us:
+      \begin{enumerate}
+        \item<3 -> Morals: how you, individually, determine what's right or wrong
+        \item<4 -> Ethics: moral principals that govern a person's behavior
+                   \blueite{when conducting an activity in a professional capacity}
+      \end{enumerate}
+      \item<5 -> I can't tell you what's right or wrong, that's up to your moral worldview
+      \item<6 -> I can tell you what the Data Science community is discussing as part of their ethical framework
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Statistical Inference}
+    We've concerned ourselves with building \redit{models}
+    \begin{enumerate}
+      \item<2 -> Models are used to go from world of `data' back to something we can change about the world
+      \item<3 -> If we don't intend on our models being actionable, why have them?
+      \item<4 -> Things we may conclude from a model:
+      \begin{enumerate}
+        \item<5 -> An estimate
+        \item<6 -> rejection of a hypothesis
+        \item<7 -> Clustering/classification of data points into groups
+      \end{enumerate}
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Sampling}
+    We often can't know all the data out there, so we have to \blueite{sample}
+    \begin{enumerate}
+      \item<2 -> Usually, we want a random sample
+      \item<3 -> When might we not want a random sample?
+      \item<4 -> When gather data, (e.g. sampling the population), we have to be careful
+      \begin{enumerate}
+        \item<5 -> How were questions worded?
+        \item<6 -> How did you poll people?
+        \item<7 -> How is missing data handled?
+      \end{enumerate}
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Potential Sources of Bias}
+    \begin{enumerate}
+      \item<2 -> Sample Bias
+      \begin{enumerate}
+        \item<3 -> Selection Bias: some subjects more likely to be selected
+        \item<4 -> Volunteer Bias: people who volunteer are not represenatative
+        \item<5 -> Nonresponse Bias: people who decline to be interviewed
+      \end{enumerate}
+      \item<6 -> Survey/Response Bias
+      \begin{enumerate}
+        \item<7 -> Interviewer Bias
+        \item<8 -> Acquiesence Bias: tendency to agree with all questions
+        \item<9 -> Social Desirability Bias: Reluctance to admit to embarassing things
+      \end{enumerate}
+      \item<10 -> Confirmation Bias
+      \item<11 -> Anchor Bias: you might say yes to something because a worse alternative was shown first.
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Potential Sources of Bias}
+    How do clinical trials work (often see as the gold standard)
+    \begin{enumerate}
+      \item<2 -> Some receive treatment, others in control group
+      \item<3 -> Each group is picked completely at random
+      \item<4 -> Considerations
+      \begin{enumerate}
+        \item<5 -> Only ethical of alternatives have a good basis (i.e. we don't ask folks to \emph{start} smoking for a trial)
+        \item<6 -> Very expensive
+        \item<7 -> Sometimes impossible!
+      \end{enumerate}
+      \item<8 -> What about how people `opt in'?
+      \item<9 -> Social networks run trials on us all the time, is that okay?
+    \end{enumerate}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Final Thoughts}
+    
+    \begin{enumerate}
+      \item<2 -> No easy answers
+      \item<3 -> Play, explore, think
+      \item<4 -> Use off-the-shelf technologies wherever possible
+      \item<5 -> Think about possible introduction of biases and be skeptical of `clear' results
+    \end{enumerate}
+
+  }
+
+  \frame{
+    \frametitle{Course Evals}
+    
+    \begin{enumerate}
+      \item<2 -> If you're able, do the course evals
+      \item<3 -> I try to take feedback seriously (though feedback doesn't always agree!)
+    \end{enumerate}
+
+  }
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     Have a good summer!
+  }
+
+
+\end{document}

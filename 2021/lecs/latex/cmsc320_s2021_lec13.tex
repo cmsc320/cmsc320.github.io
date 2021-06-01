@@ -1,0 +1,308 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Missing \_ 2: Missing Harder}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Data Science, Spring 2021}}
+\date{March 8\textsuperscript{th}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Projects
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> None. Be gentle.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Project 1 discussion}
+      \begin{enumerate}
+        \item<2 -> Deadlines, not livelines.
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Project 2}
+      \begin{enumerate}
+        \item<2 -> It's out.
+        \item<3 -> Due March 26\textsuperscript{th}, 2021
+        \item<4 -> Nothing will be accepted after 11:59pm EDT\footnote{Notice the timezone}
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Missing Data}
+      There are three main `types' of missing data
+      \begin{enumerate}
+        \item<2 -> Missing Completely at Random (MCAR)
+        \item<3 -> Missing at Random (MAR)
+        \item<4 -> Missing Not at Random (MNAR)
+      \end{enumerate}
+      
+  }
+
+  \frame{
+    \frametitle{Imagine a world where we could loiter outside CS}
+
+    \onslide<2 ->{Students just got their mid-semester grades}
+    \onslide<3 ->{and you start asking for CMSC131 grades:}
+
+    
+      \begin{enumerate}
+        \item<4 -> You use no coercion
+        \item<5 -> You write down their ...
+          \begin{enumerate}
+            \item<6 -> Response
+            \item<7 -> Height ($>$6ft or not)
+            \item<8 -> Their hair color
+          \end{enumerate}
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{You get this:}
+
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Hair  & Tall? & Grade \\ \hline
+  Red   & Y     & A \\
+  Brown & N     & A \\
+  Black & N     & B \\
+  Black & Y     & A \\
+  Brown & Y     &   \\
+  Brown & Y     &   \\
+  Brown & N     &   \\
+  Black & Y     & B \\
+  Black & Y     & B \\
+  Brown & N     & A \\
+  Black & N     &   \\
+  Brown & N     & C \\
+  Red   & N     & A \\
+  Brown & Y     & A \\
+  Black & Y     & A \\
+  \hline
+  \end{tabular}
+      
+  }
+
+  \frame{
+    \frametitle{Missing data matrix:}
+
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Hair  & Tall? & Grade \\ \hline
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 1 \\
+  0 & 0     & 1 \\
+  0 & 0     & 1 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 1 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  0 & 0     & 0 \\
+  \hline
+  \end{tabular}
+      
+  }
+
+  \frame{
+    \frametitle{MCAR}
+
+      The probability of having a `1` in a column is not dependent on
+      \blueit{any} of the data, observed or unobserved.
+
+      \onslide<2>{You can test this using conditional probability for the observed data.}
+      \onslide<3>{But how realistic is this?}
+
+  }
+
+  \frame{
+    \frametitle{MCAR: Not very realistic}
+
+      When it comes to data we've collected, especially from \blueit{people}, completely
+      random mechanisms are very unlikely:
+
+      \begin{enumerate}
+        \item<2 -> Older folks less like to answer questions online
+        \item<3 -> In long-term studies of non-trivial sample sizes, people will die before study is complete
+        \item<4 -> People/Institutions are often reluctant to reveal financial information
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{MAR}
+
+      The probability of having a `1` in a column \blueit{is} dependent on
+      \blueit{observed} data.
+
+      \onslide<2>{This allows us to model the mechanism for when the data is missing.}
+      \onslide<3>{We use \blueit{observed} data as input into our model.}
+
+  }
+
+  \frame{
+    \frametitle{MAR: Pretty realistic}
+
+      Can you think of examples?
+
+      \onslide<2>{Because we can model for it, we can \blueit{compensate} for it!}
+
+  }
+
+  \frame{
+    \frametitle{MNAR}
+
+      The probability of having a `1` in a column \blueit{is} dependent on
+      \blueit{unobserved} data.
+
+      \onslide<2>{You can't ignore this.}
+      \onslide<3>{Any analysis including MNAR data must model and guess what the missing data is, otherwise what's the point?}
+
+  }
+
+  \frame{
+    \frametitle{MNAR}
+
+    Can you think of some examples?
+
+  }
+
+  \frame{
+    \frametitle{MAR vs MNAR}
+
+    I've got some bad news.
+      
+      \begin{enumerate}
+        \item<2 -> Whether something is MAR or MNAR is not testable without getting the missing data.
+        \item<3 -> You have to understand your data.
+      \end{enumerate}
+
+  }
+
+  \frame{
+    \frametitle{Back to our questions}
+
+ \begin{tabular}{|c|c|c|}
+  \hline
+  Hair  & Tall? & Grade \\ \hline
+  Red   & Y     & A \\
+  Brown & N     & A \\
+  Black & N     & B \\
+  Black & Y     & A \\
+  Brown & Y     &   \\
+  Brown & Y     &   \\
+  Brown & N     &   \\
+  Black & Y     & B \\
+  Black & Y     & B \\
+  Brown & N     & A \\
+  Black & N     &   \\
+  Brown & N     & C \\
+  Red   & N     & A \\
+  Brown & Y     & A \\
+  Black & Y     & A \\
+  \hline
+  \end{tabular}
+      
+  }
+
+  \frame{
+    \frametitle{Get some more data}
+
+ \begin{tabular}{|c|c|c|c|}
+  \hline
+  Hair  & GPA & Tall? & Grade \\ \hline
+  Red   & 3.4 & Y     & A \\
+  Brown & 3.6 & N     & A \\
+  Black & 3.7 & N     & B \\
+  Black & 3.9 & Y     & A \\
+  Brown & 2.5 & Y     &   \\
+  Brown & 3.2 & Y     &   \\
+  Brown & 3.0 & N     &   \\
+  Black & 2.9 & Y     & B \\
+  Black & 3.3 & Y     & B \\
+  Brown & 4.0 & N     & A \\
+  Black & 3.65 & N     &   \\
+  Brown & 3.4 & N     & C \\
+  Red   & 2.2 & N     & A \\
+  Brown & 3.8 & Y     & A \\
+  Black & 3.67 & Y     & A \\
+  \hline
+  \end{tabular}
+      
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}

@@ -1,0 +1,113 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Graphs}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{The math kind, not the stonk kind}
+\date{Febuary 22\textsuperscript{nd}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    Tiny demo of SQL via Python, then on to Graphs
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Laura is our moderator again, say high!
+        \item<3 -> Website updates
+        \item<4 -> Quiz question \#4
+        \item<5 -> Final Projects!
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Website updates}
+      \begin{enumerate}
+        \item<2 -> My UMD email should be easier to find, apologies about that.
+        \item<3 -> TA office hours have been updated.
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Quiz Question \#4}
+      \begin{enumerate}
+        \item<2 -> This was not meant to cause panic.
+        \item<3 -> There are \emph{many} more correct answer (technically an infinite number of correct answers). You will \blueit{all get your points}.
+        \item<4 -> Who did this to you?
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Final Projects}
+      \begin{enumerate}
+        \item<2 -> On Wednesday we will talk a bit about final projects
+        \item<3 -> We will go over some good examples from previous semesters (currently waiting on permission from those students before I post on the website)
+        \item<4 -> Come to the lecture if you want to discuss :D
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% SQL Example
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{SQLite3 from Python}
+      \onslide<2->{To the Notebook}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

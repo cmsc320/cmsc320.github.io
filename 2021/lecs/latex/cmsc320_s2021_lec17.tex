@@ -1,0 +1,241 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Midterm Review}}
+\date{March 29\textsuperscript{th}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Project 2
+        \item<4 -> Equation(s) you were promised
+        \item<5 -> How this lecture is going to work.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> Laura!
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Project 2}
+      \begin{enumerate}
+        \item<2 -> Well done, submission rate was much higher than Project 1.
+      \end{enumerate}
+  }
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    This was written wrong:
+    \begin{equation*}
+      (1 + \frac{\lambda}{N})^{-2}
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    Should have been:
+    \begin{equation*}
+      \sqrt{1 + \frac{\lambda}{N}}
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    Let's say you had a variable where half the data was missing
+    ($\lambda = 0.5$) and you used $N = 5$ for the number of generated data
+    sets:
+    \begin{equation*}
+      \sqrt{1 + \frac{0.5}{5}} = 1.049
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    How much better would it be if you used an `infinite' number of generated
+    data sets?
+    \begin{equation*}
+      \sqrt{1 + \frac{0.5}{5}} = 1.0
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{To a notebook!}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Another equation you were promised:}
+    Pooled Slope Estimate: One way to `average' a pooled analysis (multiple imputation)
+    \begin{enumerate}
+      \item<2-> Calculate the linear regression for each imputed data-set
+      \item<3-> Each linear regression has its own slope: $\beta_{1i}$
+      \item<4-> Just average them!
+    \end{enumerate}
+    \onslide<5 ->{
+    \begin{equation*}
+      \beta_{1p} = \frac{\beta_{11} + \dots + \beta_{1n}}{n}
+    \end{equation*}}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Another equation you were promised:}
+    That was pretty na\"{i}ve, let's try something more sophisticated:
+    \begin{enumerate}
+      \item<2-> Calculate the linear regression for each imputed data-set
+      \item<3-> Each linear regression has its own slope: $\beta_{1i}$
+      \item<4-> Each linear regression has its own \blueit{standard error}: $Z_{i}$
+      \item<5-> Do the following fancy weighted average:
+    \end{enumerate}
+    \onslide<6 ->{
+    \begin{equation*}
+      V_{s} = \frac{\sum{Z_{i}}}{n} + (1 + n^{-1}) * \frac{1}{n - 1} * \sum{(\beta_{1i} - \beta_{1p})^2}
+    \end{equation*}}
+  \end{frame}
+
+
+  \begin{frame}
+    \frametitle{How this lecture is going to work}
+
+    \begin{enumerate}
+      \item<2 -> I will be clear about what will \blueit{not} be on the exam
+      \item<3 -> I will explain how the midterm will be administered.
+      \item<4 -> We will discuss expectations
+    \end{enumerate}
+  \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Part 1: What's not on the exam
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part I: What's not on the exam}
+  \end{frame}
+
+  \frame{
+    \frametitle{NLTK}
+      \begin{enumerate}
+        \item<2 -> We didn't cover NLTK in the lectures, so don't worry about it.
+        \item<3 -> Everything else (lectures \blueit{and} readings \blueit{and} projects) is fair game.
+        \item<4 -> Aside: It has been brought to my attention that NLTK is not on the course docker images: I will fix this.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{\texttt{git}}
+      \begin{enumerate}
+        \item<2 -> You should still learn it.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{\texttt{docker}}
+      \begin{enumerate}
+        \item<2 -> I'm not evil.
+      \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Part 2: Administering the test.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part II: Administering the Exam}
+  \end{frame}
+
+  \frame{
+    \frametitle{Taking the exam}
+      \begin{enumerate}
+        \item<2 -> At 00:00 EDT on March 31\textsuperscript{st} the exam will \blueit{go live} on ELMS
+        \item<3 -> At 23:59 EDT on March 31\textsuperscript{st} the exam will \blueit{close} on ELMS
+        \item<4 -> We will only answer \blueit{clarifying} questions that are asked \blueit{in private}
+        \item<5 -> This is the only thing this semester where public discussion is forbidden.
+        \item<6 -> Please respect these rules.
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Part 3: Expectations
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part III: Great Expectations}
+  \end{frame}
+
+  \frame{
+    \frametitle{What to expect}
+      \begin{enumerate}
+        \item<2 -> Exam is designed for \blueit{approx.} 90 minutes
+        \item<3 -> Feel free to typeset, our eyes will thank you
+        \item<4 -> Explain. your. process.
+        \item<5 -> Nothing will be accepted after 23:59 EDT on March 31\textsuperscript{st}, 2021 CE (AD).
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}

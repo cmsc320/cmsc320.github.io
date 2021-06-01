@@ -1,0 +1,392 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Data Science}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Introduction to Machine Learning:\\
+                  Hypothesis Testing + Gradient Descent}}
+\date{April 12, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+\newcommand{\redit}[1]{%
+  {\color{my-magenta}#1}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+\newcommand{\withwidth}[2]{%
+  \makebox[\widthof{#2}][c]{#1}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Where were left off last time:}
+    Preliminaries:
+    \begin{enumerate}
+      \item<2 -> Different distributions
+      \item<3 -> Different ways of reasoning about distributions (PDF, CDF)
+      \item<4 -> Beginnings of Hypothesis Testing
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Bounds}
+    \begin{enumerate}
+    \item<2 -> We discussed ways to use the CDF of a distribution to get \blueite{bounds} on some value
+    \item<3 -> Without running more trials (or gathering more data), we can \blueite{increase} certainty
+         by \blueite{widening} our bounds
+    \item<4 ->  But we weren't very concrete about how this relates to $H_0$ and $H_1$
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Significance and Power}
+    We need to talk about two aspects of interpreting experimental results:
+      \begin{enumerate}
+        \item<2 -> \blueite{Significance}: How willing are we to reject $H_0$, even if it's true
+        \item<3 -> \blueite{\withwidth{Power}{Significance}}: How willing are we to \emph{fail} to reject $H_0$, even if it's false.
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Errors}
+      Significance and Power relate to \redit{errors}.
+      \begin{enumerate}
+        \item<2 -> Type 1 error: ``false positive'' (Significance)
+        \item<3 -> Type 2 error: ``false negative'' (Power)
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Errors in the Judicial System}
+    \onslide<2 ->{
+    \begin{tabular}{r|c|c}
+                       & Innocent & Guilty \\ \hline
+    Guilty Verdict     & ???????  & Correct \\ \hline
+    Not Guilty Verdict & Correct  & ??????
+    \end{tabular}
+
+    }
+  }
+
+  \frame{
+    \frametitle{Errors in the Judicial System}
+    \begin{tabular}{r|c|c}
+                       & Innocent & Guilty \\ \hline
+    Guilty Verdict     & Type 1   & Correct \\ \hline
+    Not Guilty Verdict & Correct  & ??????
+    \end{tabular}
+  }
+
+  \frame{
+    \frametitle{Errors in the Judicial System}
+    \begin{tabular}{r|c|c}
+                       & Innocent & Guilty \\ \hline
+    Guilty Verdict     &  Type 1  & Correct \\ \hline
+    Not Guilty Verdict & Correct  & Type 2
+    \end{tabular}
+  }
+
+  \frame{
+    \frametitle{Back to our experiment (flipping a coin)}
+      Our hypotheses:
+    \begin{enumerate}
+      \item<2 -> $H_0$ the coin is fair ($p = 0.5$ that it lands Heads)
+      \item<3 -> $H_1$ the coin is not fair ($p \ne 0.5$)
+    \end{enumerate}
+
+  }
+
+  \begin{frame}[fragile]
+    \frametitle{Back to our experiment (flipping a coin)}
+        \centering
+    {\color{dark-gray}
+        \begin{BVerbatim}
+mu, sigma = normal_approx(1000, 0.5)
+err = 0.05 # Our comfort with a type 1 error: 5%
+lower, upper = norm_two_sided_bounds((1 - err), mu, sigma)
+        \end{BVerbatim}
+    }
+
+  \end{frame}
+
+  \frame{
+    \frametitle{Back to our experiment (flipping a coin)}
+      The result, with 95\% probability:
+    \begin{enumerate}
+      \item<2 -> Lower $\approx 469$ result in heads
+      \item<3 -> Upper $\approx 531$ result in heads
+      \item<4 -> What would we expect is the coin was fair?
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Interpreting the results}
+      Assuming the coin is fair
+    \begin{enumerate}
+      \item<2 -> Just a $5\%$ chance that the number of heads we'd see lies outside this range
+      \item<3 -> Have we \emph{proven} anything?
+      \item<4 -> Are you convinced?
+      \item<5 -> If you're wrong you lose a limb, are you convinced now?
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Interpreting the results}
+      But \blueite{we} got to choose the significance! How seriously should
+      we take these results?
+    \begin{enumerate}
+      \item<2 -> It is important that you communicate \emph{why} you feel these results
+                 are valid.
+      \item<3 -> It is \emph{very easy} to lie with statistics:
+          \begin{enumerate}
+            \item<4 -> Imagine if $H_0$ was not in the 95\% range, but in the 96\% range
+            \item<5 -> Why is 5\% special?
+          \end{enumerate}
+    \end{enumerate}
+  }
+
+  \begin{frame}[fragile]
+    \frametitle{Communication, Communication, Communication}
+      From an email I got last week (trying to book speakers):
+
+  \vspace{0.5cm}
+
+    {\color{dark-gray}
+        \begin{BVerbatim}
+I especially like your emphasis on communication
+in data science.
+        \end{BVerbatim}
+    }
+  \end{frame}
+
+
+  \frame{
+    \frametitle{p-Values}
+    We computed \emph{bounds} based on some chosen probability, \emph{p-values} flips this around:
+    \begin{enumerate}
+      \item<2 -> We assume $H_0$ is true.
+      \item<3 -> We compute the probability that we would see a value \emph{at least} as extreme
+                 as our actually observed value. 
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{p-Values}
+    Let's say we flipped a coin 1000 times (instead of having a distribution of such experiments)
+    \begin{enumerate}
+      \item<2 -> We observe 530 heads, this would give us a p-value of 6.2\%
+      \item<3 -> We observe 532 heads, this would give us a p-value of 4.6\%
+      \item<4 -> (The function for computing the p-values is added to the notebook file)
+    \end{enumerate}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Preliminaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+  \frame{
+    \frametitle{Machine Learning}
+    Many Machine Learning problems take the following form:
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ \sum_{i=1}^{m} l(h_{\theta}(x^{(i)}), y^{(i)})
+    \end{equation*}
+
+    \vspace{0.5cm}
+    \onslide<2 ->{Let's go through this, bit by bit}
+  }
+
+  \frame{
+    \frametitle{Machine Learning}
+    We have some input data we'd like to learn from:
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ \sum_{i=1}^{m} l(h_{\theta}({\color{dark-lucid-blue} x^{(i)}}), y^{(i)})
+    \end{equation*}
+
+  }
+
+  \frame{
+    \frametitle{Machine Learning}
+    We have some known output data:
+    
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ \sum_{i=1}^{m} l(h_{\theta}(x^{(i)}), {\color{dark-lucid-blue} y^{(i)}})
+    \end{equation*}
+
+  }
+
+  \frame{
+    \frametitle{Machine Learning}
+    We have a \emph{hypothesis function}, with unkown parameters:
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ \sum_{i=1}^{m} l({\color{dark-lucid-blue} h_{\theta}}(x^{(i)}), y^{(i)})
+    \end{equation*}
+
+  }
+  \frame{
+    \frametitle{Machine Learning}
+    We have a \emph{loss} function that tells us how wrong we are:
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ \sum_{i=1}^{m} {\color{dark-lucid-blue} l}(h_{\theta}(x^{(i)}), y^{(i)})
+    \end{equation*}
+  }
+  \frame{
+    \frametitle{Machine Learning}
+    We want to sum the `loss' from all of our input/output pairs:
+
+    \begin{equation*}
+    \text{minimize}_\theta ~ {\color{dark-lucid-blue}\sum_{i=1}^{m}} l(h_{\theta}(x^{(i)}), y^{(i)})
+    \end{equation*}
+  }
+
+
+  \frame{
+    \frametitle{Machine Learning}
+    We want to minimize the `loss' by changing the parameters to our hypothesis function:
+
+    \begin{equation*}
+    {\color{dark-lucid-blue} \text{minimize}_\theta} ~ \sum_{i=1}^{m} l(h_{\theta}(x^{(i)}), y^{(i)})
+    \end{equation*}
+  }
+
+  \frame{
+    \frametitle{One Approach}
+    Gradient Descent!
+    \begin{enumerate}
+      \item<2 -> The term gradient comes from calculus (a vector of partial derivatives)
+      \item<3 -> We can `ride' the gradient to some minimum (or maximum)
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{One Approach}
+    Gradient Descent is search! The basic algorith:
+    \begin{enumerate}
+      \item<2 -> pick a starting point
+      \item<3 -> compute the sum of the loss over learning set
+      \item<4 -> compute the sum of the loss for points `nearby'
+      \item<5 -> pick new parameters based on the gradient from the previous steps
+      \item<6 -> repeat
+      \item<7 -> When do we stop?
+      \item<8 -> What assumptions have we baked in?
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Gradient Descent}
+    Assumptions
+    \begin{enumerate}
+      \item<2 -> That the loss function has a gadient!
+      \item<3 -> That there's only one minimum (maximum)
+      \item<4 -> What can we do about this?
+    \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Loss Functions}
+    What we want:
+    \begin{enumerate}
+      \item<2 -> Continuity
+      \item<3 -> Global minimum
+      \item<4 -> Cheap
+      \item<5 -> Convex (why?)
+      \item<6 -> A function is convex if a lin between two points always lies above the function.
+    \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Loss Functions}
+    What we have:
+    \begin{enumerate}
+      \item<2 -> Almost none of these things.
+      \item<3 -> Most functions don't have these nice properties
+      \item<3 -> Instead we \blueite{approximate} the loss function
+    \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Surrogate Loss Functions}
+    Let's just make a function with the properties we care about! Some alternatives:
+    \begin{enumerate}
+      \item<2 -> 0/1 Loss
+      \item<3 -> Hinge
+      \item<4 -> Exponential
+      \item<5 -> Squared Loss (very common)
+    \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{On Wednesday we will:}
+    \begin{enumerate}
+      \item<2 -> Show examples of each loss function
+      \item<3 -> Use Gradient descent to learn a linear model
+      \item<4 -> Use our hypothesis testing to see if it's any good!
+    \end{enumerate}
+  }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}

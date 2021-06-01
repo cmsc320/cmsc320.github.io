@@ -1,0 +1,158 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Numpy}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{Numerical Computing in Python}
+\date{Febuary 10\textsuperscript{st}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{This Lecture}
+    You got \blueit{num}bers? We got \blueit{py}thon.
+  }
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Assignment tomorrow.
+        \item<3 -> Say hello to the mod(s).
+        \item<4 -> Quick web-scraping demo
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Assignment}
+      \begin{enumerate}
+        \item<2 -> Going live tomorrow (Feb 11).
+        \item<3 -> You will have \blueit{THREE} weeks.
+        \item<4 -> We have not covered all of the material yet, but we will before the due date.
+        \item<5 -> Do the parts you can as we progress.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Mod(s)}
+      We're gonna try having TAs monitor the chat so that I can focus on presenting. This is what I've told them:
+      \begin{enumerate}
+        \item<2 -> Chatting and banter is okay
+        \item<3 -> Any form of disrespect/gatekeeping is not okay (I'd rather have false-positives than false negatives)
+        \item<4 -> They'll answer questions in chat, but will interrupt me if it needs my attention.
+        \item<5 -> If it's on-topic, urgent, and requires my attention, you should still feel free to interrupt me.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Quick web-scraping demo}
+      To the Notebook.
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Numpy}
+    Numpy is a very popular library in Python. It is one of many data-focused libraries we will use:
+
+      \begin{enumerate}
+        \item<2 -> Numpy
+        \item<3 -> Pandas
+        \item<4 -> Matplotlib
+        \item<5 -> various analysis and ML libraries
+      \end{enumerate}
+
+  }
+
+  \frame{
+    \frametitle{The domain of Numpy}
+    Numpy is for working with $n$-dimensional array objects. 
+    \onslide<2->{This includes working with these \blueit{in Python} and \blueit{calling out of Python} to C/C++/Fortran/etc. code.}
+  }
+
+  \frame{
+    \frametitle{Why Numpy}
+      In Python, Numpy is the industry standard:
+      \begin{enumerate}
+        \item<2 -> Provides many of the basic functions: iteration, Fourier, PRNGs, etc.
+        \item<3 -> Has well-understood `escape hatches' for when you want to use functionality implemented in a different language.
+        \item<4 -> Many of the other libraries we will use this semester work with Numpy objects out of the box.
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Main thing}
+      Numpy provides the ndarray object:
+      \begin{enumerate}
+        \item<2 -> Fixed size (pros/cons?)
+        \item<3 -> Homogeneous (pros/cons?)
+        \item<4 -> Heavily optimized
+      \end{enumerate}
+  }
+
+  \begin{frame}[fragile]
+    \frametitle{Other things}
+      \begin{enumerate}
+        \item<2 -> Many integer types (\verb-intc-, \verb`int{8|16|32|64}`, \verb`float{16|32|64}`, complex numbers, booleans, and more!
+      \end{enumerate}
+  \end{frame}
+
+  \frame{
+    \frametitle{To the Notebook!}
+      What the title says.
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+  }
+
+\end{document}

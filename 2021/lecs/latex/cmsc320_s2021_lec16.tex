@@ -1,0 +1,245 @@
+\documentclass{beamer}
+
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usefonttheme{serif}
+
+
+\newcommand{\Nat}{\mathbb{N}}
+
+\title{Natural Language Processing}%\texorpdfstring{$\mathbb{N}$}}
+\subtitle{\blueit{Data Science, Spring 2021}}
+\date{March 24\textsuperscript{nd}, 2021}
+
+\usetheme{jmct}
+
+\usepackage{calc}
+
+\newcommand{\textover}[3][l]{%
+ % #1 is the alignment, default l
+ % #2 is the text to be printed
+ % #3 is the text for setting the width
+ \makebox[\widthof{#3}][#1]{#2}%
+ }
+
+\newcommand{\blueit}[1]{%
+  {\color{dark-lucid-blue}#1}%
+}
+\newcommand{\blueite}[1]{%
+  \blueit{\emph{#1}}%
+}
+
+
+\newcommand{\myquote}[3]{
+  ``#1''
+  \vspace{3pt}
+  \hrule
+  \begin{flushright}
+  --- \blueit{\emph{#2}}, \emph{#3}
+  \end{flushright}
+}
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Intro
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Before we start...}
+      \begin{enumerate}
+        \item<2 -> Our mod of the day.
+        \item<3 -> Project 2
+        \item<4 -> An equation you were promised
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Our moderator}
+      \begin{enumerate}
+        \item<2 -> Anubhav!
+      \end{enumerate}
+  }
+
+
+  \frame{
+    \frametitle{Project 2}
+      \begin{enumerate}
+        \item<2 -> Spend some time on your PDF generation!
+      \end{enumerate}
+  }
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    \begin{equation*}
+      (1 + \frac{\lambda}{N})^{-2}
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    Let's say you had a variable where half the data was missing
+    ($\lambda = 0.5$) and you used $N = 5$ for the number of generated data
+    sets:
+    \begin{equation*}
+      (1 + \frac{0.5}{5})^{-2} = 1.049
+    \end{equation*}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{An equation you were promised:}
+    How much better would it be if you used an `infinite' number of generated
+    data sets?
+    \begin{equation*}
+      (1 + \frac{0.5}{\infty})^{-2} = 1
+    \end{equation*}
+  \end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Part 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part I: Text Classification}
+  \end{frame}
+
+  \frame{
+    \frametitle{We often want to classify a text we've been given}
+      Why?
+      \begin{enumerate}
+        \item<2 -> Determine if something is spam
+        \item<3 -> Sentiment
+        \item<4 -> Authorship
+        \item<5 -> Time period of authorship
+        \item<6 -> What else?
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{What do we need?}
+      \begin{enumerate}
+        \item<2 -> A set of classes $Y = \{y_1, y_2, y_3 \dots, y_n\}$
+        \item<3 -> Some document $w \in Doc$
+        \item<4 -> Classification is a function: $\mathit{classify} : Doc \rightarrow Y$
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Classification}
+      There are many ways to implement such a function:
+      \begin{enumerate}
+        \item<2 -> Rule-based approach (blacklists, keywords, etc.)
+        \item<3 -> Supervised learning
+      \end{enumerate}
+  }
+
+  \frame{
+    \frametitle{Supervised Learning}
+      \begin{enumerate}
+        \item<2 -> Input:
+          \begin{enumerate}
+            \item <3 -> Document $w \in Doc$
+            \item <4 -> Classes $Y = \{y_1, y_2, y_3 \dots, y_n\}$
+            \item <5 -> Training set $T = \{(w_1, y_1), (w_2, y_2), (w_3, y_3) \dots, (w_n, y_n)\}$
+          \end{enumerate}
+        \item<6 -> Output
+          \begin{enumerate}
+            \item <7 -> $\mathit{classify} : Doc \rightarrow Y$
+          \end{enumerate}
+        \item<8 -> What's the downside?
+      \end{enumerate}
+  }
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part II: Representation}
+  \end{frame}
+
+
+ \frame{
+  \frametitle{Ever seen a word cloud?}
+    What's a word cloud actually tell you?
+      \begin{enumerate}
+        \item<2 -> Technical name: Bag of Words
+        \item<3 -> FYI: `Bag of Words' is also a good insult to call someone
+      \end{enumerate}
+  }
+
+ \frame{
+  \frametitle{Ever seen a word cloud?}
+    If we created a Bag of Words for the descriptions of the various CMSC courses what might we see?
+  }
+
+ \frame{
+  \frametitle{Term frequency 1}
+      \begin{enumerate}
+        \item<2 -> $\mathit{tf}_{ij}$: The frequency of word $j$ in document $i$
+        \item<3 -> More general than bag of words.
+        \item<4 -> Some adjustments:
+          \begin{enumerate}
+            \item<5 -> $\log (1 + \mathit{tf}_{ij})$: Reduce impact of outliers
+            \item<6 -> $\frac{\mathit{tf}_{ij}}{\mathit{max}_j \mathit{tf}_{ij}}$: Normalize by most common word
+          \end{enumerate}
+      \end{enumerate}
+  }
+
+ \frame{
+  \frametitle{Term frequency 2}
+      \begin{enumerate}
+        \item<2 -> You can use term frequency to train classifiers!
+        \item<3 -> Linear classifiers: ``How Dickensian is this novel?''
+        \item<4 -> Think of some examples.
+      \end{enumerate}
+  }
+
+ \frame{
+  \frametitle{Term frequency 3}
+      \begin{enumerate}
+        \item<2 -> \blueit{Inverse} term frequency is a thing, too!
+        \item<3 -> What do you think that means?
+      \end{enumerate}
+  }
+
+ \frame{
+  \frametitle{Term frequency 4}
+     Inverse Term Frequency
+      \begin{equation*}
+    \mathit{idf}_j = \log (\frac{\#\mathit{Doc}}{\#\mathit{Doc} \ni j})
+      \end{equation*}
+  }
+
+  \begin{frame}
+  \centering
+    {\fontsize{120}{88} Part III: Advice}
+  \end{frame}
+
+
+ \frame{
+  \frametitle{NLTK in Python}
+      \begin{enumerate}
+        \item<2 -> I \blueit{strongly} recommend that you do the assigned reading on NLTK
+        \item<3 -> You don't have to worry about implementing these things!
+      \end{enumerate}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \frame{
+    \frametitle{Thanks for your time!}
+
+     :) 
+  }
+
+
+\end{document}
