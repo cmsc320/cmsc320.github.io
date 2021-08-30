@@ -1,0 +1,656 @@
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="Introduction to Data Science" />
+        <meta name="author" content="John P. Dickerson" />
+        <link rel="icon" href="favicon.ico" />
+        
+        <title>Introduction to Data Science</title>
+        
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+        
+        <!-- Custom styles for this template -->
+        <link href="css/jumbotron-narrow.css" rel="stylesheet" />
+        
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="js/ie-emulation-modes-warning.js"></script>
+        
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        <!-- Fancy fonts for the headers -->
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet" />
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation"><a href="#description">Description</a></li>
+                        <li role="presentation"><a href="#schedule">Schedule</a></li>
+                        <li role="presentation"><a href="#assignments">Assignments</a></li>
+                        <li role="presentation"><a href="#tutorials">Tutorials</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">CMSC320 &ndash; Summer 2021</h3>
+            </div>
+            
+            <div class="jumbotron">
+                <h2>Introduction to Data Science</h2>
+                <!-- <img class="img-responsive" src="img/ds_01.jpg" alt="Data Science!?">  <!-- image from Vanguard -->
+                <!-- <img class="img-responsive" src="img/ds_02.jpg" alt="Data Science!?">  <!-- image from Forbes -->
+                <!-- <img class="img-responsive" src="img/ds_03.jpg" alt="Data Science!?">  <!-- image from Business Intelligence -->
+                <!-- <img class="img-responsive" src="img/ds_04.png" alt="Data Science!?">  <!-- image from https://gcn.com/articles/2017/12/05/data-inventory.aspx -->
+                <!-- <img class="img-responsive" src="img/ds_05.jpeg" alt="Data Science!?" />  <!-- image from Amber; not sure of the source-->
+                <img class="img-responsive" src="img/ds_06.png" alt="Data Science!?" />  <!-- image from Wikipedia (Sociology) -->
+                <p>
+                <address>
+                    <strong>Instructor:</strong> <a href="http://jmct.cc">José Manuel Calderón Trilla (jmct@umd.edu)</a><br/>
+                    <strong>TAs:</strong>
+                    Anubhav,
+                    Julian Vanecek,
+                    <br/>
+                    <strong>Lectures:</strong> MTuWThF, 2:00&ndash;3:25 PM<br/>
+                    <strong>Lectures are live on Zoom &amp; posted on ELMS</strong><br/>
+                </address>
+                </p>
+            </div>
+            
+            <div class="row marketing" id="description">
+                <h1>Description of Course</h1>
+                <p>Data science encapsulates the interdisciplinary activities required to create data-centric products and applications that address specific scientific, socio-political or business questions. It has drawn tremendous attention from both academia and industry and is making deep inroads in industry, government, health and journalism&mdash;just ask <a href="http://fivethirtyeight.com/features/why-fivethirtyeight-gave-trump-a-better-chance-than-almost-anyone-else/">Nate Silver</a>!</p>
+                
+                <p>This course focuses on (i) data management systems, (i) exploratory and statistical data analysis, (ii) data and information visualization, and (iv) the presentation and communication of analysis results. It will be centered around case studies drawing extensively from applications, and will yield a publicly-available final project that will strengthen course participants' data science portfolios.</p>
+                
+                <p>This course will consist primarily of sets of self-contained lectures and assignments that leverage real-world data science platforms when needed; as such, there is no assigned textbook.  Each lecture will come with links to required reading, which should be done before that lecture, and (when appropriate) a list of links to other resources on the web.</p>
+
+                <p>There will be a weekly quiz on ELMS relating to the material from that week. Of these weekly quizzes (about 7), you must take 5. The lowest 2 will be dropped. Because only 5 are required, there is no need to worry if you miss a quiz! Just make sure that you take at least 5 of them over the whole term. If you take more than 5 of the quizzes, we will only count the 5 best scores.</p>
+
+                <h3>Requirements</h3>
+                <p>
+                Students enrolled in the course should be comfortable with programming (for those at UMD, having passed CMSC216 will be good enough!) and be reasonably mathematically mature.  The course itself will make heavy use of the <a href="https://www.python.org/">Python</a> scripting language by way of <a href="https://jupyter.org/">Jupyter</a> Notebooks, leaning on the <a href="http://conda.pydata.org/docs/">Anaconda</a> package manager; we'll give some Python-for-data-science primer lectures early on, so don't worry if you haven't used Python before.  Later lectures will delve into statistics and machine learning and may make use of basic calculus and basic linear algebra; light mathematical maturity is preferred at roughly the level of a junior CS student.
+                </p>
+                
+                <p>
+                There will be one written, take-home (obviously, given COVID-19 and all) midterm examination.  There will <em>not</em> be a final examination; rather, in the interest of building students' public portfolios, and in the spirit of &quot;learning by doing&quot;, students will create a self-contained <strong>online tutorial to be posted publicly</strong>.  This tutorial can be created individually or in a small group.  As described <a href="files/su2021-final-rubric.pdf">here</a> (<em>subject to change!</em>), the tutorial will be a publicly-accessible website that provides an end-to-end walkthrough of identifying and scraping a specific data source, performing some exploratory analysis, and providing some sort of managerial or operational insight from that data.
+                </p>
+                
+                <p>
+                Final grades will be calculated as:
+                <ul>
+                    <li>10% weekly quizzes</li>
+                    <li>25% midterm</li>
+                    <li>40% mini-project assignments</li>
+                    <li>25% final tutorial to be posted publicly online (<a href="files/su2021-final-rubric.pdf">instructions</a>, <em>subject to change!</em>)</li>
+                    <!--<li>5% course, Piazza, and office hours participation (extra credit!)</li>-->
+                </ul>
+                </p>
+                
+                <!-- <p>
+                You can earn full credit for class participation in three ways:
+                <ol>
+                <li>Lecture participation, asking questions and answering your peers questions;</li>
+                <li>Piazza participation, asking and answering questions on Piazza; and</li>
+                <li>Regular attendance at office hours.</li>
+                </ol>
+                To earn full credit you should aim to ask or answer a question at least once every two weeks in lecture or on Piazza; or attend office hours at least once a month (this can include just going to my office hours to chat about computer science, data, science, software engineering, etc.).
+                </p> -->
+                
+                <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area.  If in doubt, e-mail me: jmct@umd.edu!</em></p>
+                
+                <h3>Office Hours &amp; Communication</h3>
+                <p>We are going to use <a href="https://discord.gg/v6G5h5ttWZ">Discord</a> as a replacement for the physical space that we don't have access to during COVID. This means that it's appropriate to use Discord for office hours and or short high-bandwidth discussions that would usually take place before/after class. Note that Discord is not appropriate for things like asking for accommodation or other such issues/concerns, please email José (jmct@umd.edu) with <code>[CMSC320]</code> in the email subject line.for those things.</p>
+                
+                <p>Discord, while useful, can be very 'stream of conscious' and does not allows for threading when several students have the same concern. Therefore for course-related questions, please use <a href="https://piazza.com/terpmail.umd/summer2021/cmsc320">Piazza</a>.
+As mentioned above: for private correspondence or special situations (e.g., excused absences, DDS accomodations, etc), please email José (jmct@umd.edu) with <code>[CMSC320]</code> in the email subject line.</p>
+                
+                <p>
+                <table class="table table-striped">
+                    <caption>Office Hours (all times EDT)</caption>
+                    <thead>
+                        <tr>
+                            <th style="width: 30%">Human</th>
+                            <th style="width: 45%">Time</th>
+                            <th style="width: 25%">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Anubhav</td>
+                            <td>MTuWThF: 11:30-13:00 EDT</td>
+                            <td>Online</td>
+                        </tr>
+                        <tr>
+                            <td>José Manuel Calderón Trilla</td>
+                            <td>By appointment; please email José (jmct@umd.edu) with <code>[CMSC320]</code> in the email subject line.</td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <td>Julian Vanecek</td>
+                            <td>MTuWThF: 16:00-17:30 EDT</td>
+                            <td>Online</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </p>
+                
+                <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                <h3>University Policies and Resources</h3>
+                
+                <p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.</p>
+                
+                <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                <h3>Course evaluations</h3>
+                
+                <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+                
+            </div>
+            
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="schedule">
+                <h1>Schedule</h1>
+                <table class="table table-striped">
+                    <caption>(Schedule subject to change as the semester progresses!)</caption>
+                    <thead>
+                        <tr>
+                            <th>&#35;</th>
+                            <th>Date</th>
+                            <th>Topic</th>
+                            <th>Reading</th>
+                            <th>Slides</th>
+                            <th>Lecturer</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>06/01</td>
+                            <td>Introduction</td>
+                            <td>What the Fox Knows.  <a href="https://fivethirtyeight.com/features/what-the-fox-knows/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec01.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Sign up on <a href="https://piazza.com/terpmail.umd/summer2021/cmsc320">Piazza</a>!</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>06/02</td>
+                            <td>What is Data &amp; Lightning Python Overview</td>
+                            <td>Anaconda's Test Drive.  <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec02.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="lecs/cmsc320_su2021_lec02.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>06/03</td>
+                            <td>Scraping Data (with Python) I</td>
+                            <td>&quot;What happens when you type google.com into your browser's address bar?&quot; <a href="https://github.com/alex/what-happens-when"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec03.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>06/04</td>
+                            <td>Scraping Data (with Python) II</td>
+                            <td>Think about data <a href="https://github.com/cmsc320/cmsc320.github.io/blob/master/notes/data.md">link</a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec04.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>06/07</td>
+                            <td>Scraping Data (with Python) III</td>
+                            <td>Think about data (extended edition!) <a href="https://github.com/cmsc320/cmsc320.github.io/blob/master/notes/data.md">link</a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec05.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="files/lec05.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> notebook</td>
+                            <td>Calderón Trilla</td>
+                            <td>Example APIs: <a href="https://developer.wmata.com/docs/services/">WMATA API</a>, <a href="https://www.weather.gov/documentation/services-web-api">NOAA API</a>, Library Docs: <a href="https://requests.readthedocs.io/en/master/">Requests</a>, <a href="https://docs.python.org/3/library/json.html">JSON</a>, <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>06/08</td>
+                            <td>NumPy &amp; SciPy, &amp; Best Practices</td>
+                            <td>Introduction to pandas.  <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/01_table_oriented.html#min-tut-01-tableoriented"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec06.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="files/lec06-scrapping.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> simple web-scrapping notebook, <br>
+                                <a href="files/lec06-numpy.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> numpy notebook</td>
+                            <td>Calderón Trilla</td>
+                            <td>Pandas tutorials: <a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/tutorials.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>06/09</td>
+                            <td>Data Wrangling I: Pandas &amp; Tidy Data</td>
+                            <td>Hadley Wickham. &quot;Tidy Data.&quot;  <a href="files/tidy_data.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec07.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="files/lec07.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> Notebook from class</td>
+                            <td>Calderón Trilla</td>
+                            <td>Hould's <a href="http://www.jeannicholashould.com/tidy-data-in-python.html">Tidy Data</a> for Python</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>06/10</td>
+                            <td>Data Wrangling II: Tidy data &amp; SQL</td>
+                            <td>Python SQLite Tutorial — The Ultimate Guide  <a href="https://towardsdatascience.com/python-sqlite-tutorial-the-ultimate-guide-fdcb8d7a4f30"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec08.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="files/lec08-web2pandas.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> web2pandas Notebook</td>
+                            <td>Calderón Trilla</td>
+                            <td>SQLite: <a href="https://www.sqlite.org/">link</a>; pandasql library: <a href="https://community.alteryx.com/t5/Data-Science/pandasql-Make-python-speak-SQL/ba-p/138435">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>06/11</td>
+                            <td>Git demo</td>
+                            <td>Introduction to GraphQL: <a href="https://graphql.org/learn/">link</a></td>
+                            <td>No slides, see the lecture</td>
+                            <td>Calderón Trilla</td>
+                            <td>NetworkX: <a href="https://networkx.github.io/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>06/14</td>
+                            <td>Graphs</td>
+                            <td>Backstrom &amp; Kleinberg.  &quot;Romantic Partnerships and the Dispersion of Social Ties: A Network Analysis of Relationship Status on Facebook,&quot; CSCW-14.  <a href="https://arxiv.org/abs/1310.6753">arXiv link</a>.</td>
+                            <td><a href="lecs/cmsc320_su2021_lec10.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf </td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>06/15</td>
+                            <td>Summary Statistics and Transformations</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec11.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf,
+                                <a href="https://github.com/cmsc320/lecture-code/tree/main/notebooks/lec11"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> .ipynb</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">11</th>
+                            <td>06/16</td>
+                            <td>Missing Data I</td>
+                            <td>Pandas tutorial on working with missing data. <a href="http://pandas.pydata.org/pandas-docs/stable/missing_data.html"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec12.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Scikit-learn's imputation functionality: <a href="https://scikit-learn.org/stable/modules/impute.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">12</th>
+                            <td>06/17</td>
+                            <td>Missing Data II, &amp; Data Wrangling Wrap-Up: Data Integration, Data Warehousing, Entity Resolution</td>
+                            <td>Data Cleaning: Problems and Current Approaches <a href="files/data_cleaning.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> (<em>Note: this is a reference piece; please don't read the whole thing!</em>)</td>
+                            <td><a href="lecs/cmsc320_su2021_lec12.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Wikipdia article on <a href="http://en.wikipedia.org/wiki/Outlier">outliers</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14</th>
+                            <td>06/18</td>
+                            <td>Juneteenth</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td> Nobody </td>
+                            <td> Celebrate Emancipation and reflect on how we can continue to improve </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">13</th>
+                            <td>06/21</td>
+                            <td>Missing Data III: Syntax &amp; Semantics</td>
+                            <td>NLTK Book.  <a href="http://www.nltk.org/book/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec14.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <br>
+                                <a href="https://github.com/cmsc320/lecture-code/blob/main/notebooks/Acceptable%20Missing%20Values.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> .ipynb</td>
+                            <td>Calderón Trilla</td>
+                            <td>Python Natural Language Toolkit (NLTK): <a href="http://www.nltk.org/">link</a>; Criticisms of the Turing Test: <a href="https://people.csail.mit.edu/katrina/papers/6893.pdf">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">16</th>
+                            <td>06/22</td>
+                            <td>Natural Language I</td>
+                            <td>NLTK Book.  <a href="http://www.nltk.org/book/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec15.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Python Natural Language Toolkit (NLTK): <a href="http://www.nltk.org/">link</a>; Criticisms of the Turing Test: <a href="https://people.csail.mit.edu/katrina/papers/6893.pdf">link</a>,
+                                Previous Semester's exam <a href="files/f2020-midterm.pdf">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">17</th>
+                            <td>06/23</td>
+                            <td>Natural Language II</td>
+                            <td><em>Continued from last class ...</em></td>
+                            <td><a href="lecs/cmsc320_su2021_lec15.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td><em>Continued from last class ...</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">18</th>
+                            <td>06/24</td>
+                            <td>Midterm Review &amp; TBD</td>
+                            <td>&mdash;</td>
+                            <td>Midterm review </td>
+                            <td>Calderón Trilla</td>
+                            <td><em>New material from this lecture will not be included on the midterm.</em></td>
+                        </tr>
+                        <tr class="danger">
+                            <th scope="row">19</th>
+                            <td>06/25</td>
+                            <td>Midterm</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">20</th>
+                            <td>06/28</td>
+                            <td>Dicussion of Final project (Looking toward the rest of the term)</td>
+                            <td></td>
+                            <td><a href="files/su2021-final-rubric.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> Final Tutorial Instructions+Rubric</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">21</th>
+                            <td>06/29</td>
+                            <td>Introduction to Machine Learning</td>
+                            <td>Hal Daum&eacute; III.  A Course in Machine Learning.  <a href="http://ciml.info/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec17.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">22</th>
+                            <td>06/30</td>
+                            <td>Introduction to Machine Learning II</td>
+                            <td>Russell &amp; Norvig's Chapter 18 lecture slides: <a href="http://aima.eecs.berkeley.edu/slides-pdf/chapter18.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec20.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Scikit-learn's basic decision tree functionality: <a href="http://scikit-learn.org/stable/modules/tree.html">link</a>; Bart Selman's CS4700: <a href="https://www.cs.cornell.edu/courses/cs4700/2013fa/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">23</th>
+                            <td>07/01</td>
+                            <td>Introduction to Machine Learning III</td>
+                            <td>&mdash;</td>
+                            <td><a href="https://github.com/cmsc320/lecture-code/blob/main/notebooks/make-up-lecture.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> notebook</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">24</th>
+                            <td>07/02</td>
+                            <td>Introduction to Machine Learning (cont.)</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec21.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>xkcd on overfitting: <a href="https://xkcd.com/1122/">link</a>; Polynomial features/Interaction terms in Scikit: <a href="https://chrisalbon.com/machine_learning/linear_regression/adding_interaction_terms/">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">14</th>
+                            <td>07/05</td>
+                            <td>Observation of Independence Day</td>
+                            <td>&mdash;</td>
+                            <td>&mdash;</td>
+                            <td> Nobody </td>
+                            <td> BBQ? Cookout? Let me know if I'm invited. </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">25</th>
+                            <td>07/06</td>
+                            <td>Introduction to Machine Learning (cont.)</td>
+                            <td>Nguyen &amp; Holmes.  &quot;Ten quick tips for effective dimensionality reduction,&quot; PLoS Computational Biology.  <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006907"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec22.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Wikipedia article on the confusion matrix: <a href="https://en.wikipedia.org/wiki/Confusion_matrix">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">26</th>
+                            <td>07/07</td>
+                            <td>Introduction to Machine Learning (cont.)</td>
+                            <td>Best Practices for Recommender Systems (from Microsoft). <a href="https://github.com/microsoft/recommenders#introduction"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec21.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">27</th>
+                            <td>07/08</td>
+                            <td>Scaling It Up (Cancelled, make up lecture will go online)</td>
+                            <td>Dean &amp; Ghemawat.  &quot;MapReduce: Simplified Data Processing on Large Clusters,&quot; CACM.  <a href="files/mapreduce.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec24.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>Wikipedia on SGD: <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent">link</a>
+                                Using AWK and R to parse 25tb: <a href="https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/">link</a>
+                                Command-line Tools can be 235x Faster than your Hadoop Cluster <a href="https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">28</th>
+                            <td>07/09</td>
+                            <td>Introduction to Machine Learning (cont.)</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec22.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">29</th>
+                            <td>07/12</td>
+                            <td>Non-linear Regressions, SVM, k-Means</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec23.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">29</th>
+                            <td>07/13</td>
+                            <td>Dimensionality Reduction and Collaborative Filtering</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec23.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">29</th>
+                            <td>07/14</td>
+                            <td>Scaling and Data Science Ethics</td>
+                            <td><em>The Atlantic</em>.  &quot;Everything We Know About Facebook's Secret Mood Manipulation Experiment&quot; <a href="https://www.theatlantic.com/technology/archive/2014/06/everything-we-know-about-facebooks-secret-mood-manipulation-experiment/373648/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                               Apple's brief overview of differential privacy: <a href="https://www.apple.com/privacy/docs/Differential_Privacy_Overview.pdf"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>; Barocas, Hardt, &amp; Narayanan.  <em>Fairness in Machine Learning</em>.  <a href="https://fairmlbook.org/"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a></td>
+                            <td><a href="lecs/cmsc320_su2021_lec25a.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> scaling pdf,
+                            <a href="lecs/cmsc320_su2021_lec25.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> ethics pdf</td>
+                            <td>Calderón Trilla</td>
+                            <td>What is GDPR?  (<a href="https://gdpr.eu/what-is-gdpr/">link</a>), A SIGCOMM paper that passed IRB review but is widely seen as unethical: <a href="https://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p653.pdf">link</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">30</th>
+                            <td>07/14</td>
+                            <td>Debugging Data Science, &amp; Data Science in Industry</td>
+                            <td></td>
+                            <td><a href="lecs/cmsc320_su2021_lec29.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pdf, <a href="lecs/cmsc320_su2021_lec29.pptx"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a> pptx</td>
+                            <td>Calderón Trilla</td>
+                            <td>Additional discussion of debugging models (from Cornell): <a href="http://www.cs.cornell.edu/courses/cs4780/2015fa/web/lecturenotes/lecturenote13.html">link</a></td>
+                        </tr>
+                        <tr class="danger">
+                            <th scope="row">Final</th>
+                            <td>07/21</td>
+                            <td>Final Project Due Date</td>
+                            <td><em><strong>Final versions</strong> of tutorials must be posted by 5:00PM</em></td>
+                            <td></td>
+                            <td></td>
+                            <td>Instructions &amp; rubric: <a href="files/su2021-final-rubric.pdf">link</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="assignments">
+                <h1>Mini-Projects n&#233; Homework</h1>
+                <p>In addition to the tutorial to be posted publicly at the end of the semester, there will be four &quot;mini-projects&quot; assigned over the course of the semester (plus one simple setup assignment that will walk you through using git, Docker, and Jupyter).  The best way to learn is by doing, so these will largely be applied assignments that provide hands-on experience with the basic skills a data scientist needs in industry.</p>
+                <!-- <p>As in the real world, students are encouraged to discuss these assignments in groups; however, unlike in the real world, free-riding will not be tolerated.  Toward that end, students must independently write and program their solutions; furthermore -->
+                <p>Posting solutions publicly online without the staff's express consent is a direct violation of our academic integrity policy.  <strong>Late assignments will not be accepted.</strong>
+                <table class="table table-striped">
+                    <caption>(Assignments will appear over the course of the semester.)</caption>
+                    <thead>
+                        <tr>
+                            <th>&#35;</th>
+                            <th>Description</th>
+                            <th>Date Released</th>
+                            <th>Date Due</th>
+                            <th>Project Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>0</th>
+                            <td>Setting Things Up</td>
+                            <td>June 2</td>
+                            <td>June 4</td>
+                            <td><a href="https://github.com/cmsc320/summer2021/tree/main/project0">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>Solar Power</td>
+                            <td>June 10</td>
+                            <td>June 21</td>
+                            <td><a href="https://github.com/cmsc320/summer2021/tree/main/project1">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>Moneyball</td>
+                            <td>June 29</td>
+                            <td>July 6</td>
+                            <td><a href="https://github.com/cmsc320/summer2021/tree/main/project2">link</a></td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>Gap Minder</td>
+                            <td>July 9</td>
+                            <td>July 15</td>
+                            <td><a href="https://github.com/cmsc320/summer2021/tree/master/project3">link</a></td>
+                        </tr>
+      <!--
+                        <tr>
+                            <th>4</th>
+                            <td>Baltimore Crime</td>
+                            <td>May 3</td>
+                            <td>May 11</td>
+                            <td><a href="https://github.com/cmsc320/summer2021/blob/testing/project4/README.md">link</a></td>
+                        </tr>
+      -->
+
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="tutorials">
+                
+                <h1>Final Tutorials</h1>
+                <p>In the spirit of &quot;learning by doing,&quot; students created a self-contained online tutorial to be posted publicly. Tutorials could be created individually or in a small group. The intention was to create a publicly-accessible website that provides an end-to-end walkthrough of identifying and scraping a specific data source, performing some exploratory analysis, and providing some sort of managerial or operational insight from that data.  Below is a list of (most of) the tutorials created in the Summer 2021 version of CMSC320.</p>
+                
+                <table class="table table-striped">
+                    <caption>Most links lead to a public <a href="https://pages.github.com/">GitHub Page</a> created by a student or small group in the Summer 2021 CMSC320 course; some links lead to students' personal websites or to a Notebook hosted on <a href="https://colab.research.google.com/">Google Colab</a>.  Project creators: if a link is missing or incorrect, please get in touch with José!</caption>
+                    <thead>
+                        <tr>
+                            <th>Project Title</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- TODO: This is where the student tutorials go -->
+                    </tbody>
+                </table>
+                
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            
+            <div class="row marketing" id="assignments">
+                <h1>Additional Administrative Information</h1>
+                <!-- information in this section adapted from David van Horn's course webpages -->
+                <!-- E.g., http://www.cs.umd.edu/class/fall2019/cmsc430/Syllabus.html -->
+                
+                <h3>Excused Absences</h3>
+                <p>Missing an exam for reasons such as illness, religious observance, participation in required university activities, or family or personal emergency (such as a serious automobile accident or close relative’s funeral) will be excused so long as the absence is requested in writing at least 2 days in advance and the student includes documentation that shows the absence qualifies as excused; a self-signed note is not sufficient as exams are Major Scheduled Grading Events. For this class, such events are the final project assessment and midterms, which will be due on the dates listed in the schedule above.  The final exam is scheduled according to the University Registrar.</p>
+                
+                <p>For medical absences, you must furnish documentation from the health care professional who treated you. This documentation must verify dates of treatment and indicate the timeframe that the student was unable to meet academic responsibilities. In addition, it must contain the name and phone number of the medical service provider to be used if verification is needed. No diagnostic information will ever be requested. Note that simply being seen by a health care professional does not constitute an excused absence; it must be clear that you were unable to perform your academic duties.</p>
+                
+                <p>It is the University’s policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
+                
+                <p>The policies for excused absences do not apply to project assignments. Projects will be assigned with sufficient time to be completed by students who have a reasonable understanding of the necessary material and begin promptly. In cases of extremely serious documented illness of lengthy duration or other protracted, severe emergency situations, the instructor may consider extensions on project assignments, depending upon the specific circumstances.</p>
+                
+                <p>Besides the policies in this syllabus, the University’s policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
+                
+                <p>If you experience difficulty during the semester keeping up with the academic demands of your courses, you may consider contacting the Learning Assistance Service in 2201 Shoemaker Building at (301) 314-7693. Their educational counselors can help with time management issues, reading, note-taking, and exam preparation skills.</p>
+                
+                
+                <h3>Right to Change Information</h3>
+                <p>Although every effort has been made to be complete and accurate, unforeseen circumstances arising during the semester could require the adjustment of any material given here. Consequently, given due notice to students, the instructors reserve the right to change any information on this syllabus or in other course materials. Such changes will be announced and prominently displayed at the top of the syllabus.
+                </p>
+                
+                <h3>University of Maryland Policies for Undergraduate Students</h3>
+                <p>Please read the university’s guide on <a href="https://www.ugst.umd.edu/courserelatedpolicies.html">Course Related Policies</a>, which provides you with resources and information relevant to your participation in a UMD course.
+                </p>
+
+                <h3>Miscellaneous Resources</h3>
+                <p>As we go through the course sometimes I will mention additional resources or next steps. None of this is required for the course, but students have asked for me to keep a record of which texts/websites I mention.</p>
+
+                <ul>
+                  <li> <a href="https://www.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis</a> covers some of the same topics that we cover in this class, but in textbook form.
+                  <li> <a href="https://www.oreilly.com/library/view/data-science-from/9781492041122/">Data Science From Scratch</a> this book is meant to give you a grounding in how some of the statistics and math could be implemented. Mostly, data scientists use off-the-shelf libraries for their mathematical routines/functionality, this books works through how you would implement some of those libraries. The idea is that this might give you a deeper understanding of what is going on. The implementations in this book are not meant to be high-performance, or industrial strength, but illustrative.
+                  <li> <a href="https://www.scrapingbee.com/blog/web-scraping-101-with-python/#3-requests--beautifulsoup">Web Scraping 101</a> is a good overview to how web scraping works.
+                  <li> Previous iterations of this course can be found for the <a href=2019/index.html>Fall 2019</a> and <a href=2020/index.html>Fall 2020</a> semesters.
+                </ul>
+            </div>
+            
+            <hr class="featurette-divider">
+            
+            <div class="row marketing" id="bottom-logo">
+                <img class="img-responsive" src="img/umd_cs_logo.png" alt="University of Maryland Department of Computer Science" />
+            </div>
+            
+            <footer class="footer">
+                <p>Previous versions of this course:
+                <a href="2019/index.html">Fall 2019</a>,
+                <a href="http://www.cs.umd.edu/class/fall2018/cmsc320/">Fall 2018</a>,
+                <a href="https://umd.instructure.com/courses/1227895">Fall 2017</a>,
+                <a href="http://www.cs.umd.edu/class/spring2017/cmsc320/">Spring 2017</a>
+                </p>
+                <p><a href="http://jpdickerson.com">&copy; 2017&ndash;2020 Dickerson</a> &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
+            </footer>
+            
+        </div> <!-- /container -->
+        
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+        
+    </body>
+</html>
