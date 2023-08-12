@@ -38,17 +38,20 @@
         <body>
             
             <div class="container">
+
+                <!-- Header and Navigation -->
                 <div class="header clearfix">
                     <nav>
                         <ul class="nav nav-pills pull-right">
                             <li role="presentation"><a href="#description">Description</a></li>
                             <li role="presentation"><a href="#schedule">Schedule</a></li>
-                            <li role="presentation"><a href="#assignments">Assignments</a></li>
+                            <li role="presentation"><a href="#assignments">Deliverables</a></li>
                         </ul>
                     </nav>
-                    <h3 class="text-muted">CMSC320 &ndash; Spring 2023</h3>
+                    <h3 class="text-muted">CMSC320 &ndash; Fall 2023</h3>
                 </div>
                 
+                <!-- Square with Basic Info -->
                 <div class="jumbotron">
                     <h2>Introduction to Data Science</h2>
                     <!-- <img class="img-responsive" src="img/ds_01.jpg" alt="Data Science!?">  <!-- image from Vanguard -->
@@ -60,17 +63,44 @@
                     <img class="img-responsive" src="img/ds_07.jpeg" alt="Header image to data science course website showing a multi-colored cube or matrix" />  <!-- image from https://hbr.org/2018/10/prioritize-which-data-skills-your-company-needs-with-this-2x2-matrix -->
                     <p>
                     <address>
-                        <strong>Instructor: </strong><a href="https://cmsc320.github.io/">Maksym Morawski</a> (morawski@umd.edu)<br/>
-                        <strong>TAs: Christabel Acquaye (cacquaye@umd.edu), Eric Gorner (egorner@umd.edu), NaKyung Lee (leenk@umd.edu), Aditya Parvate Patil (adpp@terpmail.umd.edu), Vikas Thoti Reddy (vikasred@terpmail.umd.edu)</strong><br/>
+                        <strong>Instructors: </strong> 
+                            <a href="https://cmsc320.github.io/">Maksym Morawski</a> (morawski@umd.edu) [0101]<br/>
+                            <a href="https://www.fardinafathmiulalam.com/">Dr. Fardina Alam</a> (fardina@umd.edu) [0201] <br/>
+                        <strong>Head TA: </strong> 
+                            <a href="mailto: leenk@umd.edu">Nakyung Lee</a>
+                            <br/>
+                        <strong>TAs: </strong> 
+                            <a href="mailto: dayeonki@umd.edu">Zoey Ki</a>,
+                            <a href="mailto: txiong23@umd.edu">Tianyi Xiong</a>
+
+                            <a href="mailto: vikasred@terpmail.umd.edu">Vikas Thoti Reddy</a>,
+                            <a href="mailto: vatsalag@umd.edu">Vatsal Agarwal</a>,
+                            <a href="mailto: agrawal5@umd.edu">Aakriti Agrawal</a>,
+                            <a href="mailto: hsong02@umd.edu">Hyemi Song</a>,
+                            <a href="mailto: sjxu@umd.edu">Shengjie Xu</a>,
+                            <a href="mailto: nghiemh@umd.edu">Huy Tran Manh Nghiem</a>,
+                            <a href="mailto: lyhan12@umd.edu">Yonghan Lee</a>,
+                            
+                        
+                            <a href="mailto: semenova@terpmail.umd.edu">Svetlana Semenova</a>,
+                            <a href="mailto: georgewitt79@gmail.com">George Witt</a>
+                            <br/>
                         <strong>Lectures [0101]: </strong>
-                        IRB 0324, Monday &amp; Wednesday &amp; Friday 10:00&ndash;10:50 PM<br/>
+                            ESJ 0224, Tuesday &amp; Thursday 3:30&ndash;4:45 PM
+                            <br/>
+                        <strong>Lectures [0201]: </strong>
+                            ESJ 0224, Monday &amp; Wednesday 3:30&ndash;4:45 PM
+                            <br/>
                         <!--<strong>Lectures are live in the Iribe Antonov Auditorium &amp; posted via Panopto on ELMS</strong><br/> --->
                     </address>
                     </p>
                 </div>
-                
+
+                <hr class="featurette-divider">
+
+                <!-- Big Class Description -->
                 <div class="row marketing" id="description">
-                    <h1>Description of Course</h1>
+                    <h1>Course Overview</h1>
                     <p>Data science encapsulates the interdisciplinary activities required to create data-centric products and applications that address specific scientific, socio-political or business questions. It has drawn tremendous attention from both academia and industry and is making deep inroads in industry, government, health and journalism.</p>
                     
                     <p>This course focuses on (i) data management systems, (i) exploratory and statistical data analysis, (ii) data and information visualization, and (iv) the presentation and communication of analysis results. It will be centered around case studies drawing extensively from applications, and will yield a publicly-available final project that will strengthen course participants' data science portfolios.</p>
@@ -78,46 +108,61 @@
                     <p>This course will consist primarily of sets of self-contained lectures and assignments that leverage real-world data science platforms when needed; as such, there is no assigned textbook.  Each lecture will come with links to required reading, which should be done before that lecture, and (when appropriate) a list of links to other resources on the web.</p>
                     
                     
-                    <h3>Requirements</h3>
+                    <h3>Prerequisites</h3>
                     <p>
                     Students enrolled in the course should be comfortable with programming (for those at UMD, having passed CMSC216 will be good enough!) and be reasonably mathematically mature.  The course itself will make heavy use of the <a href="https://www.python.org/">Python</a> scripting language by way of <a href="https://jupyter.org/">Jupyter</a> Notebooks, leaning on the <a href="http://conda.pydata.org/docs/">Anaconda</a> package manager; we'll give some Python-for-data-science primer lectures early on, so don't worry if you haven't used Python before.  Later lectures will delve into statistics and machine learning and may make use of basic calculus and basic linear algebra; light mathematical maturity is preferred at roughly the level of a junior CS student.
                     </p>
                     
-                    <p>
-                    There will be two written midterm examinations and one final.                    </p>
+                    <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area.  If in doubt, e-mail me: morawski@umd.edu!</em></p>
                     
+                    
+                    <h3>Grading</h3>
+                    <p>There will be seven assignments (six homeworks, one project), one final project, two written midterm examinations, one final.</p>
+
                     <p>
                     Final grades will be calculated as:
                     <ul>
-                        <li>40% homeworks</li>
+                        <li>40% assignments</li>
                         <li>15% midterm &#x23;1</li>
                         <li>15% midterm &#x23;2</li>
                         <li>15% final</li>
                         <li>15% final project</li>
-                        <!--<li>5% course, Piazza, and office hours participation (extra credit!)</li>-->
                     </ul>
                     </p>
-                    
-                    <!-- <p>
-                    You can earn full credit for class participation in three ways:
-                    <ol>
-                    <li>Lecture participation, asking questions and answering your peers questions;</li>
-                    <li>Piazza participation, asking and answering questions on Piazza; and</li>
-                    <li>Regular attendance at office hours.</li>
-                    </ol>
-                    To earn full credit you should aim to ask or answer a question at least once every two weeks in lecture or on Piazza; or attend office hours at least once a month (this can include just going to my office hours to chat about computer science, data, science, software engineering, etc.).
-                    </p> -->
-                    
-                    <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area.  If in doubt, e-mail me: morawski@umd.edu!</em></p>
-                    
-                    <h3>Office Hours &amp; Communication</h3>
-                    <p>We are going to use a combination of in-person office hours, as long as those are a thing, and the Piazza forum (sign up here: <a href="https://piazza.com/umd/spring2023/cmsc3200201">https://piazza.com/umd/spring2023/cmsc3200201</a>) for Q&amp;A. This means that it's appropriate to use Piazza for asynchronous communication with the course instructors and other students, and also for short high-bandwidth discussions that could usually take place before/after class. <!-- These may still occur, but COVID will surely slow things down for anything in person. --> Note that Piazza is not appropriate for things like asking for accommodation or other such issues/concerns, please email your instructor (morawski@umd.edu) with <code>[CMSC320]</code> in the email subject line for those things.</p>
-                    
-                    <p>As mentioned above: for private correspondence or special situations (e.g., excused absences, DDS accomodations, etc), please email your instructor (morawski@umd.edu) with <code>[CMSC320]</code> in the email subject line.</p>
 
-                    <p>* All hours are EDT</p>
+                    <h4>Late Policy</h4>
+                    <p>Late work gets no credit.</p>
+                    <p>However, each student is provided with four 12-hour extensions, called tokens, on homeworks. 
+                        Tokens will be automatically applied onto late homeworks. No request is necessary. 
+                        </p>
+                    
+                    
+                    <h3>Communication</h3>
+                    <p>We are going to use a combination of in-person office hours and the Piazza forum (<a href="https://piazza.com/class/lkzgkjny1ea2oh/">sign up here</a>) for Q&amp;A. 
+                        This means that it's appropriate to use Piazza for asynchronous communication with the course instructors and other students, 
+                        and also for short high-bandwidth discussions that could usually take place before/after class. </p>
+                    <p>
+                        Note that Piazza is not appropriate for things like asking for accommodations or other such issues/concerns. 
+                        Please email:
+                        <ul>
+                            <li><a href="mailto: cmsc320gradingissues@gmail.com">cmsc320gradingissues@gmail.com</a> for grading issues</li>
+                            <li><a href="mailto: cmsc320logisticsandextensions@gmail.com">cmsc320logisticsandextensions@gmail.com</a> for logistics and extensions</li>
+                        </ul>
+                    </p>
+                    
+                    <p>If your correspondence does not fit into either of those two categories, please email an instructor (TA or professor) <strong>with
+                        <code>[CMSC320]</code> in the email subject line.</strong> You may also go to an instructor's office hours at the times listed below.
+                    </p>
+
+                    <p><strong>Please note: if you don't include <code>[CMSC320]</code> in your subject line when emailing instructors, your email
+                    may not be filtered correctly.</strong></p>
+
+                    <h3>Office Hours</h3>
+
+                    <p> <em>* All hours are EDT</em></p>
                     
                     <p>
+                    <!-- Instructor Office Hour Table-->
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -129,100 +174,76 @@
                         <tbody>
                             <tr>
                                 <td>Maksym Morawski</td>
-                                <td>IRBE 2232, M/W 11:00-1:00pm, F 11:00-1:00pm; please email (morawski@umd.edu) with <code>[CMSC320]</code> in the email subject line.</td>
+                                <td>MW 11:00-1:00pm</td>
+                                <td>IRB 2232</td>
+                            </tr>
+                            <tr>
+                                <td>Dr. Fardina Alam</td>
+                                <td>TENTATIVE: F 12:00-3:00PM</td>
                                 <td>TBA</td>
                             </tr>
                         </tbody>
                     </table>
+                    </p>
+                    <p>You can find TA office hours locations for all your courses 
+                        <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  
+                        Unless otherwise stated, CMSC320's assigned space is <strong>AVW 4122</strong>. 
+                        If TAs are hosting hours virtually, you can find the zoom link on their names.<br><strong>
+                            Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, 
+                            host hours on Zoom, and so on!</strong> Additionally, we have at least one TA 
+                            explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</p>
 
                     <table class="table table-striped">
-                        <caption>You can find TA office hours locations for all your courses <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  Unless otherwise stated, CMSC320's assigned space is <strong>AVW 4122</strong>. If TAs are hosting hours virtually, you can find the zoom link on their names.<br><strong>Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, host hours on Zoom, and so on!</strong> Additionally, we have at least one TA explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</caption>
+                        <!-- <caption>You can find TA office hours locations for all your courses 
+                            <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  
+                            Unless otherwise stated, CMSC320's assigned space is <strong>AVW 4122</strong>. 
+                            If TAs are hosting hours virtually, you can find the zoom link on their names.<br><strong>
+                                Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, 
+                                host hours on Zoom, and so on!</strong> Additionally, we have at least one TA 
+                                explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</caption> -->
                         <thead>
                             <tr>
-                                <th style="width: 20%">Day</th>
-                                <th style="width: 35%">Time</th>
-                                <th style="width: 45%">TAs</th>
+                                <th style="width: 30%">TA</th>
+                                <th style="width: 45%">Time</th>
+                                <th style="width: 25%">Location</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Christabel Acquaye</td>
-                                <td>M 9:00-10:00am, T 9:00-11:00am</td>
-                                <td>AVW 4122</td>
-                            </tr>
-                            <tr>
-                                <td>Eric Gorner</td>
-                                <td>T/Th 2:00-3:30pm</td>
-                                <td>AVW 4122</td>
-                            </tr>
-                            <tr>
-                                <td>NaKyung Lee</td>
-                                <td>M/W/Th 9:00-10:00am </td>
-                                <td>AVW 4122</td>
-                            </tr>
-                            <tr>
-                                <td>Aditya Parvate Patil</td>
-                                <td>M/W/Th 3:30-4:30pm</td>
-                                <td><a href="https://umd.zoom.us/j/4186146662">online</a></a></td>
-                            </tr>
-                            <tr>
-                                <td>Vikas Thoti Reddy</td>
-                                <td>M 11:00-1:00pm, W 1:00-2:00pm</td>
+                                <td>TBA</td>
+                                <td>TBA</td>
                                 <td>AVW 4122</td>
                             </tr>
                         </tbody>
                     </table>
                     </p>
 
-                    <h3>Weekly View of in-person and online office hours:</h3>
+                    <!-- <h4>Weekly View of in-person and online office hours:</h4>
                     <iframe 
                         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNqBgOadUBPHCTx_xGlVJ1BP_4xuX000f1ATp-_n2mmMn1TTSWM33sWRMviHGFDBdVVIkwWoEk0uR0/pubhtml"
                         style="overflow: hidden;"
                         width= "100%"
-                        height= "100%"
+                        height= "50%"
                         title="Calendar view of office hours"> 
-                    </iframe>
-                    
-                    
-                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
-                    <h3>University Policies and Resources</h3>
-                    
-                    <p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.  The following policies (about masks, projects, group chats, and so on) are largely directly copied and pasted from standard campus and CMSC-specific guidance, so they should not come as a surprise to anyone.</p>
-                    
-                    <!--<p><strong>Masks:</strong> President Pines <a href="https://today.umd.edu/articles/umd-reinstate-indoor-mask-mandate-following-county-guidance-653e50ac-9f0e-4842-aacb-edb433dab24a">provided clear expectations</a> to the University about the wearing of masks for
-                    students, faculty, and staff. Face coverings over the nose and mouth are required while you are indoors
-                    at all times. There are no exceptions when it comes to classrooms, laboratories, and campus offices.
-                    Students not wearing a mask will be given a warning and asked to wear one, or will be asked to leave
-                    the room immediately. Students who have additional issues with the mask expectation after a first
-                    warning will be referred to the Office of Student Conduct for failure to comply with a directive of
-                    University officials.</p>-->
-                    
-                    <p><strong>Projects/Labs:</strong>
-                    On any graded project or lab, you are NOT allowed to exchange code. We compare each student's code with every other student's code to check for similarities. Every semester, we catch an embarrassingly high number of students that engage in cheating and we have to take them to the Honor Council.</p>
-                    
-                    <p><strong>GroupMe/Other Group Chats:</strong>
-                    We encourage students to talk about course material and help each other out in group chats. However, this does NOT include graded assignments.
-                    
-                    There have been a couple instances in the past where students have posted pictures/source files of their code, or earlier sections have given away exam questions to later sections. Not only did this lower the curve for the earlier section because the later one will do better, the WHOLE group chat had to pay a visit to the Honor Council. It was an extremely ugly business. Remember that in a group of 200+, someone or the other will blow the whistle. If you happen to be an innocent person in an innocent groupchat and someone starts cheating out of the blue, leave it immediately (and better yet, say you are leaving and say you will report it).</p>
-                    
-                    
-                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
-                    <h3>Course evaluations</h3>
-                    
-                    <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
-                    
+                    </iframe> -->
+ 
                 </div>
                 
                 
                 <hr class="featurette-divider">
+
+                <!-- Big Schedule Table -->
                <div class="row marketing" id="schedule">
                     <h1>Schedule</h1>
+                    <p>
+                        Schedule subject to change as the semester progresses!
+                    </p>
                     <table class="table table-striped">
-                        <caption>(Schedule subject to change as the semester progresses!)</caption>
+                        <caption></caption>
                         <thead>
                             <tr>
-                                <th>Topic</th>
-                                <th>Date</th>
+                                <th>#</th>
+                                <th style="width: 17%">Date</th>
                                 <th>Topic</th>
                                 <th>Reading</th>
                                 <th>Slides</th>
@@ -232,47 +253,43 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>1/25</td>
-                                <td><ul>
-                                    <li>Introduction</li>
-                                    <li>What is Data Science</li></ul>
+                                <td>Aug 28,29</td>
+                                <td>Introduction
                                 </td>
                                 <td>
 
                                 </td>
-                                <td><ul>
-                                    <li><a href="https://docs.google.com/presentation/d/1bzZKpgS8e_6rVs4kLuGR-f4qmuwpqbvryRQFopRjUGY/edit?usp=sharing">Lecture 1</a></li>
+                                <td>
                                 </td>
-                                <td>Sign up on <a href="https://piazza.com/umd/spring2023/cmsc3200201">Piazza</a>!</td>
+                                <td>Sign up on <a href="">Piazza TODO</a>!
+                                    Homework 0 and Project 0 Released (Aug 28)
+                                </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">2</th>
-                                <td>1/27</td>
-                                <td>Background
+                                <td>Aug 30,31</td>
+                                <td>Experiment Design
                                 </td>
                                 <td>
-                                <a href="https://www.youtube.com/watch?v=R13BD8qKeTg">Alternate Bayes Rule video</a></br>
-                                <a href="https://www.youtube.com/watch?v=2s3aJfRr9gE">Information Entropy</a>
+                                
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/document/d/1J-WUlOeb6X3ZK7eON0yCaSeDXnh1qLIsbNFJ0EliV4A/edit?usp=sharing">My notes</a>
+                                    
                                 </td>
-                                <td>Topics covered:<ul><li>Correlation / Covariance</li><li>Bayes Rule</li><li>Expected Value</li><li>Uncertainty</li><li>Distributions</li></td>
+                                <td></td>
                              </tr>
 
                                 <tr>
                                 <th scope="row">3</th>
-                                <td>2/1</td>
-                                <td>Experimental Design
+                                <td>Sep 5,6</td>
+                                <td>Data Types
                                 </td>
                                 <td>
-                                                                    <a href="https://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/">The Control Group is Out of Control</a>
-
+                                    
                                 </td>
                                 <td>
-                                                                       <a href="https://docs.google.com/document/d/1g5t3Xw41KQ_zIwPcEoIqeTLjl4NWjlfHDa5-49Uqbwk/edit?usp=sharing">Rough notes</a>
- 
+                                    
                                 </td>
                                 <td>
                                     </td>
@@ -280,91 +297,86 @@
                             
                             <tr>
                                 <th scope="row">4</th>
-                                <td>2/3</td>
-                                <td>What is Data?
+                                <td>Sep 7,11</td>
+                                <td>Git, Pandas, SQL
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                <a href="https://docs.google.com/presentation/d/1UW8R9t2a4HmrMd8ssIomLeCA2pkqmOy9mCp19F9YzRM/edit?usp=sharing">Slides (work in progress)</a>
-
+                                
                                 </td>
                                 <td>
-                                    </td>
+                                    Homework 1 Released (Sep 7)
+                                </td>
                              </tr>
                             
                             
                             <tr>
                                 <th scope="row">5</th>
-                                <td>2/6</td>
-                                <td>Introduction to Python, Git, SQL and Pandas
+                                <td>Sep 12,13</td>
+                                <td>Probability, Distributions, and Summary Stats
                                 </td>
                                 <td>
-                                
+                                    6. Probability 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/document/d/1zho4mDmCgNL5vzTnb3NEXvp0jBrSzTLPlxN7z_jgdmI/edit?usp=sharing">Lecture Outline</a>
+                                    
                                 </td>
                                 <td>
-                                    <a href="https://github.com/morawski-umd/homework1/blob/main/README.md">Homework 1</a>, 
-                                    <a href="https://drive.google.com/file/d/16LKtP9ArBjDw9PzeCR30kahV2HGsCRWc/view?usp=share_link">Homework 2</a>, 
-                                    and <a href="https://drive.google.com/file/d/1tHsWYGVH7SJuNpLi1xgW6IMXpLd7CLP-/view?usp=share_link">Homework 3</a> out, due 2/24.
-                                    </td>
+                                </td>
                              </tr>
                             
                             
                             <tr>
                                 <th scope="row">6</th>
-                                <td>2/8, 2/10</td>
+                                <td>Sep 14,18</td>
+                                <td>Hypothesis Testing
+                                </td>
+                                <td>
+                                    7. Hypothesis and Inference
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    Homework 2 Released (Sep 14)
+                                </td>
+                             </tr>
+                            
+                            
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Sep 19,20</td>
                                 <td>Data Visualization
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/1CufbhmL4lxwQE02dZBN7iI37KAJbzGUh5LSqENQmMkA/edit?usp=sharing">Data vis powerpoint</a>
                                 </td>
                                 <td>
-                                    </td>
-                             </tr>
-                            
-                            
-                            <tr>
-                                <th scope="row">7</th>
-                                <td>2/13</td>
-                                <td>Summary Stats
                                 </td>
-                                <td>
-                                
-                                </td>
-                                <td>
-                                    <a href="https://docs.google.com/document/d/18UH_wWMtwlsHxMqLUV44kanjqnSBGULxoRAuABcaEHc/edit?usp=sharing">Notes</a>
-                                </td>
-                                <td>
-                                    </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">8</th>
-                                <td>2/15,2/17</td>
-                                <td>Data Exploration
+                                <td>Sep 21, 25</td>
+                                <td>Data Exploration I
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://drive.google.com/file/d/1cLw7v0AvjsUEEgOPSxxMms4xNF6tri5H/view?usp=sharing">In-Class Notebook</a>, <a href="https://drive.google.com/file/d/1CeDCuGCDeYN8RaoF8rWfQSzZxd0U-tmn/view?usp=share_link">Misc Notes</a>
                                 </td>
                                 <td>
-                                    </td>
+                                </td>
                              </tr>
                             
                             
                             <tr>
                                 <th scope="row">9</th>
-                                <td>2/20</td>
-                                <td>Hypothesis Testing
+                                <td>Sep 26,27</td>
+                                <td>Data Exploration II
                                 </td>
                                 <td>
                                 
@@ -372,28 +384,41 @@
                                 <td>
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/1Ape8pU8MnQSrJpdPiMi7FRBfLGPgfVt5JnOR3oEKOoI/edit?usp=sharing">Slides</a>
-                                    </td>
+                                    Homework 3 Released (Sep 26)
+                                </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">10</th>
-                                <td>2/22, 2/24</td>
+                                <td>Sep 28, Oct 2</td>
+                                <td>Data Cleaning
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                             </tr>
+                            
+                             <tr>
+                                <th scope="row">11</th>
+                                <td>Oct 3,4</td>
                                 <td>Feature Engineering
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/document/d/14H7fFgEA-Kiz32u5VxhOgL-JYlKy720w_Gjon4GbzmM/edit?usp=sharing">Notes</a>
                                 </td>
                                 <td>
                                     </td>
                              </tr>
-                            
+
                              <tr>
-                                <th scope="row">11</th>
-                                <td>3/3</td>
+                                <th scope="row">12</th>
+                                <td>Oct 5,9</td>
                                 <td>Review
                                 </td>
                                 <td>
@@ -404,27 +429,12 @@
                                 <td>
                                     </td>
                              </tr>
-                            
-                            <tr>
-                                <th scope="row">13</th>
-                                <td>3/6</td>
-                                <td>Introduction to Modeling
-                                </td>
-                                <td>
-                                
-                                </td>
-                                <td>
-                                    <a href="https://docs.google.com/document/d/1YslYaiiC-U_MQ1pZdrAXSmQNi7uT03_3MAZdNuzxTWI/edit?usp=sharing">Notes</a>
-                                </td>
-                                <td>
-                                    <a href="https://docs.google.com/document/d/1zlD12-YQXKRCBQ-KOBNP6C_QBvQcHvCKLE1u9ghv1GM/edit?usp=sharing">Homework 4, due 3/17</a>
-                                    </td>
-                             </tr>
+
 
                             <tr>
-                                <th scope="row">12</th>
-                                <td>3/8</td>
-                                <td>Midterm 1
+                                <th scope="row">13</th>
+                                <td><strong>Oct 10, 11</strong></td>
+                                <td><strong>Midterm I</strong>
                                 </td>
                                 <td>
                                 
@@ -432,22 +442,19 @@
                                 <td>
                                 </td>
                                 <td>
-                                    </td>
+                                </td>
                              </tr>
-                            
-                            
 
                             
                             <tr>
                                 <th scope="row">14</th>
-                                <td>3/17, 3/27</td>
-                                <td>Classification
+                                <td>Oct 12,16</td>
+                                <td>Decision Trees
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/10JzlQ0MbdTvRLGqHaT4lg002pSH40PvWkTSn_EJ2Efg/edit?usp=sharing">Slides</a>
                                 </td>
                                 <td>
                                     </td>
@@ -455,39 +462,36 @@
                             
                             <tr>
                                 <th scope="row">15</th>
-                                <td>3/29</td>
-                                <td>Regression
+                                <td>Oct 17,18</td>
+                                <td>Machine Learning
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/1n9dj6cIjnbbsatpnPpzt5ydA0GImkTCZHQFKocex2lg/edit?usp=sharing">Slides</a>
                                 </td>
-                                <td>
+                                <td> Homework 4 Released (Oct 17)
                                     </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">16</th>
-                                <td>3/31,4/3</td>
-                                <td>Image Processing
+                                <td>Oct 19,23</td>
+                                <td>Classification
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/1ibiKYbP_Vuzj2Z08mm56Kt2DncjVMwsO/edit?usp=sharing&ouid=109411476581827175334&rtpof=true&sd=true">Slides</a>
                                 </td>
                                 <td>
-                                    Mandatory Viewing: <a href="https://www.youtube.com/watch?v=aircAruvnKk">Networks</a>, <a href="https://www.youtube.com/watch?v=pj9-rr1wDhM">Convolutional Networks</a>
-                                    </td>
+                                </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">17</th>
-                                <td>4/5, 4/7</td>
-                                <td>
+                                <td>Oct 24,25</td>
+                                <td> Regression
                                 </td>
                                 <td>
                                 
@@ -500,8 +504,8 @@
                             
                             <tr>
                                 <th scope="row">18</th>
-                                <td>4/10</td>
-                                <td>
+                                <td>Oct 26,30</td>
+                                <td> Neural Networks
                                 </td>
                                 <td>
                                 
@@ -514,8 +518,8 @@
                             
                             <tr>
                                 <th scope="row">19</th>
-                                <td>4/12</td>
-                                <td>
+                                <td>Oct 31, Nov 1</td>
+                                <td> Image Processing
                                 </td>
                                 <td>
                                 
@@ -528,22 +532,22 @@
 
                             <tr>
                                 <th scope="row">20</th>
-                                <td>4/14</td>
-                                <td>
+                                <td>Nov 2,6</td>
+                                <td> NLP I
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
                                 </td>
-                                <td>
+                                <td> Homework 5 Released (Nov 2)
                                     </td>
                              </tr>
                             
                             <tr>
                                 <th scope="row">21</th>
-                                <td>4/17</td>
-                                <td>Communication
+                                <td>Nov 7,8</td>
+                                <td>NLP II
                                 </td>
                                 <td>
                                 
@@ -556,14 +560,13 @@
 
                             <tr>
                                 <th scope="row">22</th>
-                                <td>4/19</td>
-                                <td>Graphs
+                                <td>Nov 9,13</td>
+                                <td>Review
                                 </td>
                                 <td>
                                 
                                 </td>
                                 <td>
-                                    <a href="https://docs.google.com/presentation/d/14w71yGk9ModI7w-CE760vaKHvBkRTswnimj5HrQlhts/edit?usp=sharing">Slides</a>
                                 </td>
                                 <td>
                                     </td>
@@ -571,8 +574,8 @@
 
                              <tr>
                                 <th scope="row">23</th>
-                                <td>4/21</td>
-                                <td>Time Series Data
+                                <td><strong>Nov 14,15</strong></td>
+                                <td><strong>Midterm II</strong>
                                 </td>
                                 <td>
                                 
@@ -586,8 +589,8 @@
                             
                               <tr>
                                 <th scope="row">24</th>
-                                <td>4/25</td>
-                                <td>Review
+                                <td>Nov 16,20</td>
+                                <td>Graphs
                                 </td>
                                 <td>
                                 
@@ -595,30 +598,14 @@
                                 <td>
                                 </td>
                                 <td>
-                                    Final Project Out
                                     </td>
                              </tr>                          
-                         
 
                             
                             <tr>
-                                <th scope="row">24</th>
-                                <td>4/27</td>
-                                <td>Big Data
-                                </td>
-                                <td>
-                                
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                    </td>
-                             </tr>
-                            
-                            <tr>
                                 <th scope="row">25</th>
-                                <td>4/28</td>
-                                <td>Midterm 2
+                                <td>Nov 21,27</td>
+                                <td>Time Series
                                 </td>
                                 <td>
                                 
@@ -631,8 +618,64 @@
                             
                             <tr>
                                 <th scope="row">26</th>
-                                <td></td>
-                                <td>Final Review
+                                <td>Nov 28,29</td>
+                                <td>Recommender Systems
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">27</th>
+                                <td>Nov 30, Dec 4</td>
+                                <td>Soft Skills
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">28</th>
+                                <td>Dec 5,6</td>
+                                <td>Ethics I
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">29</th>
+                                <td>Dec 7,11</td>
+                                <td>Ethics II
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row"></th>
+                                <td><strong>Dec 15?</strong></td>
+                                <td><strong>Final Exam</strong>
                                 </td>
                                 <td>
                                 
@@ -652,12 +695,13 @@
                 
                 <hr class="featurette-divider">
                 
+                <!-- Deliverables Section -->
                 <div class="row marketing" id="assignments">
-                    <h1>Homeworks</h1>
-                    <p></p>
-              
+                    <h1>Deliverables</h1>
+                    
+                    <h3>Assignments</h3>
+                    <p>Instructions will appear over the course of the semester.</p>
                     <table class="table table-striped">
-                        <caption>(Assignments will appear over the course of the semester.)</caption>
                         <thead>
                             <tr>
                                 <th>&#35;</th>
@@ -670,77 +714,93 @@
                         <tbody>
                             <tr>
                                 <th>Homework 0</th>
-                                <td></td>
-                                <td>Jan 30th</td>
-                                <td>Feb 8th</td>
-                                <td><a href="https://drive.google.com/file/d/1vDrriJMtXFEPPYF1MUMRyIbFuiZygOIV/view?usp=sharing">link</a></td>
+                                <td>Review Questions</td>
+                                <td>Aug 28</td>
+                                <td>Aug 12</td>
+                                <td><!-- <a href="https://drive.google.com/file/d/1vDrriJMtXFEPPYF1MUMRyIbFuiZygOIV/view?usp=sharing">link</a> --></td>
                             </tr>
                             <tr>
                                 <th>Project 0</th>
-                                <td></td>
-                                <td>Jan 30th</td>
-                                <td>Feb 13th</td>
-                                <td><a href="https://github.com/cmsc320/spring2023">link</a></td>
+                                <td>Computing Environment Setup</td>
+                                <td>Aug 28</td>
+                                <td>Aug 12</td>
+                                <td><!-- <a href="https://github.com/cmsc320/spring2023">link</a> --></td>
                             </tr>
                             <tr>
                                 <th>Homework 1</th>
-                                <td></td>
-                                <td>Feb 7th</td>
-                                <td>Feb 24th</td>
-                                <td><a href="https://github.com/morawski-umd/homework1/blob/main/README.md">link</a></td>
+                                <td>Git, Pandas, and SQL</td>
+                                <td>Sep 7</td>
+                                <td>Oct 2</td>
+                                <td><!-- <a href="https://github.com/morawski-umd/homework1/blob/main/README.md">link</a> --></td>
                             </tr>
                             <tr>
                                 <th>Homework 2</th>
-                                <td></td>
-                                <td>Feb 7th</td>
-                                <td>Feb 24th</td>
-                                <td><a href="https://drive.google.com/file/d/16LKtP9ArBjDw9PzeCR30kahV2HGsCRWc/view?usp=share_link">link</a></td>
+                                <td>Hypothesis Testing</td>
+                                <td>Sep 14</td>
+                                <td>Oct 2</td>
+                                <td><!-- <a href="https://drive.google.com/file/d/16LKtP9ArBjDw9PzeCR30kahV2HGsCRWc/view?usp=share_link">link</a> --></td>
                             </tr>
                             <tr>
                                 <th>Homework 3</th>
-                                <td></td>
-                                <td>Feb 7th</td>
-                                <td>Feb 24th</td>
-                                <td><a href="https://drive.google.com/file/d/1tHsWYGVH7SJuNpLi1xgW6IMXpLd7CLP-/view?usp=share_link">link</a></td>
+                                <td>Data Exploration</td>
+                                <td>Sep 26</td>
+                                <td>Oct 11</td>
+                                <td><!-- <a href="https://drive.google.com/file/d/1tHsWYGVH7SJuNpLi1xgW6IMXpLd7CLP-/view?usp=share_link">link</a> --></td>
                             </tr>
                             <tr>
                                 <th>Homework 4</th>
-                                <td></td>
-                                <td>March 4th</td>
-                                <td>March 17th</td>
-                                <td><a href="https://docs.google.com/document/d/1zlD12-YQXKRCBQ-KOBNP6C_QBvQcHvCKLE1u9ghv1GM/edit?usp=sharing">link</a></td>
+                                <td>Machine Learning</td>
+                                <td>Oct 17</td>
+                                <td>Nov 1</td>
+                                <td><!-- <a href="https://docs.google.com/document/d/1zlD12-YQXKRCBQ-KOBNP6C_QBvQcHvCKLE1u9ghv1GM/edit?usp=sharing">link</a> --></td>
                             </tr>
                                 <th>Homework 5</th>
-                                <td></td>
-                                <td>4/14</td>
-                                <td>4/28</td>
-                                <td><a href="https://docs.google.com/document/d/16B22XZBHP4jHjauikj332WLXeIEfRuePX2TtvlNbziA/edit?usp=sharing">link</a></td>
+                                <td>NLP</td>
+                                <td>Nov 2</td>
+                                <td>Nov 20</td>
+                                <td><!-- <a href="https://docs.google.com/document/d/16B22XZBHP4jHjauikj332WLXeIEfRuePX2TtvlNbziA/edit?usp=sharing">link</a> --></td>
     
                             
                         </tbody>
                     </table>
-                    
-                </div>
-                
-                <div class="row marketing" id="late-policy">
-                    <h1>Late Policy</h1>
-                    <p>Each students is provided with two 48-hour extensions for the mini-projects (i.e. not the quizzes, midterm exams, or final project). These extensions will be applied automatically to the first two late submissions (i.e. students do not choose which assignments use up their late allowance). No request (via email or otherwise) is necessary. After two late submissions, no late work will be accepted (i.e. any late work will be given a 0% and will not be graded).</p>
-                
-                <hr class="featurette-divider">
-                
-                <div class="row marketing" id="tutorials">
-                    
-                    <h1>Final Project</h1>
+                                       
+                    <h3>Final Project</h3>
                     <p>We will have one final project, posted as a page on github.  Stay tuned!</p>
                    
                     
                 </div>
                 
                 <hr class="featurette-divider">
-                
-                
-                <div class="row marketing" id="assignments">
+
+                <!-- Policies and Misc -->
+                <div class="row marketing" id="policies">
                     <h1>Additional Administrative Information</h1>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>University Policies and Resources</h3>
+
+                    <p>Policies relevant to Undergraduate Courses are found here: 
+                        <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. 
+                        Topics that are addressed in these various policies include academic integrity, student and instructor conduct, 
+                        accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.  
+                        
+                    <p><strong>Projects/Labs:</strong>
+                    On any graded project or lab, you are NOT allowed to exchange code. We compare each student's code with every other student's 
+                    code to check for similarities. Every semester, we catch an embarrassingly high number of students that engage in cheating and 
+                    we have to take them to the Honor Council.</p>
+                    
+                    <p><strong>GroupMe/Other Group Chats:</strong>
+                    We encourage students to talk about course material and help each other out in group chats. However, this does NOT include graded assignments.
+                    
+                    There have been a couple instances in the past where students have posted pictures/source files of their code, 
+                    or earlier sections have given away exam questions to later sections. Not only did this lower the curve for the 
+                    earlier section because the later one will do better, the WHOLE group chat had to pay a visit to the Honor Council. 
+                    It was an extremely ugly business. Remember that in a group of 200+, someone or the other will blow the whistle. 
+                    If you happen to be an innocent person in an innocent groupchat and someone starts cheating out of the blue, leave it 
+                    immediately (and better yet, say you are leaving and say you will report it).</p>
+                    
+                    
+                    
                     <!-- information in this section adapted from David van Horn's course webpages -->
                     <!-- E.g., http://www.cs.umd.edu/class/fall2019/cmsc430/Syllabus.html -->
                     
@@ -749,11 +809,11 @@
                     
                     <p>For medical absences, you must furnish documentation from the health care professional who treated you. This documentation must verify dates of treatment and indicate the timeframe that the student was unable to meet academic responsibilities. In addition, it must contain the name and phone number of the medical service provider to be used if verification is needed. No diagnostic information will ever be requested. Note that simply being seen by a health care professional does not constitute an excused absence; it must be clear that you were unable to perform your academic duties.</p>
                     
-                    <p>It is the University’s policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
+                    <p>It is the University's policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
                     
                     <p>The policies for excused absences do not apply to project assignments. Projects will be assigned with sufficient time to be completed by students who have a reasonable understanding of the necessary material and begin promptly. In cases of extremely serious documented illness of lengthy duration or other protracted, severe emergency situations, the instructor may consider extensions on project assignments, depending upon the specific circumstances.</p>
                     
-                    <p>Besides the policies in this syllabus, the University’s policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
+                    <p>Besides the policies in this syllabus, the University's policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
                     
                     <p>If you experience difficulty during the semester keeping up with the academic demands of your courses, you may consider contacting the Learning Assistance Service in 2201 Shoemaker Building at (301) 314-7693. Their educational counselors can help with time management issues, reading, note-taking, and exam preparation skills.</p>
                     
@@ -761,10 +821,11 @@
                     <h3>Right to Change Information</h3>
                     <p>Although every effort has been made to be complete and accurate, unforeseen circumstances arising during the semester could require the adjustment of any material given here. Consequently, given due notice to students, the instructors reserve the right to change any information on this syllabus or in other course materials. Such changes will be announced and prominently displayed at the top of the syllabus.
                     </p>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>Course Evaluations</h3>
                     
-                    <h3>University of Maryland Policies for Undergraduate Students</h3>
-                    <p>Please read the university’s guide on <a href="https://www.ugst.umd.edu/courserelatedpolicies.html">Course Related Policies</a>, which provides you with resources and information relevant to your participation in a UMD course.
-                    </p>
+                    <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
                     
                     <h3>Miscellaneous Resources</h3>
                     <p>As we go through the course sometimes I will mention additional resources or next steps. None of this is required for the course, but students have asked for me to keep a record of which texts/websites I mention.</p>
@@ -773,16 +834,17 @@
                         <li> <a href="https://www.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis</a> covers some of the same topics that we cover in this class, but in textbook form.</li>
                         <li> <a href="https://www.oreilly.com/library/view/data-science-from/9781492041122/">Data Science From Scratch</a> this book is meant to give you a grounding in how some of the statistics and math could be implemented. Mostly, data scientists use off-the-shelf libraries for their mathematical routines/functionality, this books works through how you would implement some of those libraries. The idea is that this might give you a deeper understanding of what is going on. The implementations in this book are not meant to be high-performance, or industrial strength, but illustrative.</li>
                         <li> <a href="https://www.scrapingbee.com/blog/web-scraping-101-with-python/#3-requests--beautifulsoup">Web Scraping 101</a> is a good overview to how web scraping works.</li>
-                        <li> Recent iterations of this course can be found for the <a href=2019/index.html>Fall 2019</a> (Dickerson), <a href=2020/index.html>Fall 2020</a> (Dickerson), <a href="2021spring/index.html">Spring 2021</a> (Calderón Trilla), and <a href="2021summer/index.html">Summer 2021</a> (Calderón Trilla) semesters.</li>
                     </ul>
                 </div>
                 
                 <hr class="featurette-divider">
                 
+                <!-- Bottom Logo -->
                 <div class="row marketing" id="bottom-logo">
                     <img class="img-responsive" src="img/umd_cs_logo.png" alt="University of Maryland Department of Computer Science" />
                 </div>
                 
+                <!-- Footer -->
                 <footer class="footer">
                     <p>Previous versions of this course:
                     <a href="2021fall/index.html">Fall 2021</a>,
@@ -794,10 +856,10 @@
                     <a href="https://umd.instructure.com/courses/1227895">Fall 2017</a>,
                     <a href="http://www.cs.umd.edu/class/spring2017/cmsc320/">Spring 2017</a>
                     </p>
-                    <p><a href="http://jpdickerson.com">&copy; 2017&ndash;2021 Dickerson</a> &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
+                    <p>&copy; 2022&ndash;2023 Morawski &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
                 </footer>
                 
-            </div> <!-- /container -->
+            </div>
             
             
             <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
