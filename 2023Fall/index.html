@@ -1,0 +1,977 @@
+<DOCTYPE html>
+    <html lang="en">
+        <head>
+            
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <meta name="description" content="Introduction to Data Science" />
+            <meta name="author" content="John P. Dickerson" />
+            <link rel="icon" href="favicon.ico" />
+            
+            <title>Introduction to Data Science</title>
+            
+            <!-- Bootstrap core CSS -->
+            <link href="css/bootstrap.min.css" rel="stylesheet" />
+            
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+            
+            <!-- Custom styles for this template -->
+            <link href="css/jumbotron-narrow.css" rel="stylesheet" />
+            
+            <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+            <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+            <script src="js/ie-emulation-modes-warning.js"></script>
+            
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            
+            <!-- Fancy fonts for the headers -->
+            <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet" />
+        </head>
+        
+        <body>
+            
+            <div class="container">
+
+                <!-- Header and Navigation -->
+                <div class="header clearfix">
+                    <nav>
+                        <ul class="nav nav-pills pull-right">
+                            <li role="presentation"><a href="#description">Description</a></li>
+                            <li role="presentation"><a href="#schedule">Schedule</a></li>
+                            <li role="presentation"><a href="#assignments">Deliverables</a></li>
+                        </ul>
+                    </nav>
+                    <h3 class="text-muted">CMSC320 &ndash; Fall 2023</h3>
+                </div>
+                
+                <!-- Square with Basic Info -->
+                <div class="jumbotron">
+                    <h2>Introduction to Data Science</h2>
+                    <!-- <img class="img-responsive" src="img/ds_01.jpg" alt="Data Science!?">  <!-- image from Vanguard -->
+                    <!-- <img class="img-responsive" src="img/ds_02.jpg" alt="Data Science!?">  <!-- image from Forbes -->
+                    <!-- <img class="img-responsive" src="img/ds_03.jpg" alt="Data Science!?">  <!-- image from Business Intelligence -->
+                    <!-- <img class="img-responsive" src="img/ds_04.png" alt="Data Science!?">  <!-- image from https://gcn.com/articles/2017/12/05/data-inventory.aspx -->
+                    <!-- <img class="img-responsive" src="img/ds_05.jpeg" alt="Data Science!?" />  <!-- image from Amber; not sure of the source-->
+                    <!-- <img class="img-responsive" src="img/ds_06.png" alt="Data Science!?" />  <!-- image from Wikipedia (Sociology) -->
+                    <img class="img-responsive" src="img/ds_07.jpeg" alt="Header image to data science course website showing a multi-colored cube or matrix" />  <!-- image from https://hbr.org/2018/10/prioritize-which-data-skills-your-company-needs-with-this-2x2-matrix -->
+                    <p>
+                    <address>
+                        <strong>Instructors: </strong> 
+                            <a href="https://cmsc320.github.io/">Maksym Morawski</a> (morawski@umd.edu) [0101]<br/>
+                            <a href="https://www.fardinafathmiulalam.com/">Dr. Fardina Alam</a> (fardina@umd.edu) [0201] <br/>
+                        <strong>Head TA: </strong> 
+                            <a href="mailto: leenk@umd.edu">Nakyung Lee</a>
+                            <br/>
+                        <strong>TAs: </strong> 
+                            <a href="mailto: dayeonki@umd.edu">Zoey Ki</a>,
+                            <a href="mailto: txiong23@umd.edu">Tianyi Xiong</a>,
+                            <a href="mailto: nghiemh@umd.edu">Huy Nghiem</a>,
+                            <a href="mailto: sjxu@umd.edu">Shengjie Xu</a>,
+                            <a href="mailto: sghosal@umd.edu">Soumya Suvra Ghosal</a>,
+                            <a href="mailto: lyhan12@umd.edu">Yonghan Lee</a>,
+                            <a href="mailto: hsong02@umd.edu">Hyemi Song</a>,
+
+                            <a href="mailto: yclee@umd.edu">Yao-Chih Lee</a>,
+                            <a href="mailto: vatsalag@umd.edu">Vatsal Agarwal</a>,
+                            <a href="mailto: agrawal5@umd.edu">Aakriti Agrawal</a>,
+                            
+                            
+                            <a href="mailto: vikasred@terpmail.umd.edu">Vikas Thoti Reddy</a>,
+                            <a href="mailto: semenova@terpmail.umd.edu">Svetlana Semenova</a>,
+                            <a href="mailto: georgewitt79@gmail.com">George Witt</a>
+                            <br/>
+                        <strong>Lectures [0101]: </strong>
+                            ESJ 0224, Tuesday &amp; Thursday 3:30&ndash;4:45 PM
+                            <br/>
+                        <strong>Lectures [0201]: </strong>
+                            ESJ 0224, Monday &amp; Wednesday 3:30&ndash;4:45 PM
+                            <br/>
+                        <!--<strong>Lectures are live in the Iribe Antonov Auditorium &amp; posted via Panopto on ELMS</strong><br/> --->
+                    </address>
+                    </p>
+                </div>
+
+                <hr class="featurette-divider">
+
+                <!-- Big Class Description -->
+                <div class="row marketing" id="description">
+                    <h1>Course Overview</h1>
+                    <p>Data science encapsulates the interdisciplinary activities required to create data-centric products and applications that address specific scientific, socio-political or business questions. It has drawn tremendous attention from both academia and industry and is making deep inroads in industry, government, health and journalism.</p>
+                    
+                    <p>This course focuses on (i) data management systems, (i) exploratory and statistical data analysis, (ii) data and information visualization, and (iv) the presentation and communication of analysis results. It will be centered around case studies drawing extensively from applications, and will yield a publicly-available final project that will strengthen course participants' data science portfolios.</p>
+                    
+                    <p>This course will consist primarily of sets of self-contained lectures and assignments that leverage real-world data science platforms when needed; as such, there is no assigned textbook.  Each lecture will come with links to required reading, which should be done before that lecture, and (when appropriate) a list of links to other resources on the web.</p>
+                    
+                    
+                    <h3>Prerequisites</h3>
+                    <p>
+                    Students enrolled in the course should be comfortable with programming (for those at UMD, having passed CMSC216 will be good enough!) and be reasonably mathematically mature.  The course itself will make heavy use of the <a href="https://www.python.org/">Python</a> scripting language by way of <a href="https://jupyter.org/">Jupyter</a> Notebooks, leaning on the <a href="http://conda.pydata.org/docs/">Anaconda</a> package manager; we'll give some Python-for-data-science primer lectures early on, so don't worry if you haven't used Python before.  Later lectures will delve into statistics and machine learning and may make use of basic calculus and basic linear algebra; light mathematical maturity is preferred at roughly the level of a junior CS student.
+                    </p>
+                    
+                    <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area.  If in doubt, e-mail me: morawski@umd.edu!</em></p>
+                    
+                    
+                    <h3>Grading</h3>
+                    <p>There will be six assignments, one final project, two written midterm exams, and one final.</p>
+
+                    <p>
+                    Final grades will be calculated as:
+                    <ul>
+                        <li>40% assignments</li>
+                        <li>15% midterm &#x23;1</li>
+                        <li>15% midterm &#x23;2</li>
+                        <li>15% final</li>
+                        <li>15% final project</li>
+                    </ul>
+                    </p>
+
+                    <h4>Late Policy</h4>
+                    <p>Late work gets no credit.</p>
+                    <p>However, each student is provided with four 12-hour extensions, called tokens, on homeworks. 
+                        Tokens will be automatically applied onto late homeworks. No request is necessary. 
+                        </p>
+                    <p>See the next section about how to contact us in special circumstances. We aim to help everyone 
+                        succeed.
+                    </p>
+                    
+                    
+                    <h3>Communication</h3>
+                    <p>We are going to use a combination of in-person office hours and the Piazza forum (<a href="https://piazza.com/class/lkzgkjny1ea2oh/">sign up here</a>) for Q&amp;A. 
+                        This means that it's appropriate to use Piazza for asynchronous communication with the course instructors and other students, 
+                        and also for short high-bandwidth discussions that could usually take place before/after class. </p>
+                    <p>
+                        Note that Piazza is not appropriate for things like asking for accommodations or other such issues/concerns. 
+                        Please email:
+                        <ul>
+                            <li><a href="mailto: cmsc320gradingissues@gmail.com">cmsc320gradingissues@gmail.com</a> for grading issues</li>
+                            <li><a href="mailto: cmsc320logisticsandextensions@gmail.com">cmsc320logisticsandextensions@gmail.com</a> for logistics and extensions</li>
+                        </ul>
+                    </p>
+
+                    <p>If you have a request that fits into one of these categories and you <em>don't</em> email one of these two 
+                    emails, then your request may not get to the right person and not be answered in a timely manner.</p>
+                    
+                    <p>If your correspondence does not fit into either of those two categories, please email an instructor (TA or professor) <strong>with
+                        <code>[CMSC320]</code> in the email subject line.</strong> You may also go to an instructor's office hours at the times listed below.
+                    </p>
+
+                    <p><strong>Please note: if you don't include <code>[CMSC320]</code> in your subject line when emailing instructors, your email
+                    may not be filtered correctly.</strong></p>
+
+                    <h3>Office Hours</h3>
+
+                    <p> <em>* All hours are EDT</em></p>
+
+                    <h4>Instructor Office Hours</h4>
+                    
+                    <p>
+                    <!-- Instructor Office Hour Table-->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">Instructor</th>
+                                <th style="width: 45%">Time</th>
+                                <th style="width: 25%">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maksym Morawski</td>
+                                <td>MW 12PM-4PM</td>
+                                <td>IRB 2232</td>
+                            </tr>
+                            <tr>
+                                <td>Dr. Fardina Alam</td>
+                                <td>F 2PM-4PM</td>
+                                <td>IRB 2222</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </p>
+
+                    <h4>TA Office Hours</h4>
+                    <p>You can find TA office hours locations for all your courses 
+                        <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  
+                        CMSC320's assigned space is <strong>AVW 4122</strong>, and 
+                        if TAs are hosting hours virtually, you can find the zoom link next to their names.</p>
+                        <p><strong>
+                        Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, 
+                        host hours on Zoom, and so on!</strong> Additionally, we have at least one TA 
+                        explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</p>
+                        <p>The table below is mostly in time order.</p>
+                        <h3><strong>THERE ARE NO OFFICE HOURS FIRST WEEK (AUG 28-SEP 1)</strong></h3>
+
+                    <table class="table table-striped">
+                        <!-- <caption>You can find TA office hours locations for all your courses 
+                            <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  
+                            Unless otherwise stated, CMSC320's assigned space is <strong>AVW 4122</strong>. 
+                            If TAs are hosting hours virtually, you can find the zoom link on their names.<br><strong>
+                                Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, 
+                                host hours on Zoom, and so on!</strong> Additionally, we have at least one TA 
+                                explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</caption> -->
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">TA</th>
+                                <th style="width: 45%">Time</th>
+                                <th style="width: 25%">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Svetlana Semenova</td><td>M 9AM-11AM</td><td>AVW 4122</td></tr>
+                            <tr><td>George Witt</td><td>M 11AM-1PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Huy Nghiem</td><td>M 2PM-3PM</td><td>AVW 4122</td></tr>
+                            <tr><td>NaKyung Lee</td><td>Tu 9AM-11AM</td><td>AVW 4122</td></tr>
+                            <tr><td>Vatsal Agarwal</td><td>Tu 11AM-12PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Soumya Suvra Ghosal</td><td>Tu 1PM-3PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Vikas Thoti Reddy</td><td>Tu 3PM-5PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Yonghan Lee</td><td>W 9AM-11AM</td><td>AVW 4122</td></tr>
+                            <tr><td>Huy Nghiem</td><td>W 2PM-3PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Zoey Ki</td><td>Th 9AM-11AM</td><td>AVW 4122</td></tr>
+                            <tr><td>Vatsal Agarwal</td><td>Th 11AM-12PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Tianyi Xiong</td><td>Th 1PM-3PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Hyemi Song</td><td>F 9AM-11AM</td><td>AVW 4122</td></tr>
+                            <tr><td>Aakriti Agrawal</td><td>F 11AM-1PM</td><td>AVW 4122</td></tr>
+                            <tr><td>Shengjie Xu</td><td>Th 3PM-5PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/3208311438?pwd=UU94Q1pHL2QxWjhZck02OFQ3ditOQT09">Zoom</a></td></tr>
+                        </tbody>
+                    </table>
+                    </p>
+
+                    <!-- <h4>Weekly View of in-person and online office hours:</h4>
+                    <iframe 
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNqBgOadUBPHCTx_xGlVJ1BP_4xuX000f1ATp-_n2mmMn1TTSWM33sWRMviHGFDBdVVIkwWoEk0uR0/pubhtml"
+                        style="overflow: hidden;"
+                        width= "100%"
+                        height= "50%"
+                        title="Calendar view of office hours"> 
+                    </iframe> -->
+ 
+                </div>
+                
+                
+                <hr class="featurette-divider">
+
+                <!-- Big Schedule Table -->
+               <div class="row marketing" id="schedule">
+                    <h1>Schedule</h1>
+                    <p>
+                        Schedule subject to change as the semester progresses!
+                    </p>
+                    <table class="table table-striped">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th style="width: 17%">Date</th>
+                                <th>Topic</th>
+                                <th>Reading</th>
+                                <th>Slides</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Aug 28,29</td>
+                                <td>Introduction
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1waWCBBd8u0DE6jIHOwIUGZ_klksjCw3l/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Fardina</a>
+                                    <a href="https://docs.google.com/presentation/d/1bzZKpgS8e_6rVs4kLuGR-f4qmuwpqbvryRQFopRjUGY/edit?usp=sharing">Max</a>
+                                </td>
+                                <td>Sign up on <a href="https://piazza.com/class/lkzgkjny1ea2oh/">Piazza</a>!
+                                    
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Aug 30,31</td>
+                                <td>Experiment Design
+                                </td>
+                                
+                                <td>
+                                <a href="http://www.stat.yale.edu/Courses/1997-98/101/expdes.htm">Experimentation </a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1B6Idzoou_5le8qlWbXmvedrwhm6SRQJamyhQoju39gU/edit?usp=sharing">Fardina</a>
+                                    <a href="https://docs.google.com/presentation/d/1XuVQfjzp9NXghyOKFVTgZDYDcuunRLeOkSn9ESkkIiw/edit?usp=sharing">Max</a>
+                                </td>
+                                <td></td>
+                             </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Sep 5,6</td>
+                                <td>Git, Pandas, SQL
+                                </td>
+                                <td>
+                                <a href="https://www.kaggle.com/fardinafalam/cmsc-320-pandas-python-library-lecture03-fall2023">Pandas Demo (Fardina)</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1x7G6edVYDMKKV9NRyestnofk8ZgC8DnoHy0ygHC0TYc/edit#slide=id.p">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1ICS5aKK33pVQlMt1cDfNfQfqdI3GK4Na/edit?usp=sharing&ouid=117841037930970219235&rtpof=true&sd=true">Fardina</a>
+                                </td>
+                                <td>
+                                    HW1 Out (Sep 6)
+                                </td>
+                             </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                <td>Sep 7,11</td>
+                                <td>Data Types
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1UW8R9t2a4HmrMd8ssIomLeCA2pkqmOy9mCp19F9YzRM/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1WZSomSx3goLq-4lXltIPCjWiX4sF42O_/edit?usp=sharing&ouid=117841037930970219235&rtpof=true&sd=true">Fardina</a>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+                            
+
+                            
+                            
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Sep 12,13</td>
+                                <td>Probability, Distributions, and Summary Stats
+                                </td>
+                                <td>
+                                    <a href="https://drive.google.com/file/d/172DG9tr1rARfNfB4qYN06nTjVnl2GFyJ/view?usp=sharing"> 6. Probability (Bayes thm,Law of tot prob)</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1d6mikkoUClxxLUA1mKbRptC7IDNGJiWqzr9tJ6T7u8w/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/10fj0U5CG6SeT_-KxTqklN4of7Jz_Eueh/edit?usp=sharing&ouid=117841037930970219235&rtpof=true&sd=true">Fardina</a>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                             </tr>
+                            
+                            
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Sep 14,18</td>
+                                <td>cont.
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://towardsdatascience.com/clearly-explained-the-mighty-central-limit-theorem-b8152b94258">Central Limit Thm</a>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    HW2 Out (Sep 18)
+                                </td>
+                             </tr>
+                            
+                            
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Sep 19,20</td>
+                                <td>Hypothesis Testing
+                                    
+                                </td>
+                                <td>
+                                    7. Hypothesis and Inference
+                                    <a href="https://vitalflux.com/data-science-how-to-formulate-hypothesis-for-hypothesis-testing/">Hypo Testing Steps And Examples</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1UlFHHSXk3PlxxFHT1R5dVBvc8BL0mdA9pj01QrgY-oA/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1_E-OWH38UDiYObHWR9HRGwTWpASEQdqI/edit?usp=sharing&ouid=117841037930970219235&rtpof=true&sd=true">Fardina</a>
+                                </td>
+                                <td>
+                                    HW3 Out (Sep 20)
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Sep 21, 25</td>
+                                <td>Data Visualization
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://colab.research.google.com/drive/1B0hCLPsGWi2aepKHxtG-PohXZ-piHi39?usp=sharing">Colab Used </a>
+                                    <a href="https://drive.google.com/file/d/1lEJVdHjDDHZTfx_J7R-lfoLmAWjAlVbM/view?usp=sharing">Dataset</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1CufbhmL4lxwQE02dZBN7iI37KAJbzGUh5LSqENQmMkA/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1ktmGqDtseCNwbDDhh7ObJA8hRV681KtlCWOUMjSwuNo/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                </td>
+                             </tr>
+                            
+                            
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Sep 26,27</td>
+                                <td>Data Exploration I
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://colab.research.google.com/drive/15VaaSgutTEOQWc7HA-LPAOfFX5LzS5hC?usp=sharing">Max Colab</a>
+                                    <a href="https://colab.research.google.com/drive/11JjW055RQ-poNCXTlzPiUxgs9hMi5Xns?usp=sharing">Fardina Colab</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1PmGu5hnHJfQ2DnGXRm9iHd3FmMS2ieAdW6HewJnAVU4/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/12d654Hw-tg1s7OBvvyw4s2iNUc6L0PyS8q6FL9gOfXc/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Sep 28, Oct 2</td>
+                                <td>Data Exploration II/Data Cleaning
+                                    
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1ELGSV2wu9Qs1fcqzyYiJXvJePNd1NBA7fw1jP2AR5TY/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/19QSxbmUJW_uXfO59584__GxHssERF4srz5B-gF2ik0k/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW4 Out (Oct 2);
+                                    HW1 Due (Oct 2)
+                                </td>
+                             </tr>
+                            
+                             <tr>
+                                <th scope="row">11</th>
+                                <td>Oct 3,4</td>
+                                <td>Data Cleaning
+                                    
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    Fardina Oct 2 slides cont.
+                                    <a href="https://docs.google.com/presentation/d/156ZOtWmtCYPUHWO83ayST2PKo1rlRDR71DUrIjh6tF4/edit?usp=sharing">Max</a>
+                                </td>
+                                <td>
+                                    
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">12</th>
+                                <td>Oct 5,9</td>
+                                <td>Intro to ML
+                                </td>
+                                <td>
+                                    </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/17yY1gboXV7UHsX7K9IO26L2-79-3LNS9s7U4DPkQVME/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1Xg7KGWHGBBjOlJ-lo84eFc50rh9RZLis-crOWheXp7o/edit?usp=sharing">Fardina</a>
+                                
+                                    
+                                </td>
+                                <td>
+                                    HW2 Due (Oct 9)
+                                    
+                                    </td>
+                             </tr>
+
+
+                            <tr>
+                                <th scope="row">13</th>
+                                <td><strong>Oct 10, 11</strong></td>
+                                <td><strong>Midterm I</strong>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/document/d/1KWNx4eSlnUtlDHEQrYFCTmGaBzvV3T3gnN-uKwaHPx0/edit?usp=sharing">Review Sheet</a>
+                                    <a href="https://docs.google.com/document/d/1JvHuJkBXWLU5tsij4-eiYtxLqXXbestFrUCaHxfz2vU/edit?usp=sharing">Past midterms (do not rely heavily)</a>
+                                    <a href="https://drive.google.com/file/d/1SnyfKsDTYlbkQgWOGGCjpBmWBooRAPL8/view?usp=sharing">Review session recording</a>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                             </tr>
+
+                            
+                            <tr>
+                                <th scope="row">14</th>
+                                <td>Oct 12,16</td>
+                                <td>Decision Trees
+                                </td>
+                                <td>
+                                    <a href="https://victorzhou.com/blog/information-gain/?fbclid=IwAR0_tE6FkK7nGDXohbSEXxqFDKVotHhB0pJwob4OGbKfj-m8n-QOCDBI8M4">DecisionTree-Calculate-Entropy-InfoGain-Fardina</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1L5y3zuwoJtz3P-wjK2U_c_s7lH3S0yhU-g8rv8Skjfs/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1LBDrD2042zGySGzSIRKY2hG5llLnCvEaXwVTZtPLL5I/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW3 Due (Oct 16)
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">15</th>
+                                <td>Oct 17,18</td>
+                                <td>Feature Engineering
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1zE54CPwDybdcAziepPob7hqC_aEEogAfsD7wZKLn-m0/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1wiHieAhC13hxBpe-uaQFyPiXIxS_TiSgz_QP-K8Tgio/edit?usp=sharing">Fardina</a>
+                                    
+                                </td>
+                                <td> 
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">16</th>
+                                <td>Oct 19,23</td>
+                                <td>Evaluation
+                                </td>
+                                <td>
+                                <a href="https://indhumathychelliah.com/2020/12/23/confusion-matrix%E2%80%8A-%E2%80%8Aclearly-explained/">Confusion Matrix(Fardina)</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1P_KAb6qwWuCXKp4Uv4CCOD4ILwEJuNEbtIU3QEatXAI/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1ufxBXGlrlmiDe-blgryRN--6xbzN2adY5XjsYEhifgU/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW5 Out (Oct 23)
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">17</th>
+                                <td>Oct 24,25</td>
+                                <td> Classification
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1wHkSrhqcySbnGui9yZz85Q7qGe-aeih0qAauNlYOuuk/edit#slide=id.p">Fardina additional</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1f08wWeUOPJW_RNjQsG8nqGNdUUqvffEQWWi1_KbVRS8/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1wHkSrhqcySbnGui9yZz85Q7qGe-aeih0qAauNlYOuuk/edit#slide=id.p">Fardina</a>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">18</th>
+                                <td>Oct 26,30</td>
+                                <td> Regression
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1vQwO3WMMSS4FHjiq5Qi2dj_rzIC2ZK1I-H7L9vRCqDU/edit#slide=id.p">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1knwRV6zzOkzRJ1yNXQHcNAkhgd0wr6Rsm_SfZK76B50/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW 4 Due (Oct 27)
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">19</th>
+                                <td>Oct 31, Nov 1</td>
+                                <td> Neural Networks
+                                </td>
+                                <td>
+                                 <a href="https://docs.google.com/presentation/d/1-Yfq9xF5oHqX4EYtVJVf1jg567GqXC3T1L7EUSPwX8I/edit?usp=sharing">Neural Network Add. Material(Fardina)</a>
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1iLq8Hyf-EuwsjHykv35xn8ZEhaR40FujWaZnqpInoxQ/edit?usp=sharing">Fardina</a>
+                                    <a href="https://docs.google.com/presentation/d/1iIrGQKmzOfdO7CBahQP1koskN48EiWCO_f46WCxdjhI/edit?usp=sharing">Max</a>
+                                </td>
+                                <td>
+                                    
+                                    </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">20</th>
+                                <td>Nov 2,6</td>
+                                <td> Image Processing
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1ibiKYbP_Vuzj2Z08mm56Kt2DncjVMwsO/edit?usp=sharing&ouid=109411476581827175334&rtpof=true&sd=true">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/12QFH56VmJuMzXqmI2XSc8qSfN1FUIMfC/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Fardina</a>
+                                </td>
+                                <td> 
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">21</th>
+                                <td>Nov 7,8</td>
+                                <td>NLP I
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/111OsZMVZRGDlSca9kIVemAwRgaJNREEXW31Vz1UVhWk/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1Fl0r3Rodlz8qLT__Iq67SDyPla-7OORNlVGQkqLS4ws/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW5 Due (Nov 7)
+                                    </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">22</th>
+                                <td>Nov 9,13</td>
+                                <td>NLP II
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    Final Project Released (Nov 9)
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">23</th>
+                                <td><strong>Nov 14,15</strong></td>
+                                <td><strong>Midterm II</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    HW6 Out (Nov 15)
+                                    </td>
+                             </tr>
+                            
+                              <tr>
+                                <th scope="row">24</th>
+                                <td>Nov 16,20</td>
+                                <td>Graphs
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1b8TO5LNU_0EgIe_bUF7BXuuRnI9bktgunAqWo0ZEwqc/edit?usp=sharing">Fardina</a>
+                                    <a href="https://docs.google.com/presentation/d/1aqY8_ad7XR1GJQnX5znf50yefwAVtw3FPkSMMhOCHIo/edit?usp=sharing">Max</a>
+                                </td>
+                                <td>
+                                    
+                                    </td>
+                             </tr>                          
+
+                            
+                            <tr>
+                                <th scope="row">25</th>
+                                <td>Nov 21,27</td>
+                                <td>Time Series
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1_P6OX64wG1wEaYqjDk74MfTjT6z6jBooFMj5zyUZntU/edit?usp=sharing">Max</a>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">26</th>
+                                <td>Nov 28,29</td>
+                                <td>Recommender Systems
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1IbqM025wT120CWTPfqzffgQkuTPRS4iG09idP_qR_nQ/edit?usp=sharing">Max</a>
+                                    <a href="https://docs.google.com/presentation/d/1655fYgw93So5BoMHnfG3yzNOVu_z0g5PBWmvEN53Tbs/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    HW6 Due (Nov 29)
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">27</th>
+                                <td>Nov 30, Dec 4</td>
+                                <td>Soft Skills
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">28</th>
+                                <td>Dec 5,6</td>
+                                <td>Ethics I
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <a href="https://docs.google.com/presentation/d/1Y98mx83Hj6tyWaRkxBXJLTzXH9dAhxVtr64sXzTaDYY/edit?usp=sharing">Fardina</a>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">29</th>
+                                <td>Dec 7,11</td>
+                                <td>Ethics II
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row"></th>
+                                <td><strong>Dec 15, 1:30PM-3:30PM</strong></td>
+                                <td><strong>Final Exam (Fardina Section)</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+                            <tr>
+                                <th scope="row"></th>
+                                <td><strong>Dec 19, 10:30AM-12:30PM</strong></td>
+                                <td><strong>Final Exam (Max Section)</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+                            
+                        </tbody>
+                            
+                    </table>
+                     
+                   
+                </div> 
+                
+                <hr class="featurette-divider">
+                
+                <!-- Deliverables Section -->
+                <div class="row marketing" id="assignments">
+                    <h1>Deliverables</h1>
+                    
+                    <h3>Assignments</h3>
+                    <p>Instructions will appear over the course of the semester. Most assignments get released on the
+                        second day lecture material gets presented and are due two or three weeks after that.
+                    </p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>&#35;</th>
+                                <th>Description</th>
+                                <th>Date Released</th>
+                                <th>Date Due</th>
+                                <th>Project Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Homework 1</th>
+                                <td>Git, Pandas, and SQL</td>
+                                <td>Sep 6</td>
+                                <td>Oct 2</td>
+                                <td>
+                                    <a href="https://github.com/morawski-umd/homework1/blob/main/README.md">Git</a>
+                                    <a href="https://drive.google.com/file/d/16LKtP9ArBjDw9PzeCR30kahV2HGsCRWc/view?usp=sharing">Pandas</a>
+                                    <a href="https://drive.google.com/file/d/1tHsWYGVH7SJuNpLi1xgW6IMXpLd7CLP-/view?usp=sharing">SQL</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Homework 2</th>
+                                <td>Statistics Review Questions</td>
+                                <td>Sep 18</td>
+                                <td>Oct 9</td>
+                                <td><a href="https://docs.google.com/document/d/11evOKLvxsGcSvCEuKqGEDLgkg5JDIVGJxsXtztkQ_CA/edit?usp=sharing">Link</a></td>
+                            </tr>
+                            <tr>
+                                <th>Homework 3</th>
+                                <td>Hypothesis Testing</td>
+                                <td>Sep 20</td>
+                                <td>Oct 16</td>
+                                <td><a href="https://drive.google.com/file/d/14thPZO5cMpuKq5e5DPVKlpQA257KP_2P/view?usp=sharing">link</a> </td>
+                            </tr>
+                            <tr>
+                                <th>Homework 4</th>
+                                <td>Data Exploration</td>
+                                <td>Oct 2</td>
+                                <td>Oct 27</td>
+                                <td><a href="https://drive.google.com/drive/folders/1r4huvtLLOovPy4TGU17-ZBvuLADAW3kl?usp=sharing">link</a></td>
+                            </tr>
+                            <tr>
+                                <th>Homework 5</th>
+                                <td>Machine Learning</td>
+                                <td>Oct 24</td>
+                                <td>Nov 7</td>
+                                <td><a href="https://colab.research.google.com/drive/1ewDl3ySL5TsL79h0AhpzD9MODzxQqeQh?usp=sharing">link</a> </td>
+                            </tr>
+                                <th>Homework 6</th>
+                                <td>Regression</td>
+                                <td>Nov 15</td>
+                                <td>Nov 29</td>
+                                <td><a href="https://colab.research.google.com/drive/1Dc4iXDuguhKcL80jJWBrfKkg2FZrir8W?usp=sharing">link</a></td>
+    
+                            
+                        </tbody>
+                    </table>
+                                       
+                    <h3>Final Project</h3>
+                    <p>Link: <a href="https://colab.research.google.com/drive/1DXVAsJw5OSm4X7ifQjFfUlP7M9q6Hk-Y?usp=sharing">Here</a> </p>
+                    <p>Remember that this is a final product for this course: you should strive to make this your best work possible. It will be graded on a higher standard than the rest of the homeworks, given that you had the chance to practice these skills beforehand.</p>
+                   
+                    
+                </div>
+                
+                <hr class="featurette-divider">
+
+                <!-- Policies and Misc -->
+                <div class="row marketing" id="policies">
+                    <h1>Additional Administrative Information</h1>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>University Policies and Resources</h3>
+
+                    <p>Policies relevant to Undergraduate Courses are found here: 
+                        <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. 
+                        Topics that are addressed in these various policies include academic integrity, student and instructor conduct, 
+                        accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.  
+                        
+                    <p><strong>Projects/Labs:</strong>
+                    On any graded project or lab, you are NOT allowed to exchange code. We compare each student's code with every other student's 
+                    code to check for similarities. Every semester, we catch an embarrassingly high number of students that engage in cheating and 
+                    we have to take them to the Honor Council.</p>
+                    
+                    <p><strong>GroupMe/Other Group Chats:</strong>
+                    We encourage students to talk about course material and help each other out in group chats. However, this does NOT include graded assignments.
+                    
+                    There have been a couple instances in the past where students have posted pictures/source files of their code, 
+                    or earlier sections have given away exam questions to later sections. Not only did this lower the curve for the 
+                    earlier section because the later one will do better, the WHOLE group chat had to pay a visit to the Honor Council. 
+                    It was an extremely ugly business. Remember that in a group of 200+, someone or the other will blow the whistle. 
+                    If you happen to be an innocent person in an innocent groupchat and someone starts cheating out of the blue, leave it 
+                    immediately (and better yet, say you are leaving and say you will report it).</p>
+                    
+                    
+                    
+                    <!-- information in this section adapted from David van Horn's course webpages -->
+                    <!-- E.g., http://www.cs.umd.edu/class/fall2019/cmsc430/Syllabus.html -->
+                    
+                    <h3>Excused Absences</h3>
+                    <p>Missing an exam for reasons such as illness, religious observance, participation in required university activities, or family or personal emergency (such as a serious automobile accident or close relative’s funeral) will be excused so long as the absence is requested in writing at least 2 days in advance and the student includes documentation that shows the absence qualifies as excused; a self-signed note is not sufficient as exams are Major Scheduled Grading Events. For this class, such events are the final project assessment and midterms, which will be due on the dates listed in the schedule above.  The final exam is scheduled according to the University Registrar.</p>
+                    
+                    <p>For medical absences, you must furnish documentation from the health care professional who treated you. This documentation must verify dates of treatment and indicate the timeframe that the student was unable to meet academic responsibilities. In addition, it must contain the name and phone number of the medical service provider to be used if verification is needed. No diagnostic information will ever be requested. Note that simply being seen by a health care professional does not constitute an excused absence; it must be clear that you were unable to perform your academic duties.</p>
+                    
+                    <p>It is the University's policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
+                    
+                    <p>The policies for excused absences do not apply to project assignments. Projects will be assigned with sufficient time to be completed by students who have a reasonable understanding of the necessary material and begin promptly. In cases of extremely serious documented illness of lengthy duration or other protracted, severe emergency situations, the instructor may consider extensions on project assignments, depending upon the specific circumstances.</p>
+                    
+                    <p>Besides the policies in this syllabus, the University's policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
+                    
+                    <p>If you experience difficulty during the semester keeping up with the academic demands of your courses, you may consider contacting the Learning Assistance Service in 2201 Shoemaker Building at (301) 314-7693. Their educational counselors can help with time management issues, reading, note-taking, and exam preparation skills.</p>
+                    
+                    
+                    <h3>Right to Change Information</h3>
+                    <p>Although every effort has been made to be complete and accurate, unforeseen circumstances arising during the semester could require the adjustment of any material given here. Consequently, given due notice to students, the instructors reserve the right to change any information on this syllabus or in other course materials. Such changes will be announced and prominently displayed.
+                    </p>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>Course Evaluations</h3>
+                    
+                    <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+                    
+                    <h3>Miscellaneous Resources</h3>
+                    <p>As we go through the course sometimes I will mention additional resources or next steps. None of this is required for the course, but students have asked for me to keep a record of which texts/websites I mention.</p>
+                    
+                    <ul>
+                        <li> <a href="https://www.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis</a> covers some of the same topics that we cover in this class, but in textbook form.</li>
+                        <li> <a href="https://www.oreilly.com/library/view/data-science-from/9781492041122/">Data Science From Scratch</a> this book is meant to give you a grounding in how some of the statistics and math could be implemented. Mostly, data scientists use off-the-shelf libraries for their mathematical routines/functionality, this books works through how you would implement some of those libraries. The idea is that this might give you a deeper understanding of what is going on. The implementations in this book are not meant to be high-performance, or industrial strength, but illustrative.</li>
+                        <li> <a href="https://www.scrapingbee.com/blog/web-scraping-101-with-python/#3-requests--beautifulsoup">Web Scraping 101</a> is a good overview to how web scraping works.</li>
+                    </ul>
+                </div>
+                
+                <hr class="featurette-divider">
+                
+                <!-- Bottom Logo -->
+                <div class="row marketing" id="bottom-logo">
+                    <img class="img-responsive" src="img/umd_cs_logo.png" alt="University of Maryland Department of Computer Science" />
+                </div>
+                
+                <!-- Footer -->
+                <footer class="footer">
+                    <p>Previous versions of this course:
+                    <a href="2021fall/index.html">Fall 2021</a>,
+                    <a href="2021summer/index.html">Summer 2021</a>,
+                    <a href="2021spring/index.html">Spring 2021</a>,
+                    <a href=2020/index.html>Fall 2020</a>,
+                    <a href="2019/index.html">Fall 2019</a>,
+                    <a href="http://www.cs.umd.edu/class/fall2018/cmsc320/">Fall 2018</a>,
+                    <a href="https://umd.instructure.com/courses/1227895">Fall 2017</a>,
+                    <a href="http://www.cs.umd.edu/class/spring2017/cmsc320/">Spring 2017</a>
+                    </p>
+                    <p>&copy; 2022&ndash;2023 Morawski &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
+                </footer>
+                
+            </div>
+            
+            
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="js/ie10-viewport-bug-workaround.js"></script>
+            
+        </body>
+    </html>
