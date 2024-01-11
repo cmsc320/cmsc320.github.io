@@ -1,1 +1,1 @@
-CMSC 320 Fall 2023 
+**CMSC 320 Fall 2023**
