@@ -1,0 +1,1445 @@
+
+<html lang="en">
+        <head>
+            
+            <style>
+            p { 
+              text-align: justify; }
+
+            ul li {
+              list-style-position: inside; }
+            </style>
+            <link rel="icon" type="image/x-icon" href="img/logo.ico">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <meta name="description" content="Introduction to Data Science" />
+            <meta name="author" content="John P. Dickerson" />
+            <link rel="icon" href="favicon.ico" />
+            
+            <title>Introduction to Data Science</title>
+            
+            <!-- Bootstrap core CSS -->
+            <link href="css/bootstrap.min.css" rel="stylesheet" />
+            
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+            
+            <!-- Custom styles for this template -->
+            <link href="css/jumbotron-narrow.css" rel="stylesheet" />
+            
+            <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+            <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+            <script src="js/ie-emulation-modes-warning.js"></script>
+            
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            
+            <!-- Fancy fonts for the headers -->
+            <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet" />
+        </head>
+        
+        <body>
+            
+            <div class="container">
+
+                <!-- Header and Navigation -->
+                <div class="header clearfix">
+                    <nav>
+                        <ul class="nav nav-pills pull-right">
+                            <li role="presentation"><a href="#description">Description</a></li>
+                            <li role="presentation"><a href="#schedule">Schedule</a></li>
+                            <li role="presentation"><a href="#assignments">Deliverables</a></li>
+                        </ul>
+                    </nav>
+                    <h3 class="text-muted">CMSC/DATA 320 &ndash; Fall 2025 (Section 0201) </h3>
+                </div>
+                
+                <!-- Square with Basic Info -->
+                <div class="jumbotron">
+                    <h2>Introduction to Data Science</h2>
+                    <!-- <img class="img-responsive" src="img/ds_01.jpg" alt="Data Science!?">  <!-- image from Vanguard -->
+                    <!-- <img class="img-responsive" src="img/ds_02.jpg" alt="Data Science!?">  <!-- image from Forbes -->
+                    <!-- <img class="img-responsive" src="img/ds_03.jpg" alt="Data Science!?">  <!-- image from Business Intelligence -->
+                    <!-- <img class="img-responsive" src="img/ds_04.png" alt="Data Science!?">  <!-- image from https://gcn.com/articles/2017/12/05/data-inventory.aspx -->
+                    <!-- <img class="img-responsive" src="img/ds_05.jpeg" alt="Data Science!?" />  <!-- image from Amber; not sure of the source-->
+                    <!-- <img class="img-responsive" src="img/ds_06.png" alt="Data Science!?" />  <!-- image from Wikipedia (Sociology) -->
+                    <img class="img-responsive" src="img/OIG.jpeg" alt="Header image to data science course website showing a multi-colored cube or matrix" height="100"/>  <!-- image from https://hbr.org/2018/10/prioritize-which-data-skills-your-company-needs-with-this-2x2-matrix -->
+                    <p>
+                    <address>
+   <!-- Aishani Edit Start -->
+                        <strong>Instructor: </strong> 
+                        <div class="instructor">
+                            <div class="ta-group">
+                                <img src="img/headshots/dr_fardina.JPG" alt="Dr. Fardina" width="70" height="70">
+                                <a href="https://www.fardinafathmiulalam.com/">Dr. Fardina Alam</a> (fardina@umd.edu)
+                            </div>
+                        </div>
+                    
+                        <strong>Head Teaching Assistants (TAs): </strong> 
+                        <div class="head-tas">
+                            <div class="ta-group">
+                                <img src="img/headshots/aviva.JPG" alt="Aviva" width="70" height="70">
+                                <a href="">Aviva Prins</a>
+                            </div>
+                            <div class="ta-group">
+                              <img src="img/headshots/guanhong.JPG" alt="Guanhong" width="70" height="70">
+                                <a href="">Guanhong Wang</a>
+                            </div>
+                            <!-- <div class="ta-group">
+                                <img src="img/headshots/pulkit.JPG" alt="Pulkit" width="70" height="70">
+                                <a href="">Pulkit Kumar</a>
+                            </div> -->
+                        </div>
+
+                        <strong>Teaching Assistants (TAs): </strong> 
+                        <div class="tas-section">
+                            <div class="ta-group">
+                                <img src="img/headshots/yonghan.JPG" alt="Yonghan" width="70" height="70">
+                                <a href="">Yonghan Lee</a>
+                            </div>
+
+                            <div class="ta-group">
+                                <img src="img/headshots/shengjie.JPG" alt="Shengjie" width="70" height="70">
+                                <a href="">Shengjie Xu</a>
+                            </div>
+
+                            <!-- <div class="ta-group">
+                               <img src="" alt="Bhuvanesh" width="70" height="70">
+                                <a href="">Bhuvanesh Murali</a>
+                            </div> -->
+
+
+                        </div>
+
+                        <div class="tas-section">
+
+                            <div class="ta-group">
+                                <img src="" alt="Weize" width="70" height="70">
+                                <a href="">Weize Liu</a>
+                            </div>
+                            <div class="ta-group">
+                                 <img src="" alt="Fnu" width="70" height="70">
+                                <a href="">Fnu Sakshi</a>
+                            </div>
+                           <div class="ta-group">
+                                <img src="img/headshots/Taewon.JPG" alt="Taewon" width="70" height="70">
+                                <a href="">Taewon Kang</a>
+                            </div>
+
+                            <div class="ta-group">
+                                <img src="img/headshots/Tanya.JPG" alt="Tanya" width="70" height="70">
+                                <a href="">Tanya Gupta</a>
+                            </div>
+
+                        </div>
+
+                        <!-- <strong>Teaching Assistants (TAs): </strong> 
+                            <table>
+                            <tr>
+                                <td align="center">
+                                <img src="img/headshots/yonghan.JPG" alt="Yonghan" width="70" height="70"><br>
+                                <a href="">Yonghan Lee</a>
+                                </td>
+                                <td align="center">
+                                <img src="img/headshots/shengjie.JPG" alt="Shengjie" width="70" height="70"><br>
+                                <a href="">Shengjie Xu</a>
+                                </td>
+                                <td align="center">
+                                <img src="" alt="Bhuvanesh" width="70" height="70"><br>
+                                <a href="">Bhuvanesh Murali</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center">
+                                <img src="" alt="Weize" width="70" height="70"><br>
+                                <a href="">Weize Liu</a>
+                                </td>
+                                <td align="center">
+                                <img src="" alt="Fnu" width="70" height="70"><br>
+                                <a href="">Fnu Sakshi</a>
+                                </td>
+                                <td align="center">
+                                <img src="" alt="Taewon" width="70" height="70"><br>
+                                <a href="">Taewon Kang</a>
+                                </td>
+                            </tr>
+                            </table> -->
+                    
+                        <div class="lecture-schedule">
+                            <strong>Lecture Schedule:</strong>
+                            IRB 0324: 3:30 PM - 4:45 PM EDT, Tuesday & Thursday.
+                        </div>
+                    </address>
+                    
+                    <style>
+                        address {
+                            text-align: center;
+                        }
+                    
+                        .instructor, .head-tas, .tas-section {
+                            display: flex;
+                            justify-content: center;
+                            gap: 30px;
+                            flex-wrap: wrap;
+                            margin: 15px 0;
+                        }
+                    
+                        .ta-group {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 10px;
+                            min-width: 100px;
+                        }
+                    
+                        .ta-group img {
+                            margin-bottom: 8px;
+                        }
+                    
+                        .lecture-schedule {
+                            margin-top: 20px;
+                        }
+                    
+                        a {
+                            display: block;
+                            margin: 2px 0;
+                        }
+                    </style>
+                    </p>
+                </div>
+<!-- Aishani Edit End -->
+                <hr class="featurette-divider">
+
+                <!-- Big Class Description -->
+                <div class="row marketing" id="description">
+                              <h1>Course Overview</h1>
+
+                    <p>Data science encapsulates the interdisciplinary activities required to create data-centric products and applications that address specific scientific, socio-political, or business questions. It has drawn tremendous attention from both academia and industry and is making deep inroads in industry, government, health, and journalism.</p>
+                    
+                    <p>This course focuses on (i) data management systems, (i) exploratory and statistical data analysis, (ii) data and information visualization, and (iv) the presentation and communication of analysis results. It will be centered around case studies drawing extensively from applications, and will yield a publicly-available final project or tutorial that will strengthen course participants' data science portfolios.
+                    </p>
+                    
+                    <p>The course will primarily consist of sets of self-contained lectures and assignments that leverage real-world data science platforms when needed. As such, there is no assigned textbook, but there will be some recommended ones. Many lectures will come with links to required readings, which should be completed before or after the lecture (as declared), and, when appropriate, a list of links to other web resources.</p>
+
+                    <p>
+
+                    <p><strong><span style="color: red;">Note:</span></strong> <strong>This course outline is tentative and subject to modification to meet the specific needs and requirements of the students and the evolving field of data science.</strong></p>
+                    </p>
+                    
+                    
+                    <h3>Prerequisites</h3>
+                    <p>
+                        Students enrolled in the course should be comfortable with programming 
+                        (for those at UMD, passing CMSC216 will be sufficient) and have a reasonable level of mathematical maturity. 
+                        The course will primarily use the <a href="https://www.python.org/">Python</a> programming language 
+                        through <a href="https://colab.research.google.com/">Google Colab</a> 
+                        (or <a href="https://jupyter.org/">Jupyter</a> Notebook if needed), 
+                        with support from the <a href="https://conda.io/docs/">Anaconda</a> package manager. 
+                        Primer lectures on Python for data science will be provided early in the semester, 
+                        so there is no need to worry if you are new to Python. 
+                        Later lectures will introduce statistics and machine learning, 
+                        potentially incorporating basic calculus and linear algebra. 
+                        A light level of mathematical maturity, roughly equivalent to that of a junior CS student, is preferred.
+                    </p>
+
+                    
+                    <p><em>This course is aimed at junior- and senior-level Computer Science majors, but should be accessible to any student of life with some degree of mathematical and statistical maturity, reasonable experience with programming, and an interest in the topic area. If in doubt, e-mail me: fardina@umd.edu!</em></p>
+                       <h3> Tentative Topics:</h3>
+
+                    <p> Introduction to Data Science, Experiment Design, Introduction to Python, Data Types, Data collection, Git, Pandas, Database, SQL, Probability, Summary Statistics, Hypothesis Testing, Data Visualization, Data Exploration, Introduction to Machine Learning, Classifications, Decision Trees, Regression, Feature Engineering, ML Evaluation, Neural Network, Image Processing, Natural Language Processing (NLP)
+                    Introduction to Graph(s) Theory, Recommender Systems, Data Science Ethics
+                    </p>
+
+                    <h3> Learning Outcomes: </h3>
+                    <p> At the completion of this course, students will be able to:
+                     <ul>
+                                <li>Develop a foundational understanding of data science, encompassing key concepts, methodologies, and tools.</li>
+                                <li>Proficiently use Python for data science applications, including data types, collection, and manipulation using libraries like Pandas.</li>
+                                <li>Explore machine learning concepts, including classifications, decision trees, regression, and feature engineering.</li>
+                                <li>Evaluate machine learning models using appropriate metrics, ensuring a comprehensive understanding of model performance.</li>
+                                <li>Understand advanced topics such as neural networks, image processing, natural language processing (NLP) etc.</li>
+                                <li>Understand the importance of applying ethical frameworks and guidelines to make informed decisions in real-world data scenarios.</li>
+                        </ul>
+By the end of the course, students will have acquired a versatile skill set, enabling them to tackle real-world data science challenges with confidence and ethical awareness.
+
+</p>
+                                       
+                    <h3>Grading</h3>
+<p>There will be six assignments, one final project, two written midterm exams, and one final written exams (cumulative).</p> 
+<p> Final grades will be calculated as:<br>
+   <table class="table table-striped">
+                            <tr>
+                                <th>Component</th>
+                                <th>Percentages</th>
+                            </tr>
+                            <tr>
+                                <td>Assignments/Mini Projects</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td>Mid Exam 01</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td>Mid Exam 02</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td>Final Project/Tutorial</td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td>Final Exam</td>
+                                <td>15%</td>
+                            </tr>
+ </table>
+                    </p> 
+
+
+                    <h4>Late Policy</h4>
+                     <p>Late work gets no credit.</p>
+                    <p> It is recommended to submit homework and projects on time. There will be a <strong>15% penalty for late submissions of homework</strong> and a <strong>20% penalty for late submissions of project/tutorial checkpoints 1 and 2</strong> within 24 hours after the deadline</strong>. 
+                        <strong>After this 24-hour period, no submissions will be accepted</strong>. In <strong>ELMS/Gradescope (as instructed in the assignment or project)</strong>, 
+                        you can submit multiple times, and only the last submission will be graded. The penalty for late homework will be applied automatically; no request is necessary. 
+                        This policy applies to both homework and projects, EXCEPT for the <strong>final submission/checkpoint 3 of the final project/tutorial and for any kind of BONUS work</strong> 
+                        </p>
+                    <p>See the next section about how to contact us in special circumstances. We aim to help everyone 
+                        succeed.
+                    </p> 
+                    
+                    
+                    <h3>Communication & Logistics Request</h3>
+                    <p>We are going to use a combination of in-person and online office hours and the Piazza forum (<a href="https://piazza.com/umd/fall2025/cmsc320">sign up here</a>) for Q&amp;A. This means that it's appropriate to use Piazza for asynchronous communication with the course instructors and other students, and also for short, high-bandwidth discussions that could usually take place before/after class.</p>
+
+                    <p>Note that Piazza is not appropriate for things like asking for accommodations, extensions or other such issues/concerns. 
+
+                    
+                    For any logistics-related help, such as extensions or grading issues, please <strong>fill out this form</strong>: CMSC320 Logistics Request Form.
+                      <a href="https://cmsc320.github.io/Request_form">CMSC320- Logistic Request Form</a> 
+
+                   However, If you do not receive a response or if your issue is not resolved within 48 hours, then please email: </p>
+                    <ul><li><a href="mailto:cmsc320gradingissues.dr.fardina@gmail.com">cmsc320gradingissues.dr.fardina@gmail.com</a> for any grading, logistics, and extension issues</li>
+                        <!-- <li><a href="mailto:cmsc320logistics.dr.fardina@gmail.com">cmsc320logistics.dr.fardina@gmail.com</a> for logistics and extensions</li> -->
+                    </ul>
+                    
+                    <p> While sending an email, at the beginning of your email subject line, include relevant tags, such as <code>[hw_extension/req]</code>, <code>[project_extension/req]</code>,<code> [gradeissue]</code>, 
+                        etc. More tags will be updated on the website. <br>
+                        
+                        If you have a request that fits into one of these categories and you <em>don't</em> email the address given above, 
+                        then your request may not reach the right person and may not be answered in a timely manner.</p>
+                    
+                         
+                                        
+                    <p>If your correspondence does not fit into either of those two categories, please email an instructor ( professor) <strong>with
+                    <code><span style="color: red;">[CMSC320]</span></code> in the email subject line.</strong> You may also go to an instructor's office hours at the times listed below.
+                    </p>
+
+                    <p><strong>Please note: if you don't include <code>[CMSC320]</code> in your subject line when emailing instructors, your email
+                    may not be filtered correctly.</strong></p> 
+
+                    <h3>Office Hours</h3>
+
+                    <p> <em>* All hours are EDT</em></p>
+
+                    <h4>Instructor Office Hours and TA office hours details can be found on ELMS as well as on Piazza.
+</h4>
+<!-- <!--                    <h4>Instructor Office Hours</h4>
+                    
+                    <p>
+                    <!-- Instructor Office Hour Table-->
+             <!--       <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">Instructor</th>
+                                <th style="width: 45%">Time</th>
+                                <th style="width: 25%">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>Dr. Fardina Alam</td>
+                                <td>Time and Day: TBD</td>
+                                <td>IRB 2222</td> 
+                            </tr>
+                        </tbody>
+                    </table>
+                    </p>  -->
+
+<!-- <!--                     <h4>TA Office Hours</h4>  -->
+<!--                     <p>You can find TA office hours locations for all your courses 
+                        <a href="http://www.cs.umd.edu/class/resources/cstarooms/fallspring/">here</a>.  
+                        CMSC320's assigned space is <strong>AVW 4122</strong>, and 
+                        if TAs are hosting hours virtually, you can find the zoom link next to their names.</p> -->
+                        <p><strong>
+                        Do keep an eye on Piazza, though; TAs will sometimes swap hours, shift hours, 
+                        host hours on Zoom, and so on!</strong> Additionally, we have at least one TA 
+                        explicitly covering Piazza on each weekday; all course staff will float around Piazza in general, too!</p>
+<!--                         <p>The table below is mostly in time order.</p> -->
+                       <strong>THERE ARE NO OFFICE HOURS FIRST WEEK (Sep 2 - Sep 5)</strong> 
+
+<!--                     <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">TA</th>
+                                <th style="width: 45%">Time</th>
+                                <th style="width: 25%">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             
+                            <tr><td>Curie Kim</td><td>M 9AM-11AM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/5881765722?pwd=MlhPaUQ4VkNEZU91Y3gzL0g1b1V0UT09" target="_blank">Zoom (if online)</a></td></tr>
+    
+                            <tr><td>Kobe Wang</td><td>M 12PM-2PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/96472987064?pwd=cTZqNTRQdlk2Q05CUXNQeTRBanFzUT09" target="_blank">Zoom (if online)</a></td></tr>
+    
+                            <tr><td>George Witt</td><td>Tu 5PM-7PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/94358679783?pwd=Vkw2UzltaVJNbkpidllIbEU1eWpoUT09" target="_blank">Zoom (if online)</a></td></tr>
+                            <tr><td>Aishani Mukherjee</td><td>Tu 4PM-5PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/97295426370" target="_blank">Zoom (if online)</a> </td></tr>
+                            <tr><td>Zichao Liang</td><td>W 10AM-12PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/94133811031?pwd=U0FiWkRvNFVmaHdlbzAreHkwNnhlZz09" target="_blank">Zoom (if online)</a> </td></tr>
+                            <tr><td>Yonghan Lee</td><td>Th 9AM-11AM</td><td>AVW 4122; <a href="https://umd.zoom.us/my/lyhan12" target="_blank">Zoom (if online)</a></tr>
+                            <tr><td>Aviva Prins</td><td>Th 2PM-4PM</td><td>AVW 4122<a href="https://umd.zoom.us/j/99437740544?pwd=aCtFSmNHaVFrMHdyRHV0alg3QlJUZz09" target="_blank">Zoom (if online)</a></tr>
+
+                            
+                            
+                            <tr><td>Aishani Mukherjee</td><td>Th 4PM-5PM</td><td>AVW 4122 <a href="https://umd.zoom.us/j/97295426370" target="_blank">Zoom (if online)</a> </td></tr>
+                            <tr><td>Ishan Kar</td><td>F 4PM-6PM (Tentative)</td><td>AVW 4122 <a href="https://umd.zoom.us/j/2056242544?omn=95045328980" target="_blank">Zoom (if online)</a> </td></tr>
+                        </tbody>
+                    </table> -->
+                    </p>
+
+                    <!-- <h4>Weekly View of in-person and online office hours:</h4>
+                    <iframe 
+                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRNqBgOadUBPHCTx_xGlVJ1BP_4xuX000f1ATp-_n2mmMn1TTSWM33sWRMviHGFDBdVVIkwWoEk0uR0/pubhtml"
+                        style="overflow: hidden;"
+                        width= "100%"
+                        height= "50%"
+                        title="Calendar view of office hours"> 
+                    </iframe> -->
+ 
+<!--                 </div>
+                 --> 
+                
+                <hr class="featurette-divider">
+
+                <!-- Big Schedule Table -->
+               <div class="row marketing" id="schedule">
+                    <h1>Schedule</h1>
+                   <p><strong>ALL THE LECTURE SLIDES WILL BE POSTED HERE</strong></p>
+                    <p>
+                        The schedule is subject to change as the semester progresses!
+                    </p>
+                    <table class="table table-striped">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th style="width: 17%">Date</th>
+                                <th>Topic</th>
+                                <th>Reading</th>
+                                <th>Slides</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                       <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Sep 2, Tu</td>
+                                <td>Introduction to Data Science and Data Type
+                                </td>
+                                <td>
+                                     Self-Study Slide: </br>
+                                 <a href="https://docs.google.com/presentation/d/1tMAcTbH0yPA4fVasPqndfbQdkSWuWLSX/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Git </a> </br>
+                               Additional Reading/Helpful slide: </br>
+                                 <a href="https://docs.google.com/presentation/d/1tOC0EOiF4Dkavjz3To07wXC_EdKW32qvZyN3XizvMlo/edit?usp=sharing">Python</a>  
+                                 <a href="https://colab.research.google.com/drive/1xHJHDJPEAZCrUeB1-iIFm8a3Rw3od5In?usp=sharing">Demo Python</a>
+                        
+                                </td>
+                                <td>       
+                                   <a href="https://docs.google.com/presentation/d/1Cp-GZdNI4SP0ho1F9j-6GpjjY1aJPe-f/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec1.1Intro</a>
+                                  
+                                   <a href="https://docs.google.com/presentation/d/1VO7nJppNcgjl-SbpB_lZb8QqwsmSqd_d/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true"> Lec1.2DataTypes</a> (Self-Study)
+                                </td>
+                                <td>Sign up on <a href="https://piazza.com/umd/fall2025/cmsc320">Piazza</a>!
+                                    
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Sep 4, Th</td>
+                                <td>Experiment Design
+                                </td>
+                                
+                                <td>
+                                <a href="http://www.stat.yale.edu/Courses/1997-98/101/expdes.htm">Experimentation </a> 
+                                </td>
+                                <td>     
+                                <a href="https://docs.google.com/presentation/d/19Gw-Pty0ueVB9IiKG1_kEh-hdKg-I1TT/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec02ExpDesign</a>                        
+                                </td>
+                                <td>
+
+Final Project/Tutorial Instruction Out (Sep 3-4)
+
+                                </td>
+                             </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Sep 9, Tu </td>
+                                <td>Pandas
+                                </td>
+                                
+                                <td>
+<!--                                 <a href="https://www.kaggle.com/fardinafalam/cmsc-320-pandas-python-library-lecture03-fall2023">Pandas Demo (Fardina)</a> -->
+                                     
+                                    
+<!--                                     <a href="https://colab.research.google.com/drive/1xHJHDJPEAZCrUeB1-iIFm8a3Rw3od5In?usp=sharing">Class Demo Python</a> -->
+                                    
+                                </td>
+                                <td>
+                                      <!-- <a href="https://docs.google.com/presentation/d/1pD1epxkGxEk3T9ojmdAaWy3t72uQXI-9/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec03PandasSQL</a>  -->
+                                   
+                                      <a href="https://docs.google.com/presentation/d/13QLs2urqJKgdgLZlSwbpRVpVEOP2NaCj/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec03Pandas</a>
+                                </td>
+                                <td>
+                                     HW 1 Out (<s>Sep 9</s>Sep 10) 
+                                </td>
+                             </tr>
+                                <tr>
+                                <th scope="row">4</th>
+                                <td>Sep 11 Th</td>
+                                <td> SQL   
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>                                
+<!--                                     <a href="https://docs.google.com/presentation/d/1QzURiqmGwTAeQG2P_GGU5RGbfHdqkm2D/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">fallLec06_07Prob</a> -->
+<!--                                      
+                                    
+                                    <a href="https://docs.google.com/presentation/d/1aK0r5dCEwK9YK2n0ozQaAUHCo2RS0-NE/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec04Prob</a>  -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1uatKHxcyNdwpXnuzMSq6jBHSJ4mZZttd/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lecture04Probability_Part01</a> -->
+                                    <a href= "https://docs.google.com/presentation/d/12q5k1QEAIwIXL135RwG40q_IbR4r1zmw/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec04_SQL </a>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    </td>
+                             </tr>
+                                                                                           
+                             <tr>
+                                <th scope="row">5</th>
+                                <td>Sep 16, Tu</td>
+                                <td>       Probability, Distributions, and Summary Stats  
+                                </td>
+                                         
+                                <td> 
+                                    <a href="https://drive.google.com/file/d/172DG9tr1rARfNfB4qYN06nTjVnl2GFyJ/view?usp=sharing"> Probability (Bayes thm,Law of tot prob)</a> 
+
+                                </td>
+                                <td> 
+                                    <!-- <a href="https://docs.google.com/presentation/d/11IiuFPBhEM46zVY6kXNMajHuqr9i1cDI/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lecture05Probability_Part02</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1pnRYKeVOV31J3941z4rPCbUga8c8opw-V8VcGufvAEs/edit?usp=sharing">Lecture05_Probabilities_Part01 </a>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                             </tr>
+                            
+                            
+                             <tr>
+                                <th scope="row">6</th>
+                                <td>Sep 18, Th</td>
+                                <td> Probability cont.
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://towardsdatascience.com/clearly-explained-the-mighty-central-limit-theorem-b8152b94258">Central Limit Thm</a>                              
+                                    <a href="https://docs.google.com/document/d/1lRxah0GXLD_hZ7QAyMyo2jmV1oAN5_IdXwCiPFLlTTU/edit?usp=sharing">Shared Description Material</a>
+                                </td>
+                                <td>
+
+<!--                                    <a href="https://docs.google.com/presentation/d/1Os5dqSUcrzZsrqJ5j1qjqQP6HGDlrLFgPqze8y8Dy64/edit?usp=sharing">fallLec08Hypothesis</a> -->
+                                       
+<!--                                     <a href="https://docs.google.com/presentation/d/1U7nzUQHoQ82Be_YMLUo8NfnpC2V03FKA/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec05Hypothesis</a>   -->
+                                     <!-- <a href="https://docs.google.com/presentation/d/1g2eyWFUMGnQtK3Sab1iAkLiVtVnpuUai/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec06Hypothesis_Part01</a>  <br>
+                                     <a href="https://docs.google.com/presentation/d/1nI_SrSE7h9kKrQR8BJYkOPI815gqcFCy/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec06Hypothesis_Part02</a>  <br>
+                                     <a href="https://docs.google.com/presentation/d/1_w8uIF_6IduzfJLjuv8zxvc-JtE9zvCi/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec06Hypothesis_Part03</a>   -->
+                                    <a href="https://docs.google.com/presentation/d/10AOZR3raAdP7eyGQildobYtlAdJxkfYl/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec06_Probability_Part2</a>
+
+                                </td>
+                                <td>
+                                      HW 1 Due (<s>Sep 18</s>Sep 19)
+                                      HW 2 Out (Sep 18) 
+                                </td>
+                             </tr> 
+                            
+                            
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Sep 23, Tu</td>
+                                <td> Hypothesis Testing
+                                    
+                                </td>
+                                <td>
+                                    <a href="https://vitalflux.com/data-science-how-to-formulate-hypothesis-for-hypothesis-testing/">Hypo Testing Steps And Examples</a>
+                                    <a href="https://towardsdatascience.com/what-is-p-value-370056b8244d">P-Value-Explaination</a>
+                                </td>
+                                <td>
+<!--                                      <a href="https://docs.google.com/presentation/d/13O1QPLhSA2tYBLMbUxFnV9tWvBfe6tZjrj3yXJOtbak/edit?usp=sharing">fallLec09DataViz</a> -->
+                                    
+<!--                                     <a href="https://docs.google.com/presentation/d/1KALSyr6nMd4eyJI4Br06O3C6LoPRAlk9/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec6DataViz</a>   -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1HgIlv-vTVvV8d4aowa_wT7rBHhqJcNit/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec7_DataVisualization</a> -->
+
+                                     <a href="https://docs.google.com/presentation/d/1irYwMcg3qjaBufii72q7wDHJj1LR1XNY/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec07Hypothesis_Part01</a>  <br>
+                                     <a href="https://docs.google.com/presentation/d/1FXcIVACDlnfmjH9_xxLEXA233HwquntX/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec07Hypothesis_Part02</a>  <br>
+                                     <a href="https://docs.google.com/presentation/d/1UAY22kl_FvxyQhZABIuhBJbf-7J7V3Z2/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec07Hypothesis_Part03</a>   
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Sep 25, Th </td>
+                                <td> Data Visualization
+                                    
+                                </td>
+                                <td>
+                             
+                                </td>
+                                <td>   
+                                     <a href="https://docs.google.com/presentation/d/1Oyl8QrUr8NdDhP41EOiv8pVxEdp0RyoI/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec08DataVisualization</a>
+                                </td>
+                                <td>
+                                    Project First Checkpoint Due (Sep 25)
+                                   
+                                </td>
+                             </tr> 
+                            
+                            
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>Sep 30 </td>
+                                <td> Data Exploration
+                                    
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+<!--                                  <a href="https://docs.google.com/presentation/d/1z_qAvRta3fDjyoEJlGHaCUEiB5qoVcShkKHUhLfzAvg/edit?usp=sharing">fallLec10DataExploration</a> -->
+                                   
+<!--                                     <a href="https://docs.google.com/presentation/d/1nxj5aMZgqrRnV0PTdsbSzkeJ-3jg6-YzjifcE0MBfj4/edit?usp=sharing">Lec7DataExploration</a>  -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1VBiiF0UoNAXvL4iidAlrKtY3lY81zBv9/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec08DataExploration</a> -->
+                                
+                                    <a href="https://docs.google.com/presentation/d/1AdnhbcprjIl-wH_NqeqLLLIsaS1sK8-L/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec09DataExploration</a>
+                                </td>
+                                <td>
+                                    <!-- Project First Checkpoint Due (Sep 30) -->
+                                </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>Oct 2, Th </td>
+                                <td>Data Cleaning
+                                    
+                                </td>
+                                <td>
+<!--                                 <a href="https://colab.research.google.com/drive/10kS9JcQDsvwTMhX_P5Pj3fnsHQQ6Wrwf?usp=sharing">Class Google Colab</a> -->
+                                </td>
+                                <td> 
+<!--                                     <a href="https://docs.google.com/presentation/d/1yj5p6gvYRWe2uYuTLfLPvm2QpPb9erakNDzAK89e7zE/edit?usp=sharing">fallLec11&12DataCleaning</a>  -->
+                                    
+                                    
+<!--                                     <a href="https://docs.google.com/presentation/d/14VYDiB41j3-ULEBgT_myhspyZhiNvLDv/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec8DataCleaning_p1</a>  -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1x9Q8IPfDQxEjgdOeDZT-s6EKyxd-1kqNvH_HARcTJ0A/edit?usp=sharing">Lecture9DataCleaningP1</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1bFwYVHvLee3uTqInhwhPWxeGaHe-RJzq/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec10DataCleaning_Part01</a>
+                               </td>
+                                <td>
+                                    HW 2 Due (Oct 2) 
+                                    HW 3 Out (Oct 2);
+                                    
+                                </td>
+                             </tr>
+                            
+                             <tr>
+                                <th scope="row">11</th>
+                                <td>Oct 7, Tu </td>
+                                <td> Data Cleaning
+                                    
+                                </td>
+                                <td>
+                                <a href="https://www.shiksha.com/online-courses/articles/handling-missing-data-mean-median-mode/">HandlingMissingData</a>
+                                </td>
+                                <td> 
+                               <!-- <a href="https://docs.google.com/presentation/d/1Ux7wz-xvZ6StJZ5EzGZ1JTkei0SDW4ef/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec10DataCleaning_p2</a>
+     -->
+                                    <a href="https://docs.google.com/presentation/d/1I8THPYGauel648ozXkMtlXQr9tHrov6Y/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec11DataCleaning_Part02</a>
+                                    
+                                </td>
+                                  
+                                <td>
+                                    <!-- HW 2 Due (Oct 7) -->
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">12</th>
+                                <td>Oct 9, Th</td>
+                                <td>Introduction to Machine Learning
+                                </td>
+                                <td>
+    
+                                    </td>
+                                <td>
+<!--                                     <a href="https://docs.google.com/presentation/d/1UTsD-eQ52i4gDK8BI_fnyOglE4zd7kF1UKIztleBHa8/edit?usp=sharing">fallLec13IntroToML</a> -->
+                      
+<!--                                     <a href="https://docs.google.com/presentation/d/1Yfs5K8-lLZDK8rFYIyijn7Eok8hJIXZfgST-gdDLEtQ/edit?usp=sharing">Lec10IntroToML</a>
+                                 -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1bJdJ3EMggzapz--xeJ2ZdeYY_-KcdD6lqFH2lcFfwKI/edit?usp=sharing">Lec11IntroToML</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1HlH-V6Yv-jfVbZZ1VtiL2VgqIH3tkHcu/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec12_IntroToML</a>
+                                    
+                                </td>
+                                <td>
+                                    
+                                    </td>
+                             </tr>
+
+
+                            <tr>
+                                <th scope="row">13</th>
+                                <td><strong>Oct 14, Tu </strong></td>
+                                <td>
+                                    <strong>Fall Break (No class)</strong>
+                                </td>
+                                <td> 
+              
+                                </td>
+                                <td>
+                                   <td>
+                                </td>
+                                <td>
+                                </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">14</th>
+                                <td><strong>Oct 16, Th </strong></td>
+                                <td><strong>Midterm I</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                     
+                                    
+                                    HW 4 Out (Oct 16)
+                                    
+                                    </td>
+                             </tr> 
+
+                            
+                            <tr>
+                                <th scope="row">15</th>
+                                <td>Oct 21, Tu</td>
+                                <td>Feature Engineering & ML Evaluation</td>
+                                <td>
+
+
+                                </td>
+                                <td>
+<!--                                     <a href="https://docs.google.com/presentation/d/1E8B3NRdXwm0IVtAryItHqiJSW-WaEFJNm7wMcOMK0nc/edit?usp=sharing">fallLec14FeatureEng&MLEvaluation</a> -->
+                                     
+                                    
+<!--                                     <a href="https://docs.google.com/presentation/d/1XusPkHNGpwLrYYJA1f3hHIcrjQHxsLsu/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec11FeatureEngineering</a>
+ -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1hCkVF_126bUX3AYEqXYsvvkjD13WeNw6/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec12FeatureEngineering</a>
+                                     -->
+                                    <a href="https://docs.google.com/presentation/d/1UxjLJTrwewQ2UE4NLLlBwN9J8qS06ji1/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec13_FeatureEngineering</a>
+                                </td>
+                                <td>
+                                    HW 3 Due (Oct 21)
+                                    </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">16</th>
+                                <td>Oct 23, Th</td>
+                                <td>Feature Engineering & ML Evaluation cont.
+                                </td>
+                                <td> 
+                                   <a href="https://indhumathychelliah.com/2020/12/23/confusion-matrix%E2%80%8A-%E2%80%8Aclearly-explained/">Confusion Matrix</a> <br>  
+                                    <a href="https://youtu.be/fSytzGwwBVw?si=khWbup2E19JGFvQJ">CrossValidationVideo</a>
+                                    <a href="https://www.youtube.com/watch?v=kituDjzXwfE">KFoldVideo</a>
+                                     
+                                </td>
+                                <td>
+<!--    <a href="https://docs.google.com/presentation/d/1E8B3NRdXwm0IVtAryItHqiJSW-WaEFJNm7wMcOMK0nc/edit?usp=sharing">fallLec14FeatureEng&MLEvaluation</a> -->
+                                    
+<!--                                     <a href="https://docs.google.com/presentation/d/1F7kNBPlkZ_yIFDihXDMnqCexYTBYcYBT/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec11ML_Evaluation</a>
+                                 -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1agF_o0JTwmadYy1S4u5IOSQhrohUQHmn/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec13_ML_Evaluation -->
+                                    <a href="https://docs.google.com/presentation/d/1V5HaCtQyS_3vJSLFBUt6Ow-9g1L8vHdI/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec14_ML_Evaluation</a>
+                                </td>
+                                <td> 
+                                    
+                                   
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">17</th>
+                                <td>Oct 28, Tu</td>
+                                <td>Decision Tree </td>
+                                <td>
+                                    <a href="https://victorzhou.com/blog/information-gain/?fbclid=IwAR0_tE6FkK7nGDXohbSEXxqFDKVotHhB0pJwob4OGbKfj-m8n-QOCDBI8M4">DecisionTree-Calculate-Entropy-InfoGain</a>
+                                </td>
+                                <td>
+                                 <!--    <a href="https://docs.google.com/presentation/d/1Cw-H7LZPwJjGHqwLt-9OYSby4H39GyCiEIELy_xDFaI/edit?usp=sharing">fallLec15DecisionTree</a> -->
+                                     
+<!--                                     <a href="https://docs.google.com/presentation/d/1FMAAuiTCHLZmrV-Gsh8FXOF3Lmi0H4KQ61AdleCKJmc/edit?usp=sharing">Lec13DecisionTree </a>   
+                                    -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1BOQOiuVqFZR5dhA4zqlaAhxMzD1WvxY4-YXFrnBz0dU/edit?usp=sharing">Lec14_DecisionTree</a> -->
+                                    
+                                    <a href="https://docs.google.com/presentation/d/1QeynQI4wSt8hUHKrh88PYNtprajJGu_3/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec15_DecisionTree</a>
+                                </td>
+                                <td>
+                                    Project Second Checkpoint Due (Oct 28)
+                                   
+                                </td>
+                             </tr>
+                         
+                          <tr>
+                                <th scope="row">18</th>
+                                <td>Oct 30, Th</td>
+                                <td> Classifications
+                                </td>
+                                <td>
+                                    Reading materials are given at end of the Classification lecture slide
+                                             
+                                </td>
+                                <td>
+<!--                        <a href="https://docs.google.com/presentation/d/1ouOOgEXTTXJD-5mqjsvXLw3m0rV54-w47Vb8TSHOWWA/edit?usp=sharing">fallLec16Classifications</a>  -->
+                                   
+<!--                                     <a href="https://docs.google.com/presentation/d/1DHwoxPBsL_HLK6nE83ZgDzY81sNenMD6/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec14Classifications</a>
+                                                                    </td> -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1A9sbzeFthKak3L335GXA7y0dhu46umYd/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec15Classifications</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1tCW7htw5FiDDWKeqk3hAPH7HMAl74jle/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lecc16_Classification</a>
+                                
+                                <td>
+                                    <!-- Project Second Checkpoint Due (Oct 30) -->
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">19</th>
+                                <td>Nov 04, Tu</td>
+                                <td> Regression
+                                </td>
+                                <td> 
+                                    <a href="https://drive.google.com/file/d/1wdRweYLoMjNF5kPgt7T0vV2xnqaBQm0N/view?usp=sharing">Simple Linear Regression</a>
+                                
+                                </td>
+                                <td>
+<!--                                       <a href="https://docs.google.com/presentation/d/1855fEMaH4vrhyK0uWdUmw62gEu3ZtVFTn669QsCBL0Y/edit#slide=id.p">fallLec17Regression</a> -->
+                                   
+<!--                                     <a href="https://docs.google.com/presentation/d/1SHyhPerA7Kt47Ex759LuOEcESZ05jt_v/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec15Regression</a>
+                                -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1xH_KVzDR_e92qrMvk-rFoz6kQPv6hgWM/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec16Regression</a> -->
+                                <a href="https://docs.google.com/presentation/d/1gad8MGSo3oyg9Jp9SpZPsaWhR5vbFD0T/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec16Regression</a>
+                                    
+                                  
+                                </td>
+                                <td>
+                                    
+                                    HW 5 Out (Nov 04)
+
+
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">20</th>
+                                <td>Nov 06, Th</td>
+                                <td> Unsupervised Learning & Dimensionality Reduction
+                            
+                                </td>
+                                <td>
+                               <a href="https://docs.google.com/presentation/d/1DkqltXbHqYS6HDmm8HQfzfvNT2ni6ib3Lx_O-w3EmvA/edit?usp=sharing">PCA_short_slides</a>
+
+                                
+                                </td>
+                                <td>
+               <!--  <a href="https://docs.google.com/presentation/d/1VlraXWDj_s_ul0qlI3R5NO6lH3q71pb_UxD_BvEL4sM/edit?usp=sharing">fallLec18UnsupervisedLearning</a> -->
+                                   
+<!--                                     <a href="https://docs.google.com/presentation/d/1xg9fPg2WwCXNwnL75Hy0cRGi11LxEqzq/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec16UnsupervisedLearning</a>
+                                 -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1oOyfJeKHNlrAtoZzs5CpkYDACzDTq4Mm/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec17DimReduction_UnsupervisedLearning</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1MoMIjeiXyGiQ91l6A4GUA_o1HCzC8bXg/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec17.1_DimReduction</a>
+                                     <a href="https://docs.google.com/presentation/d/1Oe0BCym4i7nDmGalqxfZ3q5rK8JOgFI_/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec17.2_UnsupervisedLearning</a>
+                                </td>
+                                <td>
+                                    HW 4 Due (Nov 06)
+                                    </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">21</th>
+                                <td>Nov 11, Th</td>
+                                <td> 
+                                    Introduction to Neural Network
+                                </td>
+                               
+                                <td>
+                              
+                               </td>
+                                <td>
+                                    <!--  <a href="https://docs.google.com/presentation/d/1EPq0VjzJTuv6QrMvs1W-dB6ezJdymAVUsY4TA6Oo9XE/edit?usp=sharing">Lec19NeuralNetwork</a>                                    -->
+                                  
+<!--                                     <a href="https://docs.google.com/presentation/d/15QMj-t9ikPU5FLxhFg7GHDYTRPY0YdA5/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec17NeuralNetwork </a>
+ -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1IXzcTsYPQlAFM2eX8KmKr0XNnhKz4WkL/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec18.1Intro_to_NeuralNetwork</a>
+                                    <a href="https://docs.google.com/presentation/d/1csYtDbV1KaUcttf3zReYvMZO5BTNeKjq/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec18.2NeuralNetwork_Training</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1kfP6KuBqQH3qVLj2mpka4CQ3Z5sMqzQL/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec18.1_IntroToNeuralNetwork</a>
+                                    <a href="https://docs.google.com/presentation/d/1pDO_XYVKM5sDf1mwc0MRWsFXDdMqu78W/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true
+                                    ">LEc18.2_NN_Training</a>
+                                </td>
+                                <td> 
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">22</th>
+                                <td>Nov 13, Th</td>
+                                <td> Image Processing with CNN
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                    <!--   <a href="https://docs.google.com/presentation/d/1Urzgec2qloBleP-0O9SkEfjKJBnRJNiS/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec20ImageProcessing</a>                     
+                                </td> -->
+<!--                                     <a href="https://docs.google.com/presentation/d/1dU9O_WV6E4NSvK31ax9DvpaioZIlomsjtqqJ53wIU-s/edit?usp=sharing">Lec18ImageProcessing</a>
+                                    
+  -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/12qH8RWVvAvEVkYDI_95MEKLLJvOAXmGv/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec19CNN_ImageProcessing</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1xgUivRXMnyKjeJxBOm0TdSd-MGcUJYuc/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec19CNN_ImageProcessing</a>
+
+                                </td>
+                                <td>
+                                   
+                                    </td>
+                             </tr>
+
+                            <tr>
+                                <th scope="row">23</th>
+                                <td>Nov 18, Tu </td>
+                                <td> CNN continue and Intro to Natural Language Processing (NLP)
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                   <!--                                    <a href="https://docs.google.com/presentation/d/1QClaoR1eDZcH3NYZw8nhrCVACFW2oN4jQPmHPy8gKm4/edit?usp=sharing">Lec21NLP01and02</a> -->
+                                   
+<!--                                     <a href="https://docs.google.com/presentation/d/1OBK6C0TRxlFuxHkGwyXtxet2gyNyh2h1/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec18NLP</a>
+ -->
+                                      <!-- <a href="https://docs.google.com/presentation/d/12qH8RWVvAvEVkYDI_95MEKLLJvOAXmGv/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec19CNN_ImageProcessing</a>
+
+                                    <a href="https://docs.google.com/presentation/d/1OJZ0d80Qv-Qy4VIOz_z9z1xrBsDXy7q8/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec20IntroToNLP</a> -->
+                                    <a href="https://docs.google.com/presentation/d/13T8oLRdIg162BWYYOULSWBHHvm7gCbcP/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec20IntroToNLP</a>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">24</th>
+                                <td>Nov 20, Th</td>
+                                <td> Intro to Natural Language Processing (NLP) cont.
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                               <!--                                    <a href="https://docs.google.com/presentation/d/1QClaoR1eDZcH3NYZw8nhrCVACFW2oN4jQPmHPy8gKm4/edit?usp=sharing">Lec21NLP01and02</a> -->
+                                 <!--    <a href="https://docs.google.com/presentation/d/1OBK6C0TRxlFuxHkGwyXtxet2gyNyh2h1/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec21NLP</a> -->
+                                </td>
+                                <td>
+                                     HW 5 Due (Nov 20) 
+                                     HW6 Out (Nov 20)
+<!--                                      A Bonus HW (HW6) on NLP has been posted (OPTIONAL) -->
+                                    </td>
+                             </tr>
+                            
+                              <tr>
+                                <th scope="row">25</th>
+                                <td><strong>Nov 25, Tu </strong></td>
+                                <td><strong>Midterm II</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    
+                                    
+                                    </td>
+                             </tr> 
+                             
+                             <tr>
+                                <th scope="row">26</th>
+                                <td><strong>Nov 27, Th </strong></td>
+                                <td>
+                                    <strong>Thanksgiving Recess (No class)</strong>
+                                </td>
+                                <td> 
+              
+                                </td>
+                                <td>
+                                   <td>
+                                </td>
+                                <td>
+                                </td>
+                             </tr>
+
+                            
+                            <tr>
+                                <th scope="row">27</th>
+                                <td>Dec 2, Tu </td>
+                                <td>
+                                    Introduction to Graph Theory
+                                </td>
+                                <td>
+                                     <a href="https://networkx.org/">NetworkX</a> <br>
+                                    <a href="https://graphql.org/learn/">Intro to GraphQL </a> <br>
+                                    These two materials are given for self-exploration if someone is interested.
+                                
+                                </td>
+                                <td>
+<!--                                         <a href="https://docs.google.com/presentation/d/15WV1g0KmvMXRZf_2jSxaqAIEi-QQRYm1Uq1a-3huVXs/edit?usp=sharing">Lec22_GraphTheory</a>  -->
+<!--                                          <a href="https://docs.google.com/presentation/d/1EV7t1IR-TnW_k-lC4yhdzLAHqqQQRQ5YHhQFmnBQQBI/edit?usp=sharing">Lec23GraphTheory</a> -->
+                                  
+<!--                                     <a href="https://docs.google.com/presentation/d/1HTJp8qjVdZCQA51Q0ptPAet34dYN2Mi5Yc76GQaV7SI/edit?usp=sharing">Lec21_GraphTheory_P1</a> </br>
+                                    <a href="https://docs.google.com/presentation/d/1WBDVgYDfsVojbByzCgmTW5Jarnkx7Gf_Pg16L9erG88/edit?usp=sharing">Lec21_GraphTheory_P2</a> -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/1PRdogj1hZrxuIoJNQkKY9OD5sbHLPKnBtMWSoAAcg1A/edit?usp=sharing">Lec21_GraphTheory_P1</a>
+                                    <a href="https://docs.google.com/presentation/d/1QjWiSPd6KXIpFBDGfuyxJacqiZ2JJBeZqr-ZnBWaJsI/edit?usp=sharing">Lec21_GraphTheory_P2</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1UWScaSOGJ3wUw3CcLC0HmyN9Avb3JIAY/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec21_GraphTheory</a>
+                                    
+                                  
+                                </td>
+                                <td>
+                                   
+                                   
+                                    </td>
+                             </tr>
+                            
+                            <tr>
+                                <th scope="row">28</th>
+                                <td>Dec 4, Th</td>
+                                <td>Introduction to Graph Theory cont.
+                                </td>
+                                <td>
+                                     <a href="https://drive.google.com/file/d/1UQsL6YxzbwcA_q6UDv_p0UislonKfbBt/view?usp=sharing">ClassNote_Girvan-NewmanAlgorithm</a>
+                                    <br>
+                                    <a href="https://cmsc320.github.io/2021fall/files/girvan-newman.pdf">Girvan & Newman. "Community structure in social and biological networks," PNAS-02.</a>
+                                                   
+                                
+                                </td>
+                                <td>
+<!--         <a href="https://docs.google.com/presentation/d/15WV1g0KmvMXRZf_2jSxaqAIEi-QQRYm1Uq1a-3huVXs/edit?usp=sharing">Lec22_GraphTheory</a> -->
+                                    
+                                     
+<!--                                     <a href="https://docs.google.com/presentation/d/1-8xGjnCJhS7v5e0nQcxMtkV94IRu0tYQ0q_g3CBI78k/edit?usp=sharing">Lec20_GraphTheory_P3</a> -->
+                                    <!-- <a href="https://docs.google.com/presentation/d/15_PdJt5sHvoZD33Lk2viCz3ZQwhxc1bO/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec21_GraphTheory_P3</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1CQmpWH6xIdQOvxhw6TwfQXq2fKUrZATF/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec22_GraphTheory_Lecture2</a>
+                                </td>
+                                <td>
+                                    HW 6 Due (Dec 4)
+                                    
+                                    </td> 
+                             </tr>
+
+                             <tr>
+                                <th scope="row">29</th>
+                                <td>Dec 9, Tu</td>
+                                <td>Recommender System 
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                
+<!--                                   <a href="https://docs.google.com/presentation/d/12YOLSvowglthMixjCxNC5AEuWigavJ0Nn6oDUcHw5tU/edit?usp=sharing">springLec24RecommendationPart01</a> 
+                                <a href="https://docs.google.com/presentation/d/1d1etKp5WmtPIK9Xl5fnHoyZq6RiDu5cif6HXnP6WYVg/edit?usp=sharing">summerLec21RecommendationSystem_Lecture01</a> -->
+                                    
+                                <!-- <a href="https://docs.google.com/presentation/d/1Nfmd7449emh3UOhXj0tgq9K8AsxPiOZsIXo-gii7f4w/edit?usp=sharing">Lec22_RecommendationSystem_Lecture01</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1LS-0H0nxd991mVNf1JaHnPDYILaFtIjq/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec23_RecommendationSystem_Lecture01</a>
+                                </td>
+                                <td>
+                                    
+                                    Project Final Checkpoint Due (December 9)
+                                    </td>
+                             </tr>
+
+                             <tr>
+                                <th scope="row">30</th>
+                                <td>Dec 11, Th</td>
+                                <td>Recommender System cont. and Data Ethics (self reading)
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+<!--                                     <a href="https://docs.google.com/presentation/d/14p6YZmXvcbkMkMVkToQpypmZK5rRKHw1C-ck2dHzW0U/edit?usp=sharing">springLec25RecommendationPart02</a>
+                                    <a href= https://docs.google.com/presentation/d/1EqOxJWk8wSKKTC6WUQOGYKdzBiscQVWjfN3pMtn0Sqk/edit?usp=sharing>summerLec22RecommendationPart02</a> -->
+                                     <!-- <a href="https://docs.google.com/presentation/d/1q69TSOjyHChJdfzn7d3mG_XmNLvYP0PRN47NCMeI_eE/edit?usp=sharing">Lec23_RecommendationSystem_Lecture02</a> -->
+                                    <a href="https://docs.google.com/presentation/d/1n-icgXxOa5sjo9U_03I8frZ-WCYclKf2/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec24_RecommendationSystem_Lecture02</a>
+                                      -- <a href="https://docs.google.com/presentation/d/1kQmXAGiPB_TqGIFL8cKaQSoKzf4qMb5D/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec25DataEthics (SELF STUDY)</a>
+                                   
+                                    
+                                </td>
+                                
+                                <td>
+                                    <!-- Project Final Checkpoint Due (December 11) -->
+                                    
+                                    </td>
+                             </tr>
+                            <!-- <tr>
+                                <th scope="row">31</th>
+                                <td>May 13, Tu</td>
+                                <td>Data Ethics / TA Exam Review Session
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+<!--                                     <a href="https://docs.google.com/presentation/d/1SEKLoY1tZyHMpOdpbyu-PhdhRO8FRBw8qiBJT8lYFfY/edit?usp=sharing">Lec23DataEthics</a>
+                                     -->
+                                    
+                                    <!-- SELF STUDY: <a href="https://docs.google.com/presentation/d/1NIGTwMKt8sTnI_MiSKX8pFznlmtdiCfPSmxEomKxBQI/edit?usp=sharing">Lec24DataEthics</a> -->
+                                        <!-- <a href="https://docs.google.com/presentation/d/1kQmXAGiPB_TqGIFL8cKaQSoKzf4qMb5D/edit?usp=sharing&ouid=104928873451736790560&rtpof=true&sd=true">Lec25DataEthics</a>
+                                   
+                                    
+                                </td>
+                                <td>
+                                    HW 6 Due (May 13)
+                                    </td>
+                             </tr>  -->
+                            <tr>
+                                <th scope="row">32</th>
+                                <td>Final Exam Week</td>
+                                <td><strong>Final Exam (<a href="https://app.testudo.umd.edu/soc/exam/search?courseId=CMSC&sectionId=&termId=202508">Details</a>)</strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td><strong> Saturday December 20, 1:30pm - 3:30pm
+
+
+Reference: https://registrar.umd.edu/registration/register-classes/final-exams/fall</strong>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>
+<!--                             <tr>
+                                <th scope="row"></th>
+                                <td><strong></strong></td>
+                                <td><strong></strong>
+                                </td>
+                                <td>
+                                
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    </td>
+                             </tr>  -->
+                            
+                        </tbody>
+                            
+                    </table>
+               </div> 
+
+
+                <hr class="featurette-divider">
+                
+                <!-- Deliverables Section -->
+                <div class="row marketing" id="assignments">
+                    <h1>Deliverables</h1>
+                    
+                    <h3>Assignments</h3>
+                    <p>All the Assignments will be <strong>posted on Piazza/ ELMS.</strong> Instructions will appear over the course of the semester. Most assignments get released 
+                        on one or two days before the lecture material gets presented and are due one or two weeks after that.
+                     <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>&#35;</th>
+                                <th>Description</th>
+                                <th>Date Released</th>
+                                <th>Date Due</th>
+<!--                                 <th>Project Link</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Homework 1</th>
+                                <td>Git, Pandas, and SQL</td>
+                                <td>Sep 9</td>
+                                <td>Sep <s>18</s>19</td>
+<!--                                 <td>
+                                    <a href="https://github.com/morawski-umd/homework1/blob/main/README.md">Git</a>
+                                    <a href="https://drive.google.com/file/d/16LKtP9ArBjDw9PzeCR30kahV2HGsCRWc/view?usp=sharing">Pandas</a>
+                                    <a href="https://drive.google.com/file/d/1tHsWYGVH7SJuNpLi1xgW6IMXpLd7CLP-/view?usp=sharing">SQL</a>
+                                </td> -->
+                            </tr>
+<!--                             <tr>
+                                <th>Homework 2</th>
+                                <td>Statistics and Python</td>
+                                <td>Feb 15</td>
+                                <td>Feb 29</td> -->
+<!--                                 <td><a href="https://docs.google.com/document/d/11evOKLvxsGcSvCEuKqGEDLgkg5JDIVGJxsXtztkQ_CA/edit?usp=sharing">Link</a></td> -->
+<!--                             </tr> -->
+                            <tr>
+                                <th>Homework 2</th>
+                                <td>Python &  Statistics & Hypothesis Testing</td>
+                                <td>Sep 18</td>
+                                <td>Oct 2</td>
+<!--                                 <td><a href="https://drive.google.com/file/d/14thPZO5cMpuKq5e5DPVKlpQA257KP_2P/view?usp=sharing">link</a> </td> -->
+                            </tr>
+                            <tr>
+                                <th>Homework 3</th>
+                                <td>Data Exploration & Data Cleaning & Missing Data</td>
+                                <td>Oct 2</td>
+                                <td>Oct 21</td>
+<!--                                 <td><a href="https://drive.google.com/drive/folders/1r4huvtLLOovPy4TGU17-ZBvuLADAW3kl?usp=sharing">link</a></td> -->
+                            </tr>
+                            <tr>
+                                <th>Homework 4</th>
+                                <td>Machine Learning: Classification and Clustering </td>
+                                <td>Oct 16</td>
+                                <td>Nov 6</td>
+                            </tr>
+                             <tr>
+                                <th>Homework 5</th>
+                                <td>Regression, Gradient Descent and Neural Network </td>
+                                <td>Nov 4</td>
+                                <td>Nov <s>20</s>25</td>
+                            </tr>
+
+                             <tr>
+                                <th>Homework 6</th>
+                                <td>NLP/GraphTheory/Recommendation System/CNN (any mix) </td>
+                                <td>Nov 20</td>
+                                <td>Dec <s>04</s> 08</td>
+                            </tr>
+
+                            
+<!--                             <tr>
+
+                                 <th>BONUS: Homework 6</th>
+                                <td>Natural Language Processing</td>
+                                <td> Nov 12</td>
+                                <td>Dec 05</td> -->
+                                
+<!--                                 <td><a href="https://colab.research.google.com/drive/1ewDl3ySL5TsL79h0AhpzD9MODzxQqeQh?usp=sharing">link</a> </td> -->
+<!--                             </tr> -->
+<!--                                 <th>Homework 6</th>
+                                <td>Regression</td>
+                                <td>Nov 15</td>
+                                <td>Nov 29</td>
+                                <td><a href="https://colab.research.google.com/drive/1Dc4iXDuguhKcL80jJWBrfKkg2FZrir8W?usp=sharing">link</a></td> -->
+    
+                            
+                        </tbody>
+                    </table>
+                                       
+                    <h3>Final Project/Tutorial</h3>
+<!--                     <p>Link: <a href="https://colab.research.google.com/drive/1DXVAsJw5OSm4X7ifQjFfUlP7M9q6Hk-Y?usp=sharing">Here</a> </p> -->
+                    <p>There will be a group final project/tutorial with a maximum of four to six (four is recommended) persons in each group. Keep in mind that this is a semester-long project/tutorial for this course, and you should strive to make it your best work possible. It will be graded to a higher standard than the rest of the homework, considering that you have had the chance to practice these skills beforehand. Project details will be <strong>posted on Piazza/ELMS. It will be your responsibility to decide project topic as well as project partners.</strong></p>
+
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>&#35;</th>
+                                <th>Description</th>
+                                <th>Date Released</th>
+                                <th>Date Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Checkpoint 1</th>
+                                <td>Group Formation and Choosing Dataset</td>
+                                <td>Sep 4</td>
+                                <td>Sep 25</td>
+                            </tr>
+                            <tr>
+                             <tr>
+                                <th>Checkpoint 2</th>
+                                <td>Data preprocessing and Exploration</td>
+                                <td>Sep 4</td>
+                                <td>Oct 28</td>
+                            </tr>
+                             <tr>
+                                <th>Final Checkpoint </th>
+                                <td>Final deliverable of DS Project</td>
+                                <td>Sep 4</td>
+                                <td>Dec 9</strong>(<code>NO EXTENSION/LATE SUBMISSION IS ALLOWED)</code>)</strong></td>
+                            </tr>                
+                            
+                        </tbody>
+                    </table>
+                                        
+                    
+                 </div>
+                <div>
+                <h3>Academic Integrity</h3>
+
+                <p>Note that academic dishonesty includes not only cheating, fabrication, and plagiarism but also includes helping other students commit acts of academic dishonesty by allowing them to obtain copies of your work. You are allowed to use the Web for reference purposes, but you may not copy code from any website or any other source. In short, all submitted work must be your own. Cases of academic dishonesty will be pursued to the fullest extent possible as stipulated by the Office of Student Conduct. Without exception, every case of suspected academic dishonesty will be referred to the Office. If the student is found to be responsible for academic dishonesty, the typical sanction results in a special grade “XF", indicating that the course was failed due to academic dishonesty. More serious instances can result in expulsion from the university. If you have any doubt as to whether an act of yours might constitute academic dishonesty, please contact your TA or the course coordinator. 
+                    The University of Maryland, College Park has a nationally recognized Code of Academic Integrity, administered by the Student Honor Council.B This code sets standards for academic integrity at Maryland for all undergraduate and graduate students. As a student, you are responsible for upholding these standards for this course. It is very important for you to be aware of the consequences of cheating, fabrication, facilitation, and plagiarism. For more information on the Code of Academic Integrity or the Student Honor Council, please visit http://www.shc.umd.edu. </p>
+                    
+                    <p><strong>Examples of Academic Integrity Violations:</strong></p>
+                    
+                    <p>The following are examples of academic integrity violations:</p>
+                    
+                    <p><ul>
+                    <li>Hardcoding of results in a project assignment. Hardcoding refers to attempting to make a program appear as if it works correctly (e.g., printing expected results for a test).</li>
+                    <li>Using any code available on the internet/web or any other source.</li>
+                    <li>Hiring any online service to complete an assignment for you.</li>
+                    <li><strong>You may not post the implementation of your assignments, materials related to the class (e.g., project description), or any other material associated with this online course except the final project. Even if the class is over and you have graduated, you may NOT post any material other than what is allowed.</strong></li>
+                    <li>Sharing your homework solutions or your “test code" with any student.</li>
+                    <li>Looking at or debugging another student’s code.</li>
+                    <li>Using online forums to ask for help regarding our assignments.</li>
+                </ul> </p>
+
+                <p><strong> AI Tools Policy for this class:</strong></p>The use of AI tools (e.g., ChatGPT, Copilot, DALL·E) is strictly prohibited for any part of assignments, homework, quizzes, exams, or projects—including brainstorming, writing, coding, and editing.
+                Exception: You may use AI tools only for brainstorming ideas for the semester-long final project. If you do, you must clearly declare this use in your project checkpoints submission and cite the tool as a reference. AI-generated content or code cannot appear in your final deliverable. This restriction also applies when using Google Colab or any other online coding platform—AI-assisted features must be turned off. Violating this policy will result in a score of zero on the assignment/project and may lead to an academic integrity referral. While AI tools will play a role in your future work, this policy is designed to help you develop original ideas and a unique voice—both essential skills for this course.
+                If you have questions or would like to suggest potential exceptions, please email me at [instructor email], and I will be happy to discuss further
+                
+                <!-- <p><strong>AI tool disclosure: </strong>If a student chooses to use an AI tool to assist in any course work (e.g. assignments, programs, projects, reports, etc), they must disclose this information to the instructor. This disclosure should include the name of the AI tool and explain how it was used.</p> -->
+                <p><strong>Consequences for non-compliance:</strong> Failure to adhere to this policy may result in a zero on the particular course work where the AI tool is used.  In addition, the university honor code is applicable here: violation of the honor code and appropriate action will be enforced. </p>
+
+
+<h3>Class Announcements</h3>
+<p>You are responsible for reading the class announcements that are posted on both the course webpage and ELMS. Please check them often (at least once a day). Important information about the course (e.g., deadlines, assignment updates, etc.) will be posted on the course webpage.</p>      
+
+                </div>
+                
+                <hr class="featurette-divider"> 
+
+                <!-- Policies and Misc -->
+                <div class="row marketing" id="policies">
+                    <h1>Additional Administrative Information</h1>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>University Policies and Resources</h3>
+
+                    <p>Policies relevant to Undergraduate Courses are found here: 
+                        <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. 
+                        Topics that are addressed in these various policies include academic integrity, student and instructor conduct, 
+                        accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.  
+                        
+                    <p><strong>Projects/Labs:</strong>
+                    On any graded project or lab, you are NOT allowed to exchange code. We compare each student's code with every other student's 
+                    code to check for similarities. Every semester, we catch an embarrassingly high number of students that engage in cheating and 
+                    we have to take them to the Honor Council.</p>
+                    
+                    <p><strong>GroupMe/Other Group Chats:</strong>
+                    We encourage students to talk about course material and help each other out in group chats. However, this does NOT include graded assignments.
+                    
+                    There have been a couple instances in the past where students have posted pictures/source files of their code, 
+                    or earlier sections have given away exam questions to later sections. Not only did this lower the curve for the 
+                    earlier section because the later one will do better, the WHOLE group chat had to pay a visit to the Honor Council. 
+                    It was an extremely ugly business. Remember that in a group of 200+, someone or the other will blow the whistle. 
+                    If you happen to be an innocent person in an innocent groupchat and someone starts cheating out of the blue, leave it 
+                    immediately (and better yet, say you are leaving and say you will report it).</p>
+
+                    <p><strong>Github:</strong>
+                    You may post your project code to private Github (or similar service) repos only. As a student, you can make a private repo for free. Just remember that your free premium subscription has an expiration date, and your code becomes public once it expires. The Honor Council can retroactively give an XF (even to students who have already graduated) if your code is then used by another student to cheat. So just be careful. Posting graded code to a public repo will give you a free ticket to the Honor Council(Unless the instructor has given you permission with some strict conditions).
+
+                 
+                    
+                    
+                    <!-- information in this section adapted from David van Horn's course webpages -->
+                    <!-- E.g., http://www.cs.umd.edu/class/fall2019/cmsc430/Syllabus.html -->
+                    
+                    <h3>Excused Absences</h3>
+                    <p>Missing an exam for reasons such as illness, religious observance, participation in required university activities, or family or personal emergency (such as a serious automobile accident or close relative’s funeral) will be excused so long as the absence is requested in writing at least 2 days in advance and the student includes documentation that shows the absence qualifies as excused; a self-signed note is not sufficient as exams are Major Scheduled Grading Events. For this class, such events are the final project assessment and midterms, which will be due on the dates listed in the schedule above.  The final exam is scheduled according to the University Registrar.</p>
+                    
+                    <p>For medical absences, you must furnish documentation from the health care professional who treated you. This documentation must verify dates of treatment and indicate the timeframe that the student was unable to meet academic responsibilities. In addition, it must contain the name and phone number of the medical service provider to be used if verification is needed. No diagnostic information will ever be requested. Note that simply being seen by a health care professional does not constitute an excused absence; it must be clear that you were unable to perform your academic duties.</p>
+                    
+                    <p>It is the University's policy to provide accommodations for students with religious observances conflicting with exams, but it is the your responsibility to inform the instructor in advance of intended religious observances. If you have a conflict with a planned exam, you must inform the instructor prior to the end of the first two weeks of the class.</p>
+                    
+                    <p>The policies for excused absences do not apply to project assignments. Projects will be assigned with sufficient time to be completed by students who have a reasonable understanding of the necessary material and begin promptly. In cases of extremely serious documented illness of lengthy duration or other protracted, severe emergency situations, the instructor may consider extensions on project assignments, depending upon the specific circumstances.</p>
+                    
+                    <p>Besides the policies in this syllabus, the University's policies apply during the semester. Various policies that may be relevant appear in the <a href="https://academiccatalog.umd.edu/undergraduate/">Undergraduate Catalog</a>.
+                    
+                    <p>If you experience difficulty during the semester keeping up with the academic demands of your courses, you may consider contacting the Learning Assistance Service in 2201 Shoemaker Building at (301) 314-7693. Their educational counselors can help with time management issues, reading, note-taking, and exam preparation skills.</p>
+                    
+                    <h3>Information regarding official University closing and delays</h3>
+                    <p> Students can find information about official university closings and delays on the campus website or by contacting the weather emergency 
+                        phone line at 301-405-7669. If any exam or class assignment is rescheduled or a class is canceled due to inclement weather, we will 
+                        provide announcements via ELMS. We will ensure to follow the university campus rules
+                        
+                    </p>
+                    <h3>Right to Change Information</h3>
+                    <p>Although every effort has been made to be complete and accurate, unforeseen circumstances arising during the semester could require the adjustment of any material given here. Consequently, given due notice to students, the instructors reserve the right to change any information on this syllabus or in other course materials. Such changes will be announced and prominently displayed.
+                    </p>
+
+                    <!-- Section heartlessly stolen from Hector Corrada Bravo -->
+                    <h3>Course Evaluations</h3>
+                    
+                    <p>Course evaluations are important and the department and faculty take student feedback seriously.  Near the end of the semester, students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+                    
+                    <h3>Miscellaneous Resources</h3>
+                    <p> As a textbook reference, use this book <a href="https://ffalam.github.io/CMSC320TextBook/">CMSC320TextBook</a>
+                    As we go through the course sometimes I will mention additional resources or next steps. None of this is required for the course, but students have asked for me to keep a record of which texts/websites I mention.</p>
+                    
+                    <ul>
+                        <li> <a href="https://www.oreilly.com/library/view/python-for-data/9781491957653/">Python for Data Analysis</a> covers some of the same topics that we cover in this class, but in textbook form.</li>
+                        <li> <a href="https://www.oreilly.com/library/view/data-science-from/9781492041122/">Data Science From Scratch</a> this book is meant to give you a grounding in how some of the statistics and math could be implemented. Mostly, data scientists use off-the-shelf libraries for their mathematical routines/functionality, this books works through how you would implement some of those libraries. The idea is that this might give you a deeper understanding of what is going on. The implementations in this book are not meant to be high-performance, or industrial strength, but illustrative.</li>
+                        <li> <a href="https://www.scrapingbee.com/blog/web-scraping-101-with-python/#3-requests--beautifulsoup">Web Scraping 101</a> is a good overview to how web scraping works.</li>
+                    </ul>
+<!--                     As additional reading material and for some of the assignments, we will use <strong>"Zybook for CMSC 320: Introduction to Data Science"</strong>, which is a digital textbook available for free. Details to access the Zybook will be shared in class later. -->
+                </div>
+                
+                <hr class="featurette-divider">
+                
+                <!-- Bottom Logo -->
+                <div class="row marketing" id="bottom-logo">
+                    <img class="img-responsive" src="img/umd_cs_logo.png" alt="University of Maryland Department of Computer Science" />
+                </div>
+                
+                <!-- Footer -->
+                <footer class="footer">
+                    <p>Previous versions of this course:
+                    <a href="2021fall/index.html">Fall 2021</a>,
+                    <a href="2021summer/index.html">Summer 2021</a>,
+                    <a href="2021spring/index.html">Spring 2021</a>,
+                    <a href=2020/index.html>Fall 2020</a>,
+                    <a href="2019/index.html">Fall 2019</a>,
+                    <a href="http://www.cs.umd.edu/class/fall2018/cmsc320/">Fall 2018</a>,
+                    <a href="https://umd.instructure.com/courses/1227895">Fall 2017</a>,
+                    <a href="http://www.cs.umd.edu/class/spring2017/cmsc320/">Spring 2017</a>
+                    </p>
+                    <p>&copy; 2022&ndash;2023 Morawski &mdash; <a href="https://www.umd.edu/web-accessibility" title="UMD Web Accessibility">Web Accessibility</a></p>
+                </footer>
+                
+            </div>
+            
+            
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="js/ie10-viewport-bug-workaround.js"></script>
+            
+        </body>
+    </html>
